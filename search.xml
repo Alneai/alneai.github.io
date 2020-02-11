@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>My_First_Blog</title>
+    <title>Test</title>
     <url>/2020/02/11/My-First-Blog/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<pre><code>Test</code></pre>]]></content>
       <categories>
         <category>Test</category>
       </categories>
