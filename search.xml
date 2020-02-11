@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Test</title>
-    <url>/2020/02/11/My-First-Blog/</url>
-    <content><![CDATA[<pre><code>Test</code></pre>]]></content>
+    <title>NexT主题配置</title>
+    <url>/2020/02/11/Test/</url>
+    <content><![CDATA[<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo官网</a></p>
+<p><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT官网</a></p>
+<p>没了</p>
+<p>懒</p>
+]]></content>
       <categories>
-        <category>Test</category>
+        <category>NexT</category>
       </categories>
       <tags>
-        <tag>Test</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
