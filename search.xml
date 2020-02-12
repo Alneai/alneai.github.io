@@ -3,7 +3,46 @@
   <entry>
     <title>Test</title>
     <url>/2020/02/12/Test/</url>
-    <content><![CDATA[<center> 这是一篇测试博客</center>]]></content>
+    <content><![CDATA[<center> 这是一篇测试博客</center>
+<a id="more"></a>
+# Markdown
+
+<p>Tags: Test</p>
+<hr>
+<p><a href="https://www.zybuluo.com/codeep/note/163962" target="_blank" rel="noopener">LaTeX</a><br><a href="https://www.zybuluo.com/ghosert/note/2" target="_blank" rel="noopener">Cmd Markdown</a></p>
+<h2 id="1-斜体和粗体"><a href="#1-斜体和粗体" class="headerlink" title="1.斜体和粗体"></a>1.斜体和粗体</h2><p><em>斜体</em>   <strong>粗体</strong></p>
+<h2 id="2-分级标题"><a href="#2-分级标题" class="headerlink" title="2.分级标题"></a>2.分级标题</h2><h3 id="这是一个标题"><a href="#这是一个标题" class="headerlink" title="这是一个标题"></a>这是一个标题</h3><h2 id="3-外链接"><a href="#3-外链接" class="headerlink" title="3.外链接"></a>3.外链接</h2><p><a href="https://aliayc.github.io" target="_blank" rel="noopener">大颓子</a></p>
+<h2 id="4-无序列表"><a href="#4-无序列表" class="headerlink" title="4.无序列表"></a>4.无序列表</h2><ul>
+<li>abc</li>
+<li>bcd</li>
+<li>cde</li>
+</ul>
+<h2 id="5-有序列表"><a href="#5-有序列表" class="headerlink" title="5.有序列表"></a>5.有序列表</h2><ol>
+<li>ha</li>
+<li>haha</li>
+<li>hahaha</li>
+</ol>
+<h2 id="6-文字引用"><a href="#6-文字引用" class="headerlink" title="6.文字引用"></a>6.文字引用</h2><blockquote>
+<p>aaaa</p>
+</blockquote>
+<h2 id="7-行内代码块"><a href="#7-行内代码块" class="headerlink" title="7.行内代码块"></a>7.行内代码块</h2><p><code>1506</code></p>
+<h2 id="8-代码块"><a href="#8-代码块" class="headerlink" title="8.代码块"></a>8.代码块</h2><pre><code>1506</code></pre><h2 id="9-插入图像"><a href="#9-插入图像" class="headerlink" title="9.插入图像"></a>9.插入图像</h2><p><img src="http://www.tietuku.com/a8079ef608eaca5f" alt="1506"></p>
+<h2 id="10-内容目录"><a href="#10-内容目录" class="headerlink" title="10.内容目录"></a>10.内容目录</h2><p>[TOC]</p>
+<h2 id="11-标签分类"><a href="#11-标签分类" class="headerlink" title="11.标签分类"></a>11.标签分类</h2><p>Tags:</p>
+<h2 id="14-加强的代码块"><a href="#14-加强的代码块" class="headerlink" title="14. 加强的代码块"></a>14. 加强的代码块</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;cstdio&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;Hello, world!&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><p>标签（空格分隔）： Caiji</p>
+<hr>
+<p><del>数学公式</del></p>
+<p>$$\infty\qquad\ne\ge\le\approx\equiv\propto\sim$$<br>$$\bmod\quad \pmod {245}$$<br>$$\text{In text:}\qquad\sum\limits_{i=1}^nf(n)\quad \int_0^{\frac{\pi}{2}}\quad \prod_\epsilon$$</p>
+<p>$$\sum\nolimits_{i=1}^{n}$$<br>$$\sum_{\substack{0\le i\le n\ j\in\mathbb{R}}}P(i,j) = Q$$<br>$$1+\Bigl(\frac{1}{a-x^2}\biggr)^3$$</p>
+<p>\begin{align}<br>a &amp; = b + c \notag\<br>&amp; = d + e\notag<br>\end{align}<br>\begin{align*}<br>a ={} &amp; b + c \<br>={} &amp; d + e + f + g + h + i</p>
+<ul>
+<li>j + k + l \notag \<br>&amp; + m + n + o \<br>={} &amp; p + q + r + s<br>\end{align*}<br>$$a, b: c; d! e$$<br>$R\quad\mathrm{R}\quad\mathbf{R}\quad\mathbb{R}$$$<br>$$<br>[ |x| =<br>\begin{cases}</li>
+</ul>
+<p>-x &amp; \text{if } x &lt; 0,\<br>0 &amp; \text{if } x = 0,\<br>x &amp; \text{if } x &gt; 0.<br>\end{cases} ]<br>$$</p>
+<p>$$\alpha \quad \beta \qquad \Gamma \quad \Delta$$<br>$$\text{abc}\quad\infty\dots\cdots$$<br>$$p^3_{ij}\qquad m_\mathrm{Knuth}\qquad \sum_{k=1}^3 k $$<br>$$\frac{3}{8}\qquad \tfrac{3}{8}\qquad 1\dfrac{3}{8}$$<br>$$\sqrt[3]{2}$$<br>$$\ne\quad\ge\quad\le\quad\approx\quad\equiv\quad\propto\quad\sim\quad$$<br>$$\times\quad\div\quad\cdot\quad\pm\quad\mp\quad$$<br>$$\leqslant\qquad\geqslant\qquad\nabla\qquad\partial$$<br>$$lim_{x \rightarrow 0}\frac{\sin x}{x}=1$$<br>$$a\bmod b \qquad x\equiv a \pmod{b}$$</p>
+]]></content>
       <tags>
         <tag>Test</tag>
       </tags>
