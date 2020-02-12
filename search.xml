@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Test</title>
+    <url>/2020/02/12/Test/</url>
+    <content><![CDATA[<center> 这是一篇测试博客</center>]]></content>
+      <tags>
+        <tag>Test</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>NexT主题配置</title>
     <url>/2020/02/11/NexT%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo官网</a></p>
