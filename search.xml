@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数论笔记</title>
+    <url>/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>在这里记一些常用的数论知识，免得容易老是忘。</p>
+<a id="more"></a>
+<p><strong>积性函数：</strong> 对于任意两个互质的正整数$a, b$，均满足$f(ab)=f(b)f(b)$的函数$f$<br><strong>完全积性函数：</strong> 对于所有正整数$a, b$，均满足$f<br>(ab)=f(a)f(b)$的函数$f$</p>
+<p>对于一个积性函数$f$，$f(n)=f(\prod p_i^{a_i})=\prod f(p_i^{a_i})$，若$f$还满足完全积性，则$f(n)=\prod f(p_i)^{a_i}$</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Test - Mathjax</title>
     <url>/2020/02/12/Test%20-%20Mathjax/</url>
     <content><![CDATA[<center> 这是一篇测试博客</center>
