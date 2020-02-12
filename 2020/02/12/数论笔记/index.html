@@ -19,15 +19,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="数论数论，是一门让人又爱又恨的学问。在这里记一些常用的数论知识，免得容易老是忘。因为我比较懒，所以一些简单的东西就不写或者一笔带过了吧。">
+  <meta name="description" content="数论数论，是一门让人又爱又恨的学问。在这里记一些常用的数论知识，免得容易老是忘。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数论笔记">
 <meta property="og:url" content="http://yoursite.com/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Alneai&#39;s Blog">
-<meta property="og:description" content="数论数论，是一门让人又爱又恨的学问。在这里记一些常用的数论知识，免得容易老是忘。因为我比较懒，所以一些简单的东西就不写或者一笔带过了吧。">
+<meta property="og:description" content="数论数论，是一门让人又爱又恨的学问。在这里记一些常用的数论知识，免得容易老是忘。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-12T12:12:41.000Z">
-<meta property="article:modified_time" content="2020-02-12T13:31:23.435Z">
+<meta property="article:modified_time" content="2020-02-12T13:59:43.250Z">
 <meta property="article:author" content="Alneai">
 <meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
@@ -207,7 +207,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-12 20:12:41 / 修改时间：21:31:23" itemprop="dateCreated datePublished" datetime="2020-02-12T20:12:41+08:00">2020-02-12</time>
+              <time title="创建时间：2020-02-12 20:12:41 / 修改时间：21:59:43" itemprop="dateCreated datePublished" datetime="2020-02-12T20:12:41+08:00">2020-02-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -232,15 +232,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><p>数论，是一门让人又爱又恨的学问。<br>在这里记一些常用的数论知识，免得容易老是忘。<br>因为我比较懒，所以一些简单的东西就不写或者一笔带过了吧。<br><a id="more"></a></p>
-<h3 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h3><p>$a$的逆元，即为满足$a\times a^{-1}\equiv 1 \pmod{p}$的$a^{-1}$。</p>
-<h4 id="扩展欧几里得求逆元"><a href="#扩展欧几里得求逆元" class="headerlink" title="扩展欧几里得求逆元"></a>扩展欧几里得求逆元</h4><p>可以用扩展欧几里得算法求出a的逆元，同时根据裴蜀定理，我们又能知道若$gcd(a,p)\neq 1$，则$a$不存在逆元。</p>
+        <h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><p>数论，是一门让人又爱又恨的学问。<br>在这里记一些常用的数论知识，免得容易老是忘。<br><a id="more"></a></p>
+<h3 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h3><p>$a$ 的逆元，即为满足 $a\times a^{-1}\equiv 1 \pmod{p}$ 的 $a^{-1}$。</p>
+<h4 id="扩展欧几里得求逆元"><a href="#扩展欧几里得求逆元" class="headerlink" title="扩展欧几里得求逆元"></a>扩展欧几里得求逆元</h4><p>可以用扩展欧几里得算法求出 $a$ 的逆元，同时根据裴蜀定理，我们又能知道若 $gcd(a,p)\neq 1$，则 $a$ 不存在逆元。</p>
 <h4 id="费马小定理求逆元"><a href="#费马小定理求逆元" class="headerlink" title="费马小定理求逆元"></a>费马小定理求逆元</h4><p>更简单的求逆元方法则是利用费马小定理。</p>
 <blockquote>
-<p><strong>费马小定理：</strong> 若$p$为质数，$a$为正整数，且$gcd(a,p)=1$，则$a^{p-1}\equiv 1 \pmod{p}$</p>
+<p><strong>费马小定理：</strong> 若 $p$ 为质数，$a$ 为正整数，且  $gcd(a,p)=1$，则 $a^{p-1}\equiv 1 \pmod{p}$</p>
 </blockquote>
 <p>$a^{-1}\equiv a^{p-2} \pmod{p}$，因此可以直接快速幂求。</p>
-<h4 id="线性求逆元"><a href="#线性求逆元" class="headerlink" title="线性求逆元"></a>线性求逆元</h4><p>要求$1\dots n$的逆元，我们有更快的方法。</p>
+<h4 id="线性求逆元"><a href="#线性求逆元" class="headerlink" title="线性求逆元"></a>线性求逆元</h4><p>要求 $1\dots n$ 的逆元，我们有更快的方法。</p>
+<p>考虑带余除法，$a\bmod b = a - \lfloor \frac{a}{b}\rfloor \times b$，</p>
+<p>则 $a\bmod b = -\lfloor \frac{a}{b}\rfloor \times b \pmod{a}$</p>
+<p>两边同乘 $b^{-1}\times (a \bmod b)^{-1}$，得</p>
+<p>$b^{-1} = -\lfloor \frac{a}{b}\rfloor \times (a \bmod b)^{-1} \pmod{a}$</p>
+<p>由于 $a \bmod b$ 小于 $b$ ，因此可以递推求解。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inverse</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    inv[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">        inv[i] = (p - p / i) * inv[p % i] % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="线性求任意-n-个数的逆元"><a href="#线性求任意-n-个数的逆元" class="headerlink" title="线性求任意$n$个数的逆元"></a>线性求任意$n$个数的逆元</h4><p><a href="https://oi-wiki.org//math/inverse/" target="_blank" rel="noopener">Here</a></p>
 <h3 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h3><h3 id="埃筛-欧拉筛"><a href="#埃筛-欧拉筛" class="headerlink" title="埃筛/欧拉筛"></a>埃筛/欧拉筛</h3><h3 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h3><h3 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h3><h3 id="Lucas定理"><a href="#Lucas定理" class="headerlink" title="Lucas定理"></a>Lucas定理</h3><h3 id="BSGS"><a href="#BSGS" class="headerlink" title="BSGS"></a>BSGS</h3><h3 id="原根"><a href="#原根" class="headerlink" title="原根"></a>原根</h3><h3 id="二次剩余"><a href="#二次剩余" class="headerlink" title="二次剩余"></a>二次剩余</h3><h3 id="类欧几里得算法"><a href="#类欧几里得算法" class="headerlink" title="类欧几里得算法"></a>类欧几里得算法</h3><h3 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h3><p><strong>积性函数：</strong> 对于任意两个互质的正整数$a, b$，均满足$f(ab)=f(b)f(b)$的函数$f$</p>
 <p><strong>完全积性函数：</strong> 对于所有正整数$a, b$，均满足$f<br>(ab)=f(a)f(b)$的函数$f$</p>
@@ -262,13 +267,6 @@
 
 
         
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/02/11/NexT%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" rel="prev" title="NexT主题配置">
-      <i class="fa fa-chevron-left"></i> NexT主题配置
-    </a></div>
-      <div class="post-nav-item"></div>
-    </div>
       </footer>
     
   </article>
@@ -343,7 +341,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -356,7 +354,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
