@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>洛谷 P2365 任务安排</title>
-    <url>/2020/02/13/%E6%B4%9B%E8%B0%B7%20P2365%20%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/</url>
+    <title>洛谷 P2365 任务安排 - 斜率优化DP</title>
+    <url>/2020/02/13/Luogu%20-%20%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/</url>
     <content><![CDATA[<p>这题本身挺水的，$n$ 只有 $5000$，不过这题能用斜率规划 $O(n)$ 做，正好在这总结一下斜率规划。</p>
 <a id="more"></a>
 <hr>
@@ -34,6 +34,38 @@
         <tag>Luogu</tag>
         <tag>DP</tag>
         <tag>斜率优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>USACO Haywire - 模拟退火</title>
+    <url>/2020/02/13/USACO%20-%20Haywire/</url>
+    <content><![CDATA[<p>模拟退火板子题。</p>
+<a id="more"></a>
+<hr>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p><a href="https://www.luogu.com.cn/problem/P2210" target="_blank" rel="noopener">Luogu</a></p>
+<p>有 $n(n\le 12)$ 只奶牛，每只奶牛有 $3$ 个朋友。现在要把这 $12$ 只奶牛排成一列，使得每只奶牛与它的朋友的距离之和最小。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="模拟退火"><a href="#模拟退火" class="headerlink" title="模拟退火"></a>模拟退火</h3><p>模拟退火是一个非常玄学的算法。它可以避免像爬山法一样陷入局部最优解的情况，它的解决方法是：以一定的概率接受一个不那么优的解。温度越高，则接受的概率也就越高。当温度逐渐降低时，解便趋于稳定，接受的概率也就变低。</p>
+<p>模拟退火的大体步骤：</p>
+<ol>
+<li>给定初始温度 $T_0$、最终温度 $T_1$、降温速度 $\Delta$。</li>
+<li>在当前的解的基础上随机扰动，产生一个新解，并计算新解与原解函数值的差 $\Delta E_k$。</li>
+<li>根据 $Metropolis$ 准则判断是否接受新解。</li>
+<li>$T = T \times \Delta$，重复步骤 3，直到 $T &lt; T_0$。</li>
+</ol>
+<blockquote>
+<p>$Metropolis$ 准则：若 $\Delta E_k \leq 0$，则接受新解；否则，以概率 $e^{\frac{-\Delta E_k}{T}}$ 接受新解。</p>
+</blockquote>
+<p>一般 $T_0$ 要比较大，$T_1$ 要比较小，$\Delta$ 为接近 $1$ 的常数，迭代次数要足够多。</p>
+<p>过不了怎么办？多改改参数就过了。</p>
+<h3 id="本题"><a href="#本题" class="headerlink" title="本题"></a>本题</h3><p>直接跑模拟退火，每次随机交换两只奶牛的位置就行了。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">12</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> delta = <span class="number">0.995</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, a[N][<span class="number">4</span>], p[N], pos[N], ans = <span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Calc</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) pos[p[i]] = i;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">3</span>; j++)</span><br><span class="line">            ans += <span class="built_in">abs</span>(pos[i] - pos[a[i][j]]);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Simulate_Anneal</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> T = <span class="number">5000</span>;</span><br><span class="line">	<span class="keyword">while</span> (T &gt; <span class="number">1e-14</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> x = rand() % n + <span class="number">1</span>, y = rand() % n + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (x == y) x = rand() % n + <span class="number">1</span>;</span><br><span class="line">        swap(p[x], p[y]);</span><br><span class="line">		<span class="keyword">int</span> now = Calc(x, y);</span><br><span class="line">		<span class="keyword">double</span> dE = now - ans;</span><br><span class="line">		<span class="keyword">if</span> (dE &lt; <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			ans = now;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">exp</span>(-dE / T) * RAND_MAX &gt; rand());</span><br><span class="line">        <span class="keyword">else</span> swap(p[x], p[y]);</span><br><span class="line">		T *= delta;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	srand(time(<span class="literal">NULL</span>));</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">3</span>; j++)</span><br><span class="line">		    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][j]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) p[i] = i;</span><br><span class="line">	<span class="keyword">while</span> ((<span class="keyword">double</span>)clock()/CLOCKS_PER_SEC &lt; <span class="number">0.9</span>) Simulate_Anneal();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans / <span class="number">2</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>刷题记录</category>
+      </categories>
+      <tags>
+        <tag>Luogu</tag>
+        <tag>USACO</tag>
+        <tag>模拟退火</tag>
       </tags>
   </entry>
   <entry>
