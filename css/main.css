@@ -1153,7 +1153,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fe888e;
+  background: #7caca4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1357,7 +1357,7 @@ pre .javascript .function {
 .site-state-item-count {
   color: inherit;
   display: block;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 600;
   text-align: center;
 }
@@ -1626,7 +1626,7 @@ pre .javascript .function {
 }
 .posts-collapse .post-title {
   display: inline;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: normal;
 }
 .posts-collapse .post-title a,
