@@ -106,7 +106,7 @@
   <entry>
     <title>数论笔记</title>
     <url>/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><p>数论，是一门让人又爱又恨的学问。<br>在这里记一些常用的数论知识，免得容易老是忘。  </p>
+    <content><![CDATA[<h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><p>数论，是一门让人又爱又恨的<del>哲学</del>。<br>在这里记一些常用的数论知识，免得容易老是忘。  </p>
 <a id="more"></a>
 <hr>
 <h3 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h3><p>$a$ 的逆元，即为满足 $a\times a^{-1}\equiv 1 \pmod{p}$ 的 $a^{-1}$。</p>
