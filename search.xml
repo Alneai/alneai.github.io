@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>82</title>
+    <title>CF Edu Round 82</title>
     <url>/2020/02/13/CF%20Edu%20Round%2082/</url>
     <content><![CDATA[<p>掉分场。</p>
 <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>第一个 $1$ 和最后一个 $1$ 中间 $0$ 的数量即为答案。</p>
@@ -16,6 +16,12 @@
 <h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><p>一眼 DP，但比赛时写的太丑，没调出来。。</p>
 <p>赛后发现复杂度还是错的。。。 TLE on test 20</p>
 ]]></content>
+      <categories>
+        <category>比赛记录</category>
+      </categories>
+      <tags>
+        <tag>CF</tag>
+      </tags>
   </entry>
   <entry>
     <title>数论笔记</title>
