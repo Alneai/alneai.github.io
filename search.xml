@@ -38,8 +38,9 @@
   <entry>
     <title>数论笔记</title>
     <url>/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><hr>
-<p>数论，是一门让人又爱又恨的学问。<br>在这里记一些常用的数论知识，免得容易老是忘。<br><a id="more"></a></p>
+    <content><![CDATA[<h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><p>数论，是一门让人又爱又恨的学问。<br>在这里记一些常用的数论知识，免得容易老是忘。  </p>
+<a id="more"></a>
+<hr>
 <h3 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h3><p>$a$ 的逆元，即为满足 $a\times a^{-1}\equiv 1 \pmod{p}$ 的 $a^{-1}$。</p>
 <h4 id="扩展欧几里得求逆元"><a href="#扩展欧几里得求逆元" class="headerlink" title="扩展欧几里得求逆元"></a>扩展欧几里得求逆元</h4><p>可以用扩展欧几里得算法求出 $a$ 的逆元，同时根据裴蜀定理，我们又能知道若 $gcd(a,p)\neq 1$，则 $a$ 不存在逆元。</p>
 <h4 id="费马小定理求逆元"><a href="#费马小定理求逆元" class="headerlink" title="费马小定理求逆元"></a>费马小定理求逆元</h4><p>更简单的求逆元方法则是利用费马小定理。</p>
