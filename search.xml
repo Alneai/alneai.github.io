@@ -153,7 +153,9 @@
     <content><![CDATA[<h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><p>数论，是一门让人又爱又恨的<del>哲学</del>。<br>在这里记一些常用的数论知识，免得容易老是忘。  </p>
 <a id="more"></a>
 <hr>
-<h3 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h3><p>$a$ 的逆元，即为满足 $a\times a^{-1}\equiv 1 \pmod{p}$ 的 $a^{-1}$。</p>
+<h3 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h3><blockquote>
+<p>$a$ 的逆元，即为满足 $a\times a^{-1}\equiv 1 \pmod{p}$ 的 $a^{-1}$。</p>
+</blockquote>
 <h4 id="扩展欧几里得求逆元"><a href="#扩展欧几里得求逆元" class="headerlink" title="扩展欧几里得求逆元"></a>扩展欧几里得求逆元</h4><p>可以用扩展欧几里得算法求出 $a$ 的逆元，同时根据裴蜀定理，我们又能知道若 $gcd(a,p)\neq 1$，则 $a$ 不存在逆元。</p>
 <h4 id="费马小定理求逆元"><a href="#费马小定理求逆元" class="headerlink" title="费马小定理求逆元"></a>费马小定理求逆元</h4><p>更简单的求逆元方法则是利用费马小定理。</p>
 <blockquote>
@@ -170,7 +172,9 @@
 <h4 id="线性求任意-n-个数的逆元"><a href="#线性求任意-n-个数的逆元" class="headerlink" title="线性求任意$n$个数的逆元"></a>线性求任意$n$个数的逆元</h4><p>与求阶乘逆元的原理类似。求出 $a_i$ 的前缀积 $s_i$，用费马小定理或扩欧能够求出 $s_n^{-1}$，进而求出 $s_i^{-1}(1 \leq i \leq n)$，则 $a_i^{-1}=s_{i}^{-1}\times s_{i-1}$</p>
 <hr>
 <h3 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h3><p>欧拉函数 $\varphi(n)$，表示 $1\dots n$ 中与 $n$ 互质的数的个数。它有很多神奇的性质。</p>
+<blockquote>
 <p>设 $n=\prod\limits_{i=1}^{s} p_i^{k_i}$，$p_i$ 是质数，那么 $\varphi(n)=n\times \prod\limits_{i=1}^{s}\frac{p_i-1}{p_i}$</p>
+</blockquote>
 <h4 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h4><blockquote>
 <p>引理： 若 $x=p^k$，那么 $\varphi(x)=p^{k-1}\times(p-1)$</p>
 </blockquote>
@@ -180,10 +184,20 @@
 &=\prod_{i=1}^{s}(p_i-1)\times p_i^{k_i-1}\\
 &=\prod_{i=1}^{s}p_i^{k_i}\times \frac{p_i-1}{p_i}\\
 &=n\prod_{i=1}^{s}\frac{p_i-1}{p_i}
-\end{align*}</script><h4 id="欧拉函数的一些性质"><a href="#欧拉函数的一些性质" class="headerlink" title="欧拉函数的一些性质"></a>欧拉函数的一些性质</h4><p>欧拉函数是积性函数，即对于$gcd(a,b)=1$，$\varphi(ab)=\varphi(a)\times \varphi(b)$<br>特别的，$\varphi(2n)=\varphi(n)$</p>
+\end{align*}</script><h4 id="欧拉函数的一些性质"><a href="#欧拉函数的一些性质" class="headerlink" title="欧拉函数的一些性质"></a>欧拉函数的一些性质</h4><blockquote>
+<p>欧拉函数是积性函数，即对于$gcd(a,b)=1$，$\varphi(ab)=\varphi(a)\times \varphi(b)$</p>
+</blockquote>
+<p>特别的，$\varphi(2n)=\varphi(n)$</p>
+<blockquote>
 <p>$n=\sum\limits_{d|n}\varphi(d)$</p>
-<p>证明：如果 $gcd(k,n)=d$，那么 $gcd(\frac{k}{d}, \frac{n}{d})=1(k \leq n)$.<br>如果我们设 $f(x)$ 表示 $gcd(k,n)=x$ 的数的个数，那么 $n=\sum\limits_{i=1}^{n}f(i)$。<br>根据上面的证明，我们发现，$f(x)=\varphi(\frac{n}{x})$，从而 $n=\sum\limits_{d|n}\varphi(\frac{n}{d})$。<br>注意到约数 $n$ 和 $\frac{n}{d}$ 具有对称性，因此上式化为 $n=\sum\limits_{d|n}\varphi(d)$</p>
+</blockquote>
+<p>证明：如果 $gcd(k,n)=d$，那么 $gcd(\frac{k}{d}, \frac{n}{d})=1(k \leq n)$.</p>
+<p>如果我们设 $f(x)$ 表示 $gcd(k,n)=x$ 的数的个数，那么 $n=\sum\limits_{i=1}^{n}f(i)$。</p>
+<p>根据上面的证明，我们发现，$f(x)=\varphi(\frac{n}{x})$，从而 $n=\sum\limits_{d|n}\varphi(\frac{n}{d})$。</p>
+<p>注意到约数 $n$ 和 $\frac{n}{d}$ 具有对称性，因此上式化为 $n=\sum\limits_{d|n}\varphi(d)$</p>
+<blockquote>
 <p>$1$ 到 $n$ 中与 $n(n&gt;1)$ 互质的数的和为 $\frac{n\times \varphi(n)}{2}$</p>
+</blockquote>
 <hr>
 <h3 id="埃筛-欧拉筛"><a href="#埃筛-欧拉筛" class="headerlink" title="埃筛/欧拉筛"></a>埃筛/欧拉筛</h3><h3 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h3><h3 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h3><h3 id="Lucas定理"><a href="#Lucas定理" class="headerlink" title="Lucas定理"></a>Lucas定理</h3><h3 id="BSGS"><a href="#BSGS" class="headerlink" title="BSGS"></a>BSGS</h3><h3 id="原根"><a href="#原根" class="headerlink" title="原根"></a>原根</h3><h3 id="二次剩余"><a href="#二次剩余" class="headerlink" title="二次剩余"></a>二次剩余</h3><h3 id="类欧几里得算法"><a href="#类欧几里得算法" class="headerlink" title="类欧几里得算法"></a>类欧几里得算法</h3><hr>
 <h3 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h3><p><strong>积性函数：</strong> 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)=f(a)\times f(b)$ 的函数 $f$</p>
