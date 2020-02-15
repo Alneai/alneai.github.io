@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>c</title>
+    <url>/2020/02/15/CF%20Round%20620%20(Div.%202)/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>CF Round 619 (Div. 2)</title>
     <url>/2020/02/14/CF%20Round%20619%20(Div.%202)/</url>
     <content><![CDATA[<p>难受，这场打的是真的难受。</p>
@@ -46,7 +51,7 @@
   </entry>
   <entry>
     <title>USACO Haywire - 模拟退火</title>
-    <url>/2020/02/13/USACO%20-%20Haywire/</url>
+    <url>/2020/02/13/USACO-Haywire/</url>
     <content><![CDATA[<p>模拟退火板子题。 <del>为啥这题是黑题啊</del></p>
 <a id="more"></a>
 <hr>
@@ -77,8 +82,8 @@
       </tags>
   </entry>
   <entry>
-    <title>洛谷 P2365 任务安排 - 斜率优化DP</title>
-    <url>/2020/02/13/Luogu%20-%20%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/</url>
+    <title>「洛谷P2365」任务安排 - 斜率优化DP</title>
+    <url>/2020/02/13/Luogu-%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/</url>
     <content><![CDATA[<p>这题本身挺水的，$n$ 只有 $5000$，不过这题能用斜率规划 $O(n)$ 做，正好在这总结一下斜率规划。</p>
 <a id="more"></a>
 <hr>
@@ -138,7 +143,7 @@
 <p>$f[i][j] = min(f[i][j], nxt[f[i - 1][j] + 1][t[i]])$</p>
 <p>$f[i][j] = min(f[i][j], nxt[f[i][j - 1] + 1][t[j + k]])$</p>
 <h3 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">400</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s[N], t[N];</span><br><span class="line"><span class="keyword">int</span> f[N][N], nxt[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s%s"</span>, s + <span class="number">1</span>, t + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> n = <span class="built_in">strlen</span>(s + <span class="number">1</span>), m = <span class="built_in">strlen</span>(t + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">memset</span>(nxt, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(nxt));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">26</span>; j++) nxt[i][j] = nxt[i + <span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">if</span> (i) nxt[i][s[i] - <span class="string">'a'</span>] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ok = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; m; k++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">memset</span>(f, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(f));</span><br><span class="line">            f[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> ok1 = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= k; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= m - k; j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (i) f[i][j] = min(f[i][j], nxt[f[i - <span class="number">1</span>][j] + <span class="number">1</span>][t[i] - <span class="string">'a'</span>]);</span><br><span class="line">                    <span class="keyword">if</span> (j) f[i][j] = min(f[i][j], nxt[f[i][j - <span class="number">1</span>] + <span class="number">1</span>][t[j + k] - <span class="string">'a'</span>]);</span><br><span class="line">                    <span class="keyword">if</span> (f[i][j] &gt; n)</span><br><span class="line">                    &#123;</span><br><span class="line">                        ok1 = <span class="number">0</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (!ok1) <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!ok1) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (f[k][m - k] &lt;= n)</span><br><span class="line">            &#123;</span><br><span class="line">                ok = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ok) <span class="built_in">puts</span>(<span class="string">"YES"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><p>待填坑。。。</p>
+<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><p>不打算补了</p>
 ]]></content>
       <categories>
         <category>比赛记录</category>
