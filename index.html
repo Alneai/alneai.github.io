@@ -178,6 +178,153 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alneai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alneai's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/" class="post-title-link" itemprop="url">最小圆覆盖 - 随机增量法</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-26 19:54:18 / 修改时间：20:06:43" itemprop="dateCreated datePublished" datetime="2020-02-26T19:54:18+08:00">2020-02-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A2%98%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">题目</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最小圆覆盖板子。</p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>在一个平面上有 $n$ 个点，求一个半径最小的圆，能覆盖所有的点。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><a href="https://oi-wiki.org/geometry/random-incremental/" target="_blank" rel="noopener">OI Wiki</a></p>
+<p>为什么是 $O(n)$ 的？</p>
+<p>因为对于第 $i$ 个点，它在前 $i$ 个点形成的最小圆上的概率为 $\frac{3}{i}$。</p>
+<p>如何求三个点形成的圆？</p>
+<p>把三个点代入圆的方程，联立解出 $r$, $x_0$, $y_0$。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>抄 OI Wiki 的代码。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100000</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">double</span> r;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x, y;</span><br><span class="line">&#125; p[N], o;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">sqr</span><span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x * x; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">dist</span><span class="params">(Point a, Point b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>(sqr(a.x - b.x) + sqr(a.y - b.y));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span> </span>&#123; <span class="keyword">return</span> <span class="built_in">fabs</span>(a - b) &lt; <span class="number">1e-8</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Point <span class="title">geto</span><span class="params">(Point a, Point b, Point c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a1, a2, b1, b2, c1, c2;</span><br><span class="line">    Point ans;</span><br><span class="line">    a1 = <span class="number">2</span> * (b.x - a.x), b1 = <span class="number">2</span> * (b.y - a.y);</span><br><span class="line">    c1 = sqr(b.x) - sqr(a.x) + sqr(b.y) - sqr(a.y);</span><br><span class="line">    a2 = <span class="number">2</span> * (c.x - a.x), b2 = <span class="number">2</span> * (c.y - a.y);</span><br><span class="line">    c2 = sqr(c.x) - sqr(a.x) + sqr(c.y) - sqr(a.y);</span><br><span class="line">    <span class="keyword">if</span> (cmp(a1, <span class="number">0</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        ans.y = c1 / b1;</span><br><span class="line">        ans.x = (c2 - ans.y * b2) / a2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (cmp(b1, <span class="number">0</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        ans.x = c1 / a1;</span><br><span class="line">        ans.y = (c2 - ans.x * a2) / b2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        ans.x = (c2 * b1 - c1 * b2) / (a2 * b1 - a1 * b2);</span><br><span class="line">        ans.y = (c2 * a1 - c1 * a2) / (b2 * a1 - b1 * a2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>, &amp;p[i].x, &amp;p[i].y);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) swap(p[rand() % n + <span class="number">1</span>], p[rand() % n + <span class="number">1</span>]);</span><br><span class="line">    o = p[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (dist(o, p[i]) &lt; r || cmp(dist(o, p[i]), r)) <span class="keyword">continue</span>;</span><br><span class="line">        o.x = (p[i].x + p[<span class="number">1</span>].x) / <span class="number">2</span>;</span><br><span class="line">        o.y = (p[i].y + p[<span class="number">1</span>].y) / <span class="number">2</span>;</span><br><span class="line">        r = dist(p[i], p[<span class="number">1</span>]) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt; i; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (dist(o, p[j]) &lt; r || cmp(dist(o, p[j]), r)) <span class="keyword">continue</span>;</span><br><span class="line">            o.x = (p[i].x + p[j].x) / <span class="number">2</span>;</span><br><span class="line">            o.y = (p[i].y + p[j].y) / <span class="number">2</span>;</span><br><span class="line">            r = dist(p[i], p[j]) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt; j; k++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (dist(o, p[k]) &lt; r || cmp(dist(o, p[k]), r)) <span class="keyword">continue</span>;</span><br><span class="line">                o = geto(p[i], p[j], p[k]);</span><br><span class="line">                r = dist(o, p[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.10lf\n%.10lf %.10lf"</span>, r, o.x, o.y);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alneai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alneai's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/" class="post-title-link" itemprop="url">Camp 2015 构造专题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-26 17:36:29 / 修改时间：17:41:52" itemprop="dateCreated datePublished" datetime="2020-02-26T17:36:29+08:00">2020-02-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/" itemprop="url" rel="index">
+                    <span itemprop="name">随便写写</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这两天看了 Camp 2015 的构造题选讲，挑了几道有意思的题在这里写一写。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/17/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie%E6%A0%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -209,8 +356,19 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-22 16:47:57" itemprop="dateModified" datetime="2020-02-22T16:47:57+08:00">2020-02-22</time>
+                <time title="修改时间：2020-02-26 19:56:03" itemprop="dateModified" datetime="2020-02-26T19:56:03+08:00">2020-02-26</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A2%98%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">题目</span>
+                  </a>
+                </span>
+            </span>
 
           
 
@@ -288,7 +446,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-22 16:48:16" itemprop="dateModified" datetime="2020-02-22T16:48:16+08:00">2020-02-22</time>
+                <time title="修改时间：2020-02-26 19:56:09" itemprop="dateModified" datetime="2020-02-26T19:56:09+08:00">2020-02-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -296,8 +454,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
-                    <span itemprop="name">刷题记录</span>
+                  <a href="/categories/%E9%A2%98%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">题目</span>
                   </a>
                 </span>
             </span>
@@ -380,7 +538,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-16 00:20:11" itemprop="dateModified" datetime="2020-02-16T00:20:11+08:00">2020-02-16</time>
+                <time title="修改时间：2020-02-26 19:55:54" itemprop="dateModified" datetime="2020-02-26T19:55:54+08:00">2020-02-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -388,8 +546,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
-                    <span itemprop="name">比赛记录</span>
+                  <a href="/categories/%E6%AF%94%E8%B5%9B/" itemprop="url" rel="index">
+                    <span itemprop="name">比赛</span>
                   </a>
                 </span>
             </span>
@@ -466,7 +624,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-22 16:48:45" itemprop="dateModified" datetime="2020-02-22T16:48:45+08:00">2020-02-22</time>
+                <time title="修改时间：2020-02-26 19:56:20" itemprop="dateModified" datetime="2020-02-26T19:56:20+08:00">2020-02-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -474,8 +632,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
-                    <span itemprop="name">刷题记录</span>
+                  <a href="/categories/%E9%A2%98%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">题目</span>
                   </a>
                 </span>
             </span>
@@ -552,7 +710,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-16 00:21:25" itemprop="dateModified" datetime="2020-02-16T00:21:25+08:00">2020-02-16</time>
+                <time title="修改时间：2020-02-26 19:56:15" itemprop="dateModified" datetime="2020-02-26T19:56:15+08:00">2020-02-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -560,8 +718,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
-                    <span itemprop="name">刷题记录</span>
+                  <a href="/categories/%E9%A2%98%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">题目</span>
                   </a>
                 </span>
             </span>
@@ -635,7 +793,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-14 12:25:44" itemprop="dateModified" datetime="2020-02-14T12:25:44+08:00">2020-02-14</time>
+                <time title="修改时间：2020-02-26 19:55:46" itemprop="dateModified" datetime="2020-02-26T19:55:46+08:00">2020-02-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -643,8 +801,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
-                    <span itemprop="name">比赛记录</span>
+                  <a href="/categories/%E6%AF%94%E8%B5%9B/" itemprop="url" rel="index">
+                    <span itemprop="name">比赛</span>
                   </a>
                 </span>
             </span>
@@ -835,20 +993,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
