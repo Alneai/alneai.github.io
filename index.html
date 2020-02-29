@@ -218,6 +218,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -292,7 +306,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-27 01:44:18" itemprop="dateModified" datetime="2020-02-27T01:44:18+08:00">2020-02-27</time>
+                <time title="修改时间：2020-02-27 01:48:10" itemprop="dateModified" datetime="2020-02-27T01:48:10+08:00">2020-02-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -307,6 +321,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -318,11 +346,10 @@
 
       
           <p>这两天看了 Camp 2015 的构造题选讲，挑了几道有意思的题在这里写一写。</p>
-<h3 id="CF-468C-Hack-it"><a href="#CF-468C-Hack-it" class="headerlink" title="CF 468C: Hack it!"></a>CF 468C: Hack it!</h3><p>求给出区间 [$l$, $r$] 使得区间中的数的数位之和模 $a$ 为 $0$。</p>
+<h3 id="CF-468C-Hack-it"><a href="#CF-468C-Hack-it" class="headerlink" title="CF 468C: Hack it!"></a>CF 468C: Hack it!</h3><p>求一个区间 [$l$, $r$] 使得区间中的数的数位之和模 $a$ 为 $0$。</p>
 <p>$l, r \leq 10^{200} \quad a \leq 10^{18}$</p>
-<p>题解：</p>
-<p>令 $l=1$，$r=10^{19}$，这样对应着一个和 $s$。由于 $r$ 很大，当每次把区间右移 $k$ 时 $s$ 会增加 $k$。所以把 $l$，$r$ 右移 $a - s \bmod a$ 即为答案。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> BigInteger Int;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Int a;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">    Int l = <span class="number">1</span>, r = <span class="number">1e18</span>;</span><br><span class="line">    r *= <span class="number">10</span>;</span><br><span class="line">    Int s = r * <span class="number">9</span> / <span class="number">2</span> * <span class="number">19</span> + <span class="number">1</span>;</span><br><span class="line">    Int x = s % a;</span><br><span class="line">    l += a - x, r += a - x;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; l &lt;&lt; <span class="string">" "</span> &lt;&lt; r &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>题解：<br>令 $l=1$，$r=10^{19}$，这样对应着一个和 $s$。由于 $r$ 很大，当每次把区间右移 $k$ 时 $s$ 会增加 $k$。所以把 $l$，$r$ 右移 $a - s \bmod a$ 即为答案。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> BigInteger Int;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Int a;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">    Int l = <span class="number">1</span>, r = <span class="number">1e18</span>;</span><br><span class="line">    r *= <span class="number">10</span>;</span><br><span class="line">    Int s = r / <span class="number">10</span> * <span class="number">45</span> * <span class="number">19</span> + <span class="number">1</span>;</span><br><span class="line">    Int x = s % a;</span><br><span class="line">    l += a - x, r += a - x;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; l &lt;&lt; <span class="string">" "</span> &lt;&lt; r &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Andrew-Stankevich-Contest-44-H-Huffman-Codes"><a href="#Andrew-Stankevich-Contest-44-H-Huffman-Codes" class="headerlink" title="Andrew Stankevich Contest 44: H. Huffman Codes"></a>Andrew Stankevich Contest 44: H. Huffman Codes</h3><p>给出 $n\leq 100$ 个哈夫曼编码当中的 $0/1$ 个数，问是否存在可能的哈夫曼编码。</p>
 <h3 id="CF-209C-Trails-and-Glades"><a href="#CF-209C-Trails-and-Glades" class="headerlink" title="CF 209C: Trails and Glades"></a>CF 209C: Trails and Glades</h3><p>有一张无向图 $\leq 10^6$，加最少的边使之有欧拉回路。</p>
 <h3 id="ZOJ-3823-Excavator-Contest"><a href="#ZOJ-3823-Excavator-Contest" class="headerlink" title="ZOJ 3823: Excavator Contest"></a>ZOJ 3823: Excavator Contest</h3><p>在 $n \times n$ 的网格上，由边界某个格子出发四连通经过所有格子一次且仅一次再次回到边界上，要求拐弯的数量至少有 $n \times (n-1)-1$ 次。</p>
@@ -392,6 +419,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/17/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie%E6%A0%91/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/17/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie%E6%A0%91/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -482,6 +523,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/16/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E5%B9%B6%E6%9F%A5%E9%9B%86/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/16/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E5%B9%B6%E6%9F%A5%E9%9B%86/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -574,6 +629,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/14/CF%20Round%20619%20(Div.%202)/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/14/CF%20Round%20619%20(Div.%202)/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -660,6 +729,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/13/USACO-Haywire/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/13/USACO-Haywire/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -746,6 +829,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/13/Luogu-%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/13/Luogu-%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -829,6 +926,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/13/CF%20Edu%20Round%2082/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/13/CF%20Edu%20Round%2082/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -912,6 +1023,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -1186,6 +1311,35 @@
     
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'pV6iCj1y6mfWVATBKspCnlWv-gzGzoHsz',
+      appKey     : 'Q3AoTtBDAMmfrByu46pgOjVt',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>
