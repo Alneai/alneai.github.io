@@ -241,7 +241,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-comment-o"></i>
       </span>
-      <span class="post-meta-item-text">Valine：</span>
+      <span class="post-meta-item-text">评论数：</span>
     
     <a title="valine" href="/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/#valine-comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/" itemprop="commentCount"></span>
@@ -461,9 +461,11 @@
         .then(({ results }) => {
           if (results.length > 0) {
             var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
               .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
               .catch(error => {
                 console.error('Failed to save visitor count', error);
               })
