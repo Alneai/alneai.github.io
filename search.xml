@@ -17,7 +17,8 @@
         <category>题目</category>
       </categories>
       <tags>
-        <tag>计算几何 随机增量法</tag>
+        <tag>计算几何</tag>
+        <tag>随机增量法</tag>
       </tags>
   </entry>
   <entry>
@@ -34,7 +35,7 @@
 <h3 id="Latvia-U-Contest-14-G-Mosaic"><a href="#Latvia-U-Contest-14-G-Mosaic" class="headerlink" title="Latvia U Contest 14: G. Mosaic"></a>Latvia U Contest 14: G. Mosaic</h3><p>有三种颜色的珠子各 $a$, $b$, $c \leq 2^{31}$ 个，给出方案铺满若干层的三角形，且每层颜色必须相同。</p>
 ]]></content>
       <categories>
-        <category>总结</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
         <tag>构造</tag>

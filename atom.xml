@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-26T15:41:10.918Z</updated>
+  <updated>2020-02-29T16:18:13.758Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/"/>
     <id>http://yoursite.com/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/</id>
     <published>2020-02-26T11:54:18.000Z</published>
-    <updated>2020-02-26T15:41:10.918Z</updated>
+    <updated>2020-02-29T16:18:13.758Z</updated>
     
     <summary type="html">
     
@@ -39,7 +39,9 @@
       <category term="题目" scheme="http://yoursite.com/categories/%E9%A2%98%E7%9B%AE/"/>
     
     
-      <category term="计算几何 随机增量法" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/"/>
+      <category term="计算几何" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
+    
+      <category term="随机增量法" scheme="http://yoursite.com/tags/%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/"/>
     
   </entry>
   
@@ -48,7 +50,7 @@
     <link href="http://yoursite.com/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/"/>
     <id>http://yoursite.com/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/</id>
     <published>2020-02-26T09:36:29.000Z</published>
-    <updated>2020-02-29T15:12:35.199Z</updated>
+    <updated>2020-02-29T16:18:51.981Z</updated>
     
     <summary type="html">
     
@@ -64,7 +66,7 @@
     </summary>
     
     
-      <category term="总结" scheme="http://yoursite.com/categories/%E6%80%BB%E7%BB%93/"/>
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="构造" scheme="http://yoursite.com/tags/%E6%9E%84%E9%80%A0/"/>
