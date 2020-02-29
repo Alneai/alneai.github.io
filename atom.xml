@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Alneai&#39;s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-02-26T15:41:10.918Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Alneai</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最小圆覆盖 - 随机增量法</title>
+    <link href="http://yoursite.com/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/"/>
+    <id>http://yoursite.com/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/</id>
+    <published>2020-02-26T11:54:18.000Z</published>
+    <updated>2020-02-26T15:41:10.918Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最小圆覆盖板子。&lt;/p&gt;
+&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;在一个平面上有 $n$ 个点，求一个半径最小的圆，能覆盖所有的点。&lt;/p&gt;
+&lt;h2 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot; class=&quot;headerlink&quot; title=&quot;题解&quot;&gt;&lt;/a&gt;题解&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://oi-wiki.org/geometry/random-incremental/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OI Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;为什么是 $O(n)$ 的？&lt;/p&gt;
+&lt;p&gt;因为对于第 $i$ 个点，它在前 $i$ 个点形成的最小圆上的概率为 $\frac{3}{i}$。&lt;/p&gt;
+&lt;p&gt;如何求三个点形成的圆？&lt;/p&gt;
+&lt;p&gt;把三个点代入圆的方程，联立解出 $r$, $x_0$, $y_0$。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="题目" scheme="http://yoursite.com/categories/%E9%A2%98%E7%9B%AE/"/>
+    
+    
+      <category term="计算几何 随机增量法" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ICPCCamp 2015 构造专题</title>
+    <link href="http://yoursite.com/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/</id>
+    <published>2020-02-26T09:36:29.000Z</published>
+    <updated>2020-02-29T15:12:35.199Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这两天看了 Camp 2015 的构造题选讲，挑了几道有意思的题在这里写一写。&lt;/p&gt;
+&lt;h3 id=&quot;CF-468C-Hack-it&quot;&gt;&lt;a href=&quot;#CF-468C-Hack-it&quot; class=&quot;headerlink&quot; title=&quot;CF 468C: Hack
+        
+      
+    
+    </summary>
+    
+    
+      <category term="总结" scheme="http://yoursite.com/categories/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="构造" scheme="http://yoursite.com/tags/%E6%9E%84%E9%80%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「洛谷P4735」可持久化 Trie 树</title>
+    <link href="http://yoursite.com/2020/02/17/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie%E6%A0%91/"/>
+    <id>http://yoursite.com/2020/02/17/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie%E6%A0%91/</id>
+    <published>2020-02-17T01:49:32.000Z</published>
+    <updated>2020-02-26T11:56:03.444Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;可持久化 Trie 树模板。&lt;/p&gt;
+&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P4735&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Luogu&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;给定一个非负数列 ${a}$，有 $m$ 个操作。&lt;/p&gt;
+&lt;p&gt;操作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在序列末尾添加一个数 $x$；&lt;/li&gt;
+&lt;li&gt;找到一个位置 $p$，满足 $l \leq p \leq r$，使得 $a_p \oplus a_{p+1} \oplus \dots \oplus a_n \oplus x$ 最大，输出最大值。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="题目" scheme="http://yoursite.com/categories/%E9%A2%98%E7%9B%AE/"/>
+    
+    
+      <category term="Luogu" scheme="http://yoursite.com/tags/Luogu/"/>
+    
+      <category term="可持久化" scheme="http://yoursite.com/tags/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    
+      <category term="Trie树" scheme="http://yoursite.com/tags/Trie%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「洛谷P3402」可持久化并查集</title>
+    <link href="http://yoursite.com/2020/02/16/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    <id>http://yoursite.com/2020/02/16/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E5%B9%B6%E6%9F%A5%E9%9B%86/</id>
+    <published>2020-02-16T03:59:16.000Z</published>
+    <updated>2020-02-26T11:56:09.282Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;可持久化并查集板子。&lt;br&gt;&lt;del&gt;简单又好写&lt;/del&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P3402&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Luogu&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;$n$ 个集合，$m$个操作。&lt;/p&gt;
+&lt;p&gt;操作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;合并 $a$, $b$ 所在集合；&lt;/li&gt;
+&lt;li&gt;回到第 $k$ 次操作后的状态；&lt;/li&gt;
+&lt;li&gt;询问 $a$, $b$ 是否在同一集合。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="题目" scheme="http://yoursite.com/categories/%E9%A2%98%E7%9B%AE/"/>
+    
+    
+      <category term="Luogu" scheme="http://yoursite.com/tags/Luogu/"/>
+    
+      <category term="可持久化" scheme="http://yoursite.com/tags/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    
+      <category term="并查集" scheme="http://yoursite.com/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CF Round 619 (Div. 2)</title>
+    <link href="http://yoursite.com/2020/02/14/CF%20Round%20619%20(Div.%202)/"/>
+    <id>http://yoursite.com/2020/02/14/CF%20Round%20619%20(Div.%202)/</id>
+    <published>2020-02-13T17:20:16.000Z</published>
+    <updated>2020-02-26T11:55:54.703Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开场又被 B 卡住了，死活 WA，耽误了有 20 分钟，最后下定决心弃掉 B 去看 C，看了会发现 C 是水题，很快写完了，然而这时已经过去 50 多分钟了。&lt;/p&gt;
+&lt;p&gt;敲完 C 去看了下 D，发现不怎么可做，就又回过头去调 B，结果一看，是数组没有清空。。。就只是因为一个下标会越界。。真实训练赛打多了，忘记多组数据该怎么写了。。以后多组数据一定要记得清空数组，也一定要避免下标越界访问，尤其是像 $a[n+1]$ 这样的位置。&lt;/p&gt;
+&lt;p&gt;过了 B，迷茫了一会，发现 E, F 没什么人做，就去搞 D 了。看了会，发现 D 就是个 SB 构造，随便构造下就行了。。结果最后时间太赶，想错了一些细节，而且代码实现的也极其混乱，最终还是没能过。。&lt;/p&gt;
+&lt;p&gt;还是太菜，写个几十行的垃圾代码能出一万个 bug。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="比赛" scheme="http://yoursite.com/categories/%E6%AF%94%E8%B5%9B/"/>
+    
+    
+      <category term="CF" scheme="http://yoursite.com/tags/CF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「USACO」 Haywire - 模拟退火</title>
+    <link href="http://yoursite.com/2020/02/13/USACO-Haywire/"/>
+    <id>http://yoursite.com/2020/02/13/USACO-Haywire/</id>
+    <published>2020-02-13T12:32:40.000Z</published>
+    <updated>2020-02-26T11:56:20.859Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;模拟退火板子题。 &lt;del&gt;为啥这题是黑题啊&lt;/del&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P2210&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Luogu&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有 $n(n\le 12)$ 只奶牛，每只奶牛有 $3$ 个朋友。现在要把这 $12$ 只奶牛排成一列，使得每只奶牛与它的朋友的距离之和最小。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="题目" scheme="http://yoursite.com/categories/%E9%A2%98%E7%9B%AE/"/>
+    
+    
+      <category term="Luogu" scheme="http://yoursite.com/tags/Luogu/"/>
+    
+      <category term="USACO" scheme="http://yoursite.com/tags/USACO/"/>
+    
+      <category term="模拟退火" scheme="http://yoursite.com/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「洛谷P2365」任务安排 - 斜率优化DP</title>
+    <link href="http://yoursite.com/2020/02/13/Luogu-%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/"/>
+    <id>http://yoursite.com/2020/02/13/Luogu-%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/</id>
+    <published>2020-02-13T09:55:30.000Z</published>
+    <updated>2020-02-26T11:56:15.896Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这题本身挺水的，$n$ 只有 $5000$，不过这题能用斜率规划 $O(n)$ 做，正好在这总结一下斜率规划。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="题目" scheme="http://yoursite.com/categories/%E9%A2%98%E7%9B%AE/"/>
+    
+    
+      <category term="Luogu" scheme="http://yoursite.com/tags/Luogu/"/>
+    
+      <category term="DP" scheme="http://yoursite.com/tags/DP/"/>
+    
+      <category term="斜率优化" scheme="http://yoursite.com/tags/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CF Edu Round 82</title>
+    <link href="http://yoursite.com/2020/02/13/CF%20Edu%20Round%2082/"/>
+    <id>http://yoursite.com/2020/02/13/CF%20Edu%20Round%2082/</id>
+    <published>2020-02-13T02:05:30.000Z</published>
+    <updated>2020-02-26T11:55:46.684Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;掉分场。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="比赛" scheme="http://yoursite.com/categories/%E6%AF%94%E8%B5%9B/"/>
+    
+    
+      <category term="CF" scheme="http://yoursite.com/tags/CF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数论笔记</title>
+    <link href="http://yoursite.com/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-02-12T12:12:41.000Z</published>
+    <updated>2020-02-15T16:31:18.727Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;数论&quot;&gt;&lt;a href=&quot;#数论&quot; class=&quot;headerlink&quot; title=&quot;数论&quot;&gt;&lt;/a&gt;数论&lt;/h2&gt;&lt;p&gt;数论，是一门让人又爱又恨的&lt;del&gt;哲学&lt;/del&gt;。&lt;br&gt;在这里记一些常用的数论知识，免得容易老是忘。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数论" scheme="http://yoursite.com/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
+  
+</feed>
