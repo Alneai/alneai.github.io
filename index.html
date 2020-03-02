@@ -179,6 +179,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/Tarjan%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alneai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alneai's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/02/Tarjan%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Tarjan学习笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-03-02 17:15:54 / 修改时间：17:16:20" itemprop="dateCreated datePublished" datetime="2020-03-02T17:15:54+08:00">2020-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/02/Tarjan%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="Tarjan学习笔记" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">评论数：</span>
+    
+    <a title="valine" href="/2020/03/02/Tarjan%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/02/Tarjan%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -204,7 +294,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-02 16:20:58 / 修改时间：16:55:44" itemprop="dateCreated datePublished" datetime="2020-03-02T16:20:58+08:00">2020-03-02</time>
+              <time title="创建时间：2020-03-02 16:20:58 / 修改时间：17:15:34" itemprop="dateCreated datePublished" datetime="2020-03-02T16:20:58+08:00">2020-03-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,7 +340,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>看了遍 lyd 书上写的差分约束，在这里总结下。</p>
+          <p>看了遍 lyd 书上写的差分约束，在这里<del>抄</del>总结下。</p>
 <h2 id="差分约束"><a href="#差分约束" class="headerlink" title="差分约束"></a>差分约束</h2><p>差分约束系统包含 $N$ 个变量 $X_1\sim X_N$，以及 $M$ 个约束条件，每个约束条件形如 $X_i-X_j\leq c_k$。我们要求一组解 $X_1=a_1, X_2=a_2, \cdots, X_N=a_N$，使所有约束条件都得到满足。</p>
 <p>每个约束条件 $X_i-X_j\leq c_k$ 可以变形为 $X_i\leq X_j + c_k$，这与最短路中的三角形不等式 $dist[y]\leq dist[x]+z$ 很相似，因此可以从节点 j 向节点 i 连一条长度为 $c_k$ 的有向边。</p>
 <p>若 $\{a_1,a_2,\cdots,a_N\}$ 是一组解，那么对任意常数 $\Delta$，$\{a_1+\Delta,a_2+\Delta,\cdots,a_N+\Delta\}$ 也是一组解。所以，不妨先求一组负数解，然后增加一个 0 号节点，令 $X_0=0$。这样一来，就多了 $N$ 个形如 $X_i-X_0\leq 0$ 的约束条件，应该从节点 0 向每个节点 i 连一条长度为 0 的有向边。</p>
@@ -1139,113 +1229,12 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Alneai">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alneai's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">数论笔记</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-12 20:12:41" itemprop="dateCreated datePublished" datetime="2020-02-12T20:12:41+08:00">2020-02-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-02 16:22:13" itemprop="dateModified" datetime="2020-03-02T16:22:13+08:00">2020-03-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="数论笔记" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">评论数：</span>
-    
-    <a title="valine" href="/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><p>数论，是一门让人又爱又恨的<del>哲学</del>。<br>在这里记一些常用的数论知识，免得容易老是忘。  </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1312,7 +1301,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1325,7 +1314,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

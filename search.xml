@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Tarjan学习笔记</title>
+    <url>/2020/03/02/Tarjan%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>图论</tag>
+        <tag>Tarjan</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>差分约束笔记</title>
     <url>/2020/03/02/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>看了遍 lyd 书上写的差分约束，在这里总结下。</p>
+    <content><![CDATA[<p>看了遍 lyd 书上写的差分约束，在这里<del>抄</del>总结下。</p>
 <h2 id="差分约束"><a href="#差分约束" class="headerlink" title="差分约束"></a>差分约束</h2><p>差分约束系统包含 $N$ 个变量 $X_1\sim X_N$，以及 $M$ 个约束条件，每个约束条件形如 $X_i-X_j\leq c_k$。我们要求一组解 $X_1=a_1, X_2=a_2, \cdots, X_N=a_N$，使所有约束条件都得到满足。</p>
 <p>每个约束条件 $X_i-X_j\leq c_k$ 可以变形为 $X_i\leq X_j + c_k$，这与最短路中的三角形不等式 $dist[y]\leq dist[x]+z$ 很相似，因此可以从节点 j 向节点 i 连一条长度为 $c_k$ 的有向边。</p>
 <p>若 $\{a_1,a_2,\cdots,a_N\}$ 是一组解，那么对任意常数 $\Delta$，$\{a_1+\Delta,a_2+\Delta,\cdots,a_N+\Delta\}$ 也是一组解。所以，不妨先求一组负数解，然后增加一个 0 号节点，令 $X_0=0$。这样一来，就多了 $N$ 个形如 $X_i-X_0\leq 0$ 的约束条件，应该从节点 0 向每个节点 i 连一条长度为 0 的有向边。</p>
