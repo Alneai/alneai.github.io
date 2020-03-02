@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-02T09:25:28.272Z</updated>
+  <updated>2020-03-02T09:26:04.410Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/03/02/Tarjan%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2020/03/02/Tarjan%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2020-03-02T09:15:54.000Z</published>
-    <updated>2020-03-02T09:25:28.272Z</updated>
+    <updated>2020-03-02T09:26:04.410Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;p&gt;Tarjan!!!&lt;/p&gt;
+          &lt;p&gt;&lt;em&gt;Tarjan&lt;/em&gt;&lt;/p&gt;
 
         
       
