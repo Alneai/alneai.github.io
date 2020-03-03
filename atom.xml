@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-02T09:26:04.410Z</updated>
+  <updated>2020-03-03T08:43:15.579Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/03/02/Tarjan%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2020/03/02/Tarjan%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2020-03-02T09:15:54.000Z</published>
-    <updated>2020-03-02T09:26:04.410Z</updated>
+    <updated>2020-03-03T08:43:15.579Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,8 @@
       
         
         
-          &lt;p&gt;&lt;em&gt;Tarjan&lt;/em&gt;&lt;/p&gt;
-
+          &lt;h2 id=&quot;一些概念&quot;&gt;&lt;a href=&quot;#一些概念&quot; class=&quot;headerlink&quot; title=&quot;一些概念&quot;&gt;&lt;/a&gt;一些概念&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;割点&lt;/strong&gt;：无向图连通中，删去点 x 与 x 相连的边后 G 不连通，则 x 为
         
       
     
