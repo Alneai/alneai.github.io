@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-06T04:20:56.867Z</updated>
+  <updated>2020-03-06T07:07:43.872Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,19 +21,11 @@
     <link href="http://yoursite.com/2020/03/06/CodeCraft-20%20(Div.%202)/"/>
     <id>http://yoursite.com/2020/03/06/CodeCraft-20%20(Div.%202)/</id>
     <published>2020-03-06T04:14:26.000Z</published>
-    <updated>2020-03-06T04:20:56.867Z</updated>
+    <updated>2020-03-06T07:07:43.872Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;这场啥情况啊，被 C 卡住，20 min 下班，属实吐了。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;C&quot;&gt;&lt;a href=&quot;#C&quot; class=&quot;headerlink&quot; title=&quot;C&quot;&gt;&lt;/a&gt;C&lt;/h2&gt;&lt;h2 id=&quot;D&quot;&gt;&lt;a href=&quot;#D&quot;
-        
-      
+      &lt;p&gt;这场啥情况啊，被 C 卡住，20 min 下班，属实吐了。&lt;/p&gt;
     
     </summary>
     
@@ -50,17 +42,13 @@
     <link href="http://yoursite.com/2020/03/04/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
     <id>http://yoursite.com/2020/03/04/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</id>
     <published>2020-03-03T19:24:44.000Z</published>
-    <updated>2020-03-03T19:25:52.444Z</updated>
+    <updated>2020-03-06T07:09:04.607Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;莫比乌斯反演&quot;&gt;&lt;a href=&quot;#莫比乌斯反演&quot; class=&quot;headerlink&quot; title=&quot;莫比乌斯反演&quot;&gt;&lt;/a&gt;莫比乌斯反演&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;积性函数：&lt;/strong&gt; 对于任意两个互质的正整数 $a, b$，均满足
-        
-      
+      &lt;h3 id=&quot;莫比乌斯反演&quot;&gt;&lt;a href=&quot;#莫比乌斯反演&quot; class=&quot;headerlink&quot; title=&quot;莫比乌斯反演&quot;&gt;&lt;/a&gt;莫比乌斯反演&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;积性函数：&lt;/strong&gt; 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)=f(a)\times f(b)$ 的函数 $f$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;完全积性函数：&lt;/strong&gt; 对于所有正整数 $a, b$，均满足 $f&lt;br&gt;(ab)=f(a)\times f(b)$ 的函数 $f$&lt;/p&gt;
+&lt;p&gt;对于一个积性函数 $f$，$f(n)=f(\prod p_i^{a_i})=\prod f(p_i^{a_i})$，若 $f$ 还满足完全积性，则 $f(n)=\prod f(p_i)^{a_i}$&lt;/p&gt;
     
     </summary>
     
@@ -79,7 +67,7 @@
     <link href="http://yoursite.com/2020/03/02/Tarjan%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2020/03/02/Tarjan%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2020-03-02T09:15:54.000Z</published>
-    <updated>2020-03-06T04:16:36.116Z</updated>
+    <updated>2020-03-06T07:07:18.677Z</updated>
     
     <summary type="html">
     
@@ -97,18 +85,11 @@
 &lt;li&gt;无向图的双连通分量&lt;/li&gt;
 &lt;li&gt;有向图的强连通分量&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Tarjan 算法中的 low:&lt;/p&gt;
-&lt;p&gt;low[x] 为以下节点 dfn 的最小值：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;subtree(x) 中的节点。&lt;/li&gt;
-&lt;li&gt;通过一条不在搜索树上的边，能够到达 subtree(x) 的节点。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;若 (x, y) 在搜索树上，则 $low[x] = \min(low[x], low[y])$&lt;br&gt;若 (x, y) 不在搜索树上，则 $low[x] = \min(low[x], dfn[y])$&lt;/p&gt;
     
     </summary>
     
     
-      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="图论" scheme="http://yoursite.com/tags/%E5%9B%BE%E8%AE%BA/"/>
@@ -122,29 +103,16 @@
     <link href="http://yoursite.com/2020/03/02/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2020/03/02/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%AC%94%E8%AE%B0/</id>
     <published>2020-03-02T08:20:58.000Z</published>
-    <updated>2020-03-02T14:12:36.123Z</updated>
+    <updated>2020-03-06T07:08:58.192Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;看了 lyd 书上写的差分约束，在这里&lt;del&gt;抄&lt;/del&gt;总结下。&lt;/p&gt;
-&lt;h2 id=&quot;差分约束&quot;&gt;&lt;a href=&quot;#差分约束&quot; class=&quot;headerlink&quot; title=&quot;差分约束&quot;&gt;&lt;/a&gt;差分约束&lt;/h2&gt;&lt;p&gt;差分约束系统包含 $N$ 个变量 $X_1\sim X_N$，以及 $M$ 个约束条件，每个约束条件形如 $X_i-X_j\leq c_k$。我们要求一组解 $X_1=a_1, X_2=a_2, \cdots, X_N=a_N$，使所有约束条件都得到满足。&lt;/p&gt;
-&lt;p&gt;每个约束条件 $X_i-X_j\leq c_k$ 可以变形为 $X_i\leq X_j + c_k$，这与最短路中的三角形不等式 $dist[y]\leq dist[x]+z$ 很相似，因此可以从节点 j 向节点 i 连一条长度为 $c_k$ 的有向边。&lt;/p&gt;
-&lt;p&gt;若 $\{a_1,a_2,\cdots,a_N\}$ 是一组解，那么对任意常数 $\Delta$，$\{a_1+\Delta,a_2+\Delta,\cdots,a_N+\Delta\}$ 也是一组解。所以，不妨先求一组负数解，然后增加一个 0 号节点，令 $X_0=0$。这样一来，就多了 $N$ 个形如 $X_i-X_0\leq 0$ 的约束条件，应该从节点 0 向每个节点 i 连一条长度为 0 的有向边。&lt;/p&gt;
-&lt;p&gt;设 $dist[0]=0$，以 0 为起点求单源最短路，若存在负环，则差分约束系统无解。否则，$X_i=dist[i]$ 就是差分约束系统的一组解。&lt;/p&gt;
-&lt;h2 id=&quot;例题-Intervals&quot;&gt;&lt;a href=&quot;#例题-Intervals&quot; class=&quot;headerlink&quot; title=&quot;例题 Intervals&quot;&gt;&lt;/a&gt;例题 Intervals&lt;/h2&gt;&lt;h3 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h3&gt;&lt;p&gt;从 0~50000 中选出尽量少的数，使得每个给定区间 $[a_i,b_i]$ 中都至少有 $c_i$ 个数被选。&lt;/p&gt;
-&lt;h3 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot; class=&quot;headerlink&quot; title=&quot;题解&quot;&gt;&lt;/a&gt;题解&lt;/h3&gt;&lt;p&gt;设 $s_k$ 表示 0~k 之间最少选多少个数，则有 $s_{b_i}-s_{a_i-1}\geq c_i$。&lt;/p&gt;
-&lt;p&gt;不过还要增加一些隐含条件，才能保证求出来的解是有意义的：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;$s_k-s_{k-1}\geq 0$。&lt;/li&gt;
-&lt;li&gt;$s_k-s_{k-1}\leq 1$。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;按上述方式建图，以 $50000$ 为起点跑最短路，答案为 $s_{50000}-s_{-1}$。&lt;/p&gt;
-&lt;p&gt;其实本该新建一个超级源，但本题中 50000 就起到了超级源的作用。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="图论" scheme="http://yoursite.com/tags/%E5%9B%BE%E8%AE%BA/"/>
@@ -187,18 +155,11 @@
     <link href="http://yoursite.com/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/"/>
     <id>http://yoursite.com/2020/02/26/Camp%202015%20%E6%9E%84%E9%80%A0%E4%B8%93%E9%A2%98/</id>
     <published>2020-02-26T09:36:29.000Z</published>
-    <updated>2020-03-02T08:22:07.141Z</updated>
+    <updated>2020-03-06T07:08:22.868Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;这两天看了 Camp 2015 的构造题选 讲，挑了几道有意思的题在这里写一写。&lt;/p&gt;
-&lt;h3 id=&quot;CF-468C-Hack-it&quot;&gt;&lt;a href=&quot;#CF-468C-Hack-it&quot; class=&quot;headerlink&quot; title=&quot;CF 468C: Hack
-        
-      
+      &lt;p&gt;这两天看了 Camp 2015 的构造题选讲，在这写几道题。&lt;/p&gt;
     
     </summary>
     
@@ -377,7 +338,7 @@
     <link href="http://yoursite.com/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/</id>
     <published>2020-02-12T12:12:41.000Z</published>
-    <updated>2020-03-03T19:37:19.976Z</updated>
+    <updated>2020-03-06T07:03:17.581Z</updated>
     
     <summary type="html">
     
@@ -386,7 +347,7 @@
     </summary>
     
     
-      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="数论" scheme="http://yoursite.com/tags/%E6%95%B0%E8%AE%BA/"/>
