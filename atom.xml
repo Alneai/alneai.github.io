@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-06T04:14:26.996Z</updated>
+  <updated>2020-03-06T04:20:56.867Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,17 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>now</title>
-    <link href="http://yoursite.com/2020/03/06/now/"/>
-    <id>http://yoursite.com/2020/03/06/now/</id>
+    <title>CodeCraft-20 (Div. 2)</title>
+    <link href="http://yoursite.com/2020/03/06/CodeCraft-20%20(Div.%202)/"/>
+    <id>http://yoursite.com/2020/03/06/CodeCraft-20%20(Div.%202)/</id>
     <published>2020-03-06T04:14:26.000Z</published>
-    <updated>2020-03-06T04:14:26.996Z</updated>
+    <updated>2020-03-06T04:20:56.867Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这场啥情况啊，被 C 卡住，20 min 下班，属实吐了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;C&quot;&gt;&lt;a href=&quot;#C&quot; class=&quot;headerlink&quot; title=&quot;C&quot;&gt;&lt;/a&gt;C&lt;/h2&gt;&lt;h2 id=&quot;D&quot;&gt;&lt;a href=&quot;#D&quot;
+        
+      
     
     </summary>
     
     
+      <category term="比赛" scheme="http://yoursite.com/categories/%E6%AF%94%E8%B5%9B/"/>
+    
+    
+      <category term="CF" scheme="http://yoursite.com/tags/CF/"/>
     
   </entry>
   
