@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-09T15:18:02.639Z</updated>
+  <updated>2020-03-09T16:02:02.188Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,21 +17,16 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>「HDU4747」Mex - 线段树</title>
+    <title>「HDU 4747」Mex - 线段树</title>
     <link href="http://yoursite.com/2020/03/09/HDU%204747%20Mex/"/>
     <id>http://yoursite.com/2020/03/09/HDU%204747%20Mex/</id>
     <published>2020-03-09T14:53:19.000Z</published>
-    <updated>2020-03-09T15:18:02.639Z</updated>
+    <updated>2020-03-09T16:02:02.188Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给定一个非负序列 $\{a_i\}$，定义 $\operatorname{mex}(l, r)$ 表示下标在 $l$ 和 $r$
-        
-      
+      &lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给定一个非负序列 $\{a_i\}$，定义 $\operatorname{mex}(l, r)$ 表示下标在 $l$ 和 $r$ 之间未出现的最小自然数，求&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{i=1}^{n}\sum_{j=i}^{n} \operatorname{mex}(i,j)&lt;/script&gt;&lt;h2 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot; class=&quot;headerlink&quot; title=&quot;题解&quot;&gt;&lt;/a&gt;题解&lt;/h2&gt;&lt;p&gt;若固定左端点，那么随着右端点的增加，mex 是单调不降的。因此考虑枚举左端点 $i$，维护此时序列每个位置的 mex。每次左端点 + 1 都需要删除上一个点 $a_{i-1}$，$a_{i-1}$ 影响的范围为 $i$ 到 $a_{i-1}$ 出现的下一个位置 - 1，在这段区间内所有大于 $a_{i-1}$ 的 mex 都应该更新为 $a_{i-1}$。由于 mex 具有单调性，因此可以二分寻找大于 $a_{i-1}$ 的第一个 mex 对应的位置，用线段树维护 mex。&lt;/p&gt;
     
     </summary>
     
