@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-06T07:07:43.872Z</updated>
+  <updated>2020-03-09T15:18:02.639Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「HDU4747」Mex - 线段树</title>
+    <link href="http://yoursite.com/2020/03/09/HDU%204747%20Mex/"/>
+    <id>http://yoursite.com/2020/03/09/HDU%204747%20Mex/</id>
+    <published>2020-03-09T14:53:19.000Z</published>
+    <updated>2020-03-09T15:18:02.639Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给定一个非负序列 $\{a_i\}$，定义 $\operatorname{mex}(l, r)$ 表示下标在 $l$ 和 $r$
+        
+      
+    
+    </summary>
+    
+    
+      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="线段树" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>CodeCraft-20 (Div. 2)</title>
@@ -126,7 +153,7 @@
     <link href="http://yoursite.com/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/"/>
     <id>http://yoursite.com/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96-%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95/</id>
     <published>2020-02-26T11:54:18.000Z</published>
-    <updated>2020-02-29T16:18:13.758Z</updated>
+    <updated>2020-03-09T14:57:14.350Z</updated>
     
     <summary type="html">
     
@@ -141,7 +168,7 @@
     </summary>
     
     
-      <category term="题目" scheme="http://yoursite.com/categories/%E9%A2%98%E7%9B%AE/"/>
+      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
       <category term="计算几何" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
@@ -173,10 +200,10 @@
   
   <entry>
     <title>「洛谷P4735」可持久化 Trie 树</title>
-    <link href="http://yoursite.com/2020/02/17/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie%E6%A0%91/"/>
-    <id>http://yoursite.com/2020/02/17/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie%E6%A0%91/</id>
+    <link href="http://yoursite.com/2020/02/17/Luogu%204735%20%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie%E6%A0%91/"/>
+    <id>http://yoursite.com/2020/02/17/Luogu%204735%20%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie%E6%A0%91/</id>
     <published>2020-02-17T01:49:32.000Z</published>
-    <updated>2020-02-26T11:56:03.444Z</updated>
+    <updated>2020-03-09T14:55:56.140Z</updated>
     
     <summary type="html">
     
@@ -192,7 +219,7 @@
     </summary>
     
     
-      <category term="题目" scheme="http://yoursite.com/categories/%E9%A2%98%E7%9B%AE/"/>
+      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
       <category term="Luogu" scheme="http://yoursite.com/tags/Luogu/"/>
@@ -205,10 +232,10 @@
   
   <entry>
     <title>「洛谷P3402」可持久化并查集</title>
-    <link href="http://yoursite.com/2020/02/16/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-    <id>http://yoursite.com/2020/02/16/Luogu-%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E5%B9%B6%E6%9F%A5%E9%9B%86/</id>
+    <link href="http://yoursite.com/2020/02/16/Luogu%203402%20%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    <id>http://yoursite.com/2020/02/16/Luogu%203402%20%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E5%B9%B6%E6%9F%A5%E9%9B%86/</id>
     <published>2020-02-16T03:59:16.000Z</published>
-    <updated>2020-02-26T11:56:09.282Z</updated>
+    <updated>2020-03-09T14:55:51.192Z</updated>
     
     <summary type="html">
     
@@ -226,7 +253,7 @@
     </summary>
     
     
-      <category term="题目" scheme="http://yoursite.com/categories/%E9%A2%98%E7%9B%AE/"/>
+      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
       <category term="Luogu" scheme="http://yoursite.com/tags/Luogu/"/>
@@ -263,10 +290,10 @@
   
   <entry>
     <title>「USACO」 Haywire - 模拟退火</title>
-    <link href="http://yoursite.com/2020/02/13/USACO-Haywire/"/>
-    <id>http://yoursite.com/2020/02/13/USACO-Haywire/</id>
+    <link href="http://yoursite.com/2020/02/13/USACO%20Haywire/"/>
+    <id>http://yoursite.com/2020/02/13/USACO%20Haywire/</id>
     <published>2020-02-13T12:32:40.000Z</published>
-    <updated>2020-02-29T16:22:44.370Z</updated>
+    <updated>2020-03-09T14:56:01.341Z</updated>
     
     <summary type="html">
     
@@ -278,7 +305,7 @@
     </summary>
     
     
-      <category term="题目" scheme="http://yoursite.com/categories/%E9%A2%98%E7%9B%AE/"/>
+      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
       <category term="USACO" scheme="http://yoursite.com/tags/USACO/"/>
@@ -289,10 +316,10 @@
   
   <entry>
     <title>「洛谷P2365」任务安排 - 斜率优化DP</title>
-    <link href="http://yoursite.com/2020/02/13/Luogu-%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/"/>
-    <id>http://yoursite.com/2020/02/13/Luogu-%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/</id>
+    <link href="http://yoursite.com/2020/02/13/Luogu%202365%20%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/"/>
+    <id>http://yoursite.com/2020/02/13/Luogu%202365%20%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/</id>
     <published>2020-02-13T09:55:30.000Z</published>
-    <updated>2020-02-26T11:56:15.896Z</updated>
+    <updated>2020-03-09T14:55:45.328Z</updated>
     
     <summary type="html">
     
@@ -301,7 +328,7 @@
     </summary>
     
     
-      <category term="题目" scheme="http://yoursite.com/categories/%E9%A2%98%E7%9B%AE/"/>
+      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
       <category term="Luogu" scheme="http://yoursite.com/tags/Luogu/"/>
