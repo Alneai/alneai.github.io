@@ -27,7 +27,7 @@
 <meta property="og:description" content="数论函数数论函数： 定义域为正整数的函数。 积性函数： 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)&#x3D;f(a)\times f(b)$ 的函数 $f$ 完全积性函数： 对于所有正整数 $a, b$，均满足 $f(ab)&#x3D;f(a)\times f(b)$ 的函数 $f$ 对于一个积性函数 $f$，$f(n)&#x3D;f(\prod p_i^{a_i})&#x3D;\prod f(p_i^{a_i})$">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-03T19:24:44.000Z">
-<meta property="article:modified_time" content="2020-03-10T07:35:39.796Z">
+<meta property="article:modified_time" content="2020-03-10T07:37:58.279Z">
 <meta property="article:author" content="Alneai">
 <meta property="article:tag" content="数论">
 <meta property="article:tag" content="莫比乌斯反演">
@@ -215,7 +215,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-10 15:35:39" itemprop="dateModified" datetime="2020-03-10T15:35:39+08:00">2020-03-10</time>
+                <time title="修改时间：2020-03-10 15:37:58" itemprop="dateModified" datetime="2020-03-10T15:37:58+08:00">2020-03-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,11 +276,15 @@
 \end{cases}</script><p><strong>除数函数：</strong> $\sigma_k(n)$ 表示 $n$ 的所有正因子的 $k$ 次幂之和。</p>
 <p>$d(n)=\sigma_0(n)$ 表示 $n$ 的正因子个数，$\sigma(n)=\sigma_1(n)$ 表示 $n$ 的所有正因子之和。</p>
 <p><strong>幂函数：</strong> $\operatorname{Id}_k(n)=n^k$，$1(n)=\operatorname{Id}_0(n)=1$，$\operatorname{Id}(n)=\operatorname{Id}_1(n)=n$</p>
-<p><strong>单位函数：</strong><br>$e(n)=\varepsilon(n)=<br>\begin{cases}<br>1 &amp; n = 1\\<br>0 &amp; n &gt; 1<br>\end{cases}<br>$</p>
-<h2 id="狄利克雷（Dirichlet）卷积"><a href="#狄利克雷（Dirichlet）卷积" class="headerlink" title="狄利克雷（Dirichlet）卷积"></a>狄利克雷（Dirichlet）卷积</h2><p>定义两个数论函数 $f$，$g$ 的 Dirichlet 卷积：</p>
+<p><strong>单位函数：</strong></p>
+<script type="math/tex; mode=display">e(n)=\varepsilon(n)=
+\begin{cases}
+1 & n = 1\\
+0 & n > 1
+\end{cases}</script><h2 id="狄利克雷（Dirichlet）卷积"><a href="#狄利克雷（Dirichlet）卷积" class="headerlink" title="狄利克雷（Dirichlet）卷积"></a>狄利克雷（Dirichlet）卷积</h2><p>定义两个数论函数 $f$，$g$ 的 Dirichlet 卷积：</p>
 <script type="math/tex; mode=display">(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})</script><p>狄利克雷卷积的性质：</p>
-<p>交换律：<br>$f\text{<em>}g=g+f$<br>结合律：<br>$(f </em> g) <em> h=f </em> (g * h)$<br>分配律：</p>
-<script type="math/tex; mode=display">f * (g+h)=f * g+f * h</script><p>单位元：<br>$f <em> \varepsilon = \varepsilon </em> f$</p>
+<p>交换律：<br>$f<em>g=g</em>f$<br>结合律：<br>$(f<em>g)</em>h=f<em>(g</em>h)$<br>分配律：</p>
+<script type="math/tex; mode=display">f*(g+h)=f*g+f*h</script><p>单位元：<br>$f<em>\varepsilon=\varepsilon</em>f$</p>
 <p>常见的狄利克雷卷积：</p>
 <p>$d(n)=\sum_{d|n}1$，即 $d=1*1$</p>
 <p>$\sigma(n)=\sum_{d|n}d$，即 $\sigma=1*1$</p>
