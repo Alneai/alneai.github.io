@@ -50,11 +50,11 @@
 <p><strong>单位函数：</strong><br>$e(n)=\varepsilon(n)=<br>\begin{cases}<br>1 &amp; n = 1\\<br>0 &amp; n &gt; 1<br>\end{cases}<br>$</p>
 <h2 id="狄利克雷（Dirichlet）卷积"><a href="#狄利克雷（Dirichlet）卷积" class="headerlink" title="狄利克雷（Dirichlet）卷积"></a>狄利克雷（Dirichlet）卷积</h2><p>定义两个数论函数 $f$，$g$ 的 Dirichlet 卷积：</p>
 <script type="math/tex; mode=display">(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})</script><p>狄利克雷卷积的性质：</p>
-<p>$f<em>g=g</em>f$，即 $d=1*1$</p>
-<p>$(f<em>g)</em>h=f<em>(g</em>h)$，即 $\sigma=1*1$</p>
-<p>$\varphi(n)=\sum_{d|n}\mu(d)\frac{n}{d}$，即 $\varphi=\mu*\operatorname{Id}$</p>
-<p>$\varepsilon(n)=\sum_{d|n}\mu(d)$，即 $\varepsilon=\mu*1$</p>
-<p>常见的狄利克雷卷积：</p>
+<p>交换律：</p>
+<script type="math/tex; mode=display">f*g=g*f</script><p>结合律：</p>
+<script type="math/tex; mode=display">(f*g)*h=f*(g*h)</script><p>分配律：</p>
+<script type="math/tex; mode=display">f*(g+h)=f*g+f*h</script><p>单位元：</p>
+<script type="math/tex; mode=display">f*\varepsilon=\varepsilon*f</script><p>常见的狄利克雷卷积：</p>
 <p>$d(n)=\sum_{d|n}1$，即 $d=1*1$</p>
 <p>$\sigma(n)=\sum_{d|n}d$，即 $\sigma=1*1$</p>
 <p>$\varphi(n)=\sum_{d|n}\mu(d)\frac{n}{d}$，即 $\varphi=\mu*\operatorname{Id}$</p>
