@@ -64,7 +64,7 @@
     <link href="http://yoursite.com/2020/03/04/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
     <id>http://yoursite.com/2020/03/04/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</id>
     <published>2020-03-03T19:24:44.000Z</published>
-    <updated>2020-03-10T01:14:02.346Z</updated>
+    <updated>2020-03-10T01:27:55.374Z</updated>
     
     <summary type="html">
     
@@ -82,14 +82,14 @@
 \end{cases}&lt;/script&gt;&lt;p&gt;&lt;strong&gt;除数函数：&lt;/strong&gt; $\sigma_k(n)$ 表示 $n$ 的所有正因子的 $k$ 次幂之和。&lt;/p&gt;
 &lt;p&gt;$d(n)=\sigma_0(n)$ 表示 $n$ 的正因子个数，$\sigma(n)=\sigma_1(n)$ 表示 $n$ 的所有正因子之和。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;幂函数：&lt;/strong&gt; $I!d_k(n)=n^k$，$1(n)=I!d_0(n)=1$，$I!d(n)=I!d_1(n)=n$&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;单位函数：&lt;/strong&gt;&lt;br&gt;$e(n)=\varepsilon(n)=&lt;br&gt;\begin{cases}&lt;br&gt;1 &amp;amp; n = 1\\&lt;br&gt;0 &amp;amp; n &amp;gt; 1&lt;br&gt;\end{cases}&lt;br&gt;$&lt;/p&gt;
-&lt;h2 id=&quot;狄利克雷（Dirichlet）卷积&quot;&gt;&lt;a href=&quot;#狄利克雷（Dirichlet）卷积&quot; class=&quot;headerlink&quot; title=&quot;狄利克雷（Dirichlet）卷积&quot;&gt;&lt;/a&gt;狄利克雷（Dirichlet）卷积&lt;/h2&gt;&lt;p&gt;定义两个数论函数 $f$，$g$ 的 Dirichlet 卷积：&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})&lt;/script&gt;&lt;p&gt;常见的狄利克雷卷积：&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-d(n)=\sum_{d|n}1，\text{即 }d=1*1\\
-\sigma(n)=\sum_{d|n}d，\text{即 }\sigma=1*1\\
-\varphi(n)=\sum_{d|n}\mu(d)\frac{n}{d}，\text{即 }\varphi=\mu*I\!d\\
-\varepsilon(n)=\sum_{d|n}\mu(d)，\text{即 }\varepsilon=\mu*1&lt;/script&gt;&lt;h2 id=&quot;莫比乌斯反演&quot;&gt;&lt;a href=&quot;#莫比乌斯反演&quot; class=&quot;headerlink&quot; title=&quot;莫比乌斯反演&quot;&gt;&lt;/a&gt;莫比乌斯反演&lt;/h2&gt;&lt;p&gt;若两个函数 $f$，$g$ 满足：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;单位函数：&lt;/strong&gt;&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;e(n)=\varepsilon(n)=
+\begin{cases}
+1 &amp; n = 1\\
+0 &amp; n &gt; 1
+\end{cases}&lt;/script&gt;&lt;h2 id=&quot;狄利克雷（Dirichlet）卷积&quot;&gt;&lt;a href=&quot;#狄利克雷（Dirichlet）卷积&quot; class=&quot;headerlink&quot; title=&quot;狄利克雷（Dirichlet）卷积&quot;&gt;&lt;/a&gt;狄利克雷（Dirichlet）卷积&lt;/h2&gt;&lt;p&gt;定义两个数论函数 $f$，$g$ 的 Dirichlet 卷积：&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})&lt;/script&gt;&lt;p&gt;常见的狄利克雷卷积：&lt;br&gt;$\\&lt;br&gt;d(n)=\sum_{d|n}1，\text{即 }d=1&lt;em&gt;1\\&lt;br&gt;\sigma(n)=\sum_{d|n}d，\text{即 }\sigma=1&lt;/em&gt;1\\&lt;br&gt;\varphi(n)=\sum_{d|n}\mu(d)\frac{n}{d}，\text{即 }\varphi=\mu&lt;em&gt;I!d\\&lt;br&gt;\varepsilon(n)=\sum_{d|n}\mu(d)，\text{即 }\varepsilon=\mu&lt;/em&gt;1&lt;br&gt;$&lt;/p&gt;
+&lt;h2 id=&quot;莫比乌斯反演&quot;&gt;&lt;a href=&quot;#莫比乌斯反演&quot; class=&quot;headerlink&quot; title=&quot;莫比乌斯反演&quot;&gt;&lt;/a&gt;莫比乌斯反演&lt;/h2&gt;&lt;p&gt;若两个函数 $f$，$g$ 满足：&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;f(n)=\sum_{d|n}g(d)&lt;/script&gt;&lt;p&gt;则它们也满足&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;g(n)=\sum_{d|n}\mu(d)f(\frac{n}{d})&lt;/script&gt;&lt;p&gt;反之亦然，即&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;f=g*1\Leftrightarrow g=\mu *f&lt;/script&gt;&lt;p&gt;它的另一个形式：&lt;/p&gt;
