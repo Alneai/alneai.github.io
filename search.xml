@@ -50,10 +50,7 @@
 <p><strong>单位函数：</strong><br>$e(n)=\varepsilon(n)=<br>\begin{cases}<br>1 &amp; n = 1\\<br>0 &amp; n &gt; 1<br>\end{cases}<br>$</p>
 <h2 id="狄利克雷（Dirichlet）卷积"><a href="#狄利克雷（Dirichlet）卷积" class="headerlink" title="狄利克雷（Dirichlet）卷积"></a>狄利克雷（Dirichlet）卷积</h2><p>定义两个数论函数 $f$，$g$ 的 Dirichlet 卷积：</p>
 <script type="math/tex; mode=display">(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})</script><p>狄利克雷卷积的性质：</p>
-<p>交换律：$f <em> g=g </em> f$</p>
-<p>结合律：$(f <em> g) </em> h=f <em> (g </em> h)$</p>
-<p>分配律：$f <em> (g+h)=f </em> g+f * h$</p>
-<p>单位元：$f <em> \varepsilon = \varepsilon </em> f$</p>
+<p>交换律：$f+g=g+f$<br>结合律：$(f <em> g) </em> h=f <em> (g </em> h)$<br>分配律：$f <em> (g+h)=f </em> g+f <em> h$<br>单位元：$f </em> \varepsilon = \varepsilon * f$</p>
 <p>常见的狄利克雷卷积：</p>
 <p>$d(n)=\sum_{d|n}1$，即 $d=1*1$</p>
 <p>$\sigma(n)=\sum_{d|n}d$，即 $\sigma=1*1$</p>
