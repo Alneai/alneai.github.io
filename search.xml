@@ -16,20 +16,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CodeCraft-20 (Div. 2)</title>
-    <url>/2020/03/06/CodeCraft-20%20(Div.%202)/</url>
-    <content><![CDATA[<p>这场啥情况啊，被 C 卡住，20 min 下班，属实吐了。</p>
-<a id="more"></a>
-<hr>
-<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2>]]></content>
-      <categories>
-        <category>比赛</category>
-      </categories>
-      <tags>
-        <tag>CF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>莫比乌斯反演</title>
     <url>/2020/03/04/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</url>
     <content><![CDATA[<h2 id="数论函数"><a href="#数论函数" class="headerlink" title="数论函数"></a>数论函数</h2><p><strong>数论函数：</strong> 定义域为正整数的函数。</p>
@@ -63,7 +49,8 @@
 <li><p>$\varepsilon(n)=\sum_{d|n}\mu(d)$，即 $\varepsilon=\mu*1$</p>
 </li>
 </ul>
-<h3 id="一些证明和结论"><a href="#一些证明和结论" class="headerlink" title="一些证明和结论"></a>一些证明和结论</h3><p>$\varphi=\mu<em>\operatorname{Id}$ 两端卷上 $1$ 可以得到 $\operatorname{Id}=\varphi </em> 1$，即 $n = \sum_{d|n}\varphi(d)$。</p>
+<h3 id="一些证明和结论"><a href="#一些证明和结论" class="headerlink" title="一些证明和结论"></a>一些证明和结论</h3><!--$\varphi=\mu*\operatorname{Id}$ 两端卷上 $1$ 可以得到 $\operatorname{Id}=\varphi * 1$，即-->
+<p>$n = \sum_{d|n}\varphi(d)$。</p>
 <p>$\varepsilon=\mu*1$ 即为 $\sum_{d|n}\mu(d)=[n=1]$。</p>
 <p>证明：$n=1$ 时 $\sum_{d|n}\mu(d)=1$。</p>
 <p>$n \neq 1$ 时，设 $n$ 有 $k$ 个质因子，只有当 $n$ 的因子中所有质因子次数都为 $1$ 时，$\mu$ 不为 $0$，即</p>
