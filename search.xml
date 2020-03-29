@@ -49,8 +49,7 @@
 <li><p>$\varepsilon(n)=\sum_{d|n}\mu(d)$，即 $\varepsilon=\mu*1$</p>
 </li>
 </ul>
-<h3 id="一些证明和结论"><a href="#一些证明和结论" class="headerlink" title="一些证明和结论"></a>一些证明和结论</h3><!--$\varphi=\mu*\operatorname{Id}$ 两端卷上 $1$ 可以得到 $\operatorname{Id}=\varphi * 1$，即-->
-<p>$n = \sum_{d|n}\varphi(d)$。</p>
+<h3 id="一些证明和结论"><a href="#一些证明和结论" class="headerlink" title="一些证明和结论"></a>一些证明和结论</h3><p>$\varphi=\mu<em>\operatorname{Id} \Rightarrow \operatorname{Id}=\varphi </em> 1$, 即<br>$n = \sum_{d|n}\varphi(d)$。</p>
 <p>$\varepsilon=\mu*1$ 即为 $\sum_{d|n}\mu(d)=[n=1]$。</p>
 <p>证明：$n=1$ 时 $\sum_{d|n}\mu(d)=1$。</p>
 <p>$n \neq 1$ 时，设 $n$ 有 $k$ 个质因子，只有当 $n$ 的因子中所有质因子次数都为 $1$ 时，$\mu$ 不为 $0$，即</p>
