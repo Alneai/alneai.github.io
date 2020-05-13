@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-09T16:02:02.188Z</updated>
+  <updated>2020-05-13T08:49:42.269Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>区间中位数与 CF641 D</title>
+    <link href="http://yoursite.com/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641%20D/"/>
+    <id>http://yoursite.com/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641%20D/</id>
+    <published>2020-05-13T08:14:41.000Z</published>
+    <updated>2020-05-13T08:49:42.269Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;昨天打了 CF614，依旧不太顺心，被 D 卡死了。比赛时一直以为是我区间中位数求的有问题，比赛后才发现是我得出的结论有问题。。&lt;/p&gt;
+&lt;h2 id=&quot;区间中位数&quot;&gt;&lt;a href=&quot;#区间中位数&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="CF" scheme="http://yoursite.com/categories/CF/"/>
+    
+      <category term="树状数组" scheme="http://yoursite.com/categories/CF/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>「HDU 4747」Mex - 线段树</title>
@@ -69,7 +99,7 @@
     <link href="http://yoursite.com/2020/03/02/Tarjan%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2020/03/02/Tarjan%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2020-03-02T09:15:54.000Z</published>
-    <updated>2020-03-06T07:07:18.677Z</updated>
+    <updated>2020-05-13T08:41:52.901Z</updated>
     
     <summary type="html">
     

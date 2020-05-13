@@ -179,6 +179,133 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641%20D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alneai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alneai's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641%20D/" class="post-title-link" itemprop="url">区间中位数与 CF641 D</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-13 16:14:41 / 修改时间：16:49:42" itemprop="dateCreated datePublished" datetime="2020-05-13T16:14:41+08:00">2020-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CF/" itemprop="url" rel="index">
+                    <span itemprop="name">CF</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CF/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" itemprop="url" rel="index">
+                    <span itemprop="name">树状数组</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641%20D/" class="post-meta-item leancloud_visitors" data-flag-title="区间中位数与 CF641 D" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">评论数：</span>
+    
+    <a title="valine" href="/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641%20D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641%20D/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>昨天打了 CF614，依旧不太顺心，被 D 卡死了。比赛时一直以为是我区间中位数求的有问题，比赛后才发现是我得出的结论有问题。。</p>
+<h2 id="区间中位数"><a href="#区间中位数" class="headerlink" title="区间中位数"></a>区间中位数</h2><p>若将中位数定义为区间排序后第 $\lfloor (n + 1)/2 \rfloor$ 个数，定义数组 $b$，</p>
+<script type="math/tex; mode=display">
+\begin{aligned} 
+b_i = 
+\begin{cases} 
+1,  & a_i \ge k, \\ 
+-1, & a_i < k.
+\end{cases} 
+\end{aligned}</script><p>则区间中位数大于等于 $k$ 等价于 $\sum_{i=l}^r b_i &gt; 0$。<br>利用树状数组即可在 $O(n\log n)$ 时间内求出中位数大于等于 $k$ 的子区间数量。</p>
+<p>若将中位数定义为区间排序后第 $\lfloor n / 2 \rfloor + 1$ 个数，那么定义数组 $b$，</p>
+<script type="math/tex; mode=display">
+\begin{aligned} 
+b_i = 
+\begin{cases} 
+1,  & a_i > k, \\ 
+-1, & a_i \leq k.
+\end{cases} 
+\end{aligned}</script><p>则区间中位数小于等于 $k$ 等价于 $\sum_{i=l}^r b_i &lt; 0$。</p>
+<p>当然也可以将 $b$ 定义为</p>
+<script type="math/tex; mode=display">
+\begin{aligned} 
+b_i = 
+\begin{cases} 
+-1,  & a_i > k, \\ 
+1, & a_i \leq k.
+\end{cases} 
+\end{aligned}</script><p>则区间中位数小于等于 $k$ 等价于 $\sum_{i=l}^r b_i &gt; 0$。</p>
+<h2 id="CF614-D"><a href="#CF614-D" class="headerlink" title="CF614 D"></a>CF614 D</h2><p>让我们回到这道题。题意大概是给一个长度为 $n(n \leq 10000)$ 的数组和一个整数 $k$，可以无限次执行以下操作：选择一个子区间，让这个子区间内的所有数等于这个区间内的中位数，其中中位数定义为子区间内下标为 $\lfloor (n + 1)/2 \rfloor$ 对应的数。问最终能否把原始数组全部变成 $k$。</p>
+<p>这道题有这样一个结论：当且仅当存在一个长度大于等于 2 的区间使得区间内中位数大于等于 $k$ 并且原数组至少存在一个 $k$ 时，可以满足要求。可以简单的证明一下：首先我们能得到一些简单的结论，当区间内存在相邻的两个 $k$ 时，我们便可以不断向左右扩张使得整个区间都变为 $k$。当存在与 $k$ 相邻的大于 $k$ 的数时，那么便可以将这个数变为 $k$。现在如果存在一个区间中位数大于等于 $k$，若恰好等于 $k$，则可以将这个区间都变成 $k$ 从而满足条件；若大于 $k$，则可以将整个区间都变成大于 $k$，然后可以将区间不断延伸直到与 $k$ 相邻，从而也可以将整个区间变成 $k$。这就证明了必要性。充分性显然，因为如果不存在度大于等于 2 的区间使得区间内中位数大于等于 $k$，那么就不可能通过操作增加大于等于 $k$ 的数。</p>
+<p>比赛时我只考虑了中位数等于 $k$ 的情况，疯狂 WA。这就是把充分条件当成充要条件的下场。。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fl first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fr second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">200000</span> + <span class="number">10</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> n, k, a[N], b[N];</span><br><span class="line">LL tr[N];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (; x &lt;= n * <span class="number">2</span> + <span class="number">1</span>; x += x &amp; -x)</span><br><span class="line">        tr[x] += a;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">LL <span class="title">Query</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LL res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (; x &gt; <span class="number">0</span>; x -= x &amp; -x)</span><br><span class="line">        res += tr[x];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;k);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n * <span class="number">2</span> + <span class="number">1</span>; i++) tr[i] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">            <span class="keyword">if</span> (a[i] &gt;= k)  b[i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> b[i] = <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">if</span> (a[i] == k) num++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">"no"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (b[<span class="number">1</span>] == <span class="number">1</span>) <span class="built_in">puts</span>(<span class="string">"yes"</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"no"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        LL res = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">        Add(n + <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += b[i];</span><br><span class="line">            res += Query(sum + n);</span><br><span class="line">            Add(sum + n + <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="keyword">if</span> (b[i] == <span class="number">1</span>) res--;</span><br><span class="line">        <span class="keyword">if</span> (res &gt; <span class="number">0</span>) <span class="built_in">puts</span>(<span class="string">"yes"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"no"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/09/HDU%204747%20Mex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -422,7 +549,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-06 15:07:18" itemprop="dateModified" datetime="2020-03-06T15:07:18+08:00">2020-03-06</time>
+                <time title="修改时间：2020-05-13 16:41:52" itemprop="dateModified" datetime="2020-05-13T16:41:52+08:00">2020-05-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1153,113 +1280,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/13/USACO%20Haywire/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Alneai">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alneai's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/13/USACO%20Haywire/" class="post-title-link" itemprop="url">「USACO」 Haywire - 模拟退火</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-13 20:32:40" itemprop="dateCreated datePublished" datetime="2020-02-13T20:32:40+08:00">2020-02-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-09 22:56:01" itemprop="dateModified" datetime="2020-03-09T22:56:01+08:00">2020-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index">
-                    <span itemprop="name">题解</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/02/13/USACO%20Haywire/" class="post-meta-item leancloud_visitors" data-flag-title="「USACO」 Haywire - 模拟退火" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">评论数：</span>
-    
-    <a title="valine" href="/2020/02/13/USACO%20Haywire/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/13/USACO%20Haywire/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>模拟退火板子题。 <del>为啥这题是黑题啊</del></p>
-<hr>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p><a href="https://www.luogu.com.cn/problem/P2210" target="_blank" rel="noopener">Luogu</a></p>
-<p>有 $n(n\le 12)$ 只奶牛，每只奶牛有 $3$ 个朋友。现在要把这 $12$ 只奶牛排成一列，使得每只奶牛与它的朋友的距离之和最小。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/13/USACO%20Haywire/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1332,20 +1352,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
