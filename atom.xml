@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-13T08:49:42.269Z</updated>
+  <updated>2020-05-13T08:52:14.790Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,22 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>区间中位数与 CF641 D</title>
-    <link href="http://yoursite.com/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641%20D/"/>
-    <id>http://yoursite.com/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641%20D/</id>
+    <title>区间中位数与 CF641D</title>
+    <link href="http://yoursite.com/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641D/"/>
+    <id>http://yoursite.com/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641D/</id>
     <published>2020-05-13T08:14:41.000Z</published>
-    <updated>2020-05-13T08:49:42.269Z</updated>
+    <updated>2020-05-13T08:52:14.790Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;昨天打了 CF614，依旧不太顺心，被 D 卡死了。比赛时一直以为是我区间中位数求的有问题，比赛后才发现是我得出的结论有问题。。&lt;/p&gt;
-&lt;h2 id=&quot;区间中位数&quot;&gt;&lt;a href=&quot;#区间中位数&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;p&gt;昨天打了 CF614，依旧不太顺心，被 D 卡死了。比赛时一直以为是我区间中位数求的有问题，比赛后才发现是我得出的结论有问题。。&lt;/p&gt;
+&lt;h2 id=&quot;区间中位数&quot;&gt;&lt;a href=&quot;#区间中位数&quot; class=&quot;headerlink&quot; title=&quot;区间中位数&quot;&gt;&lt;/a&gt;区间中位数&lt;/h2&gt;&lt;p&gt;若将中位数定义为区间排序后第 $\lfloor (n + 1)/2 \rfloor$ 个数，定义数组 $b$，&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\begin{aligned} 
+b_i = 
+\begin{cases} 
+1,  &amp; a_i \ge k, \\ 
+-1, &amp; a_i &lt; k.
+\end{cases} 
+\end{aligned}&lt;/script&gt;&lt;p&gt;则区间中位数大于等于 $k$ 等价于 $\sum_{i=l}^r b_i &amp;gt; 0$。&lt;br&gt;利用树状数组即可在 $O(n\log n)$ 时间内求出中位数大于等于 $k$ 的子区间数量。&lt;/p&gt;
+&lt;p&gt;若将中位数定义为区间排序后第 $\lfloor n / 2 \rfloor + 1$ 个数，那么定义数组 $b$，&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\begin{aligned} 
+b_i = 
+\begin{cases} 
+1,  &amp; a_i &gt; k, \\ 
+-1, &amp; a_i \leq k.
+\end{cases} 
+\end{aligned}&lt;/script&gt;&lt;p&gt;则区间中位数小于等于 $k$ 等价于 $\sum_{i=l}^r b_i &amp;lt; 0$。&lt;/p&gt;
+&lt;p&gt;当然也可以将 $b$ 定义为&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\begin{aligned} 
+b_i = 
+\begin{cases} 
+-1,  &amp; a_i &gt; k, \\ 
+1, &amp; a_i \leq k.
+\end{cases} 
+\end{aligned}&lt;/script&gt;&lt;p&gt;则区间中位数小于等于 $k$ 等价于 $\sum_{i=l}^r b_i &amp;gt; 0$。&lt;/p&gt;
     
     </summary>
     
