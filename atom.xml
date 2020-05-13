@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-13T08:52:14.790Z</updated>
+  <updated>2020-05-13T08:54:26.893Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641D/"/>
     <id>http://yoursite.com/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0%E4%B8%8ECF641D/</id>
     <published>2020-05-13T08:14:41.000Z</published>
-    <updated>2020-05-13T08:52:14.790Z</updated>
+    <updated>2020-05-13T08:54:26.893Z</updated>
     
     <summary type="html">
     
@@ -57,12 +57,12 @@ b_i =
     </summary>
     
     
-      <category term="CF" scheme="http://yoursite.com/categories/CF/"/>
-    
-      <category term="树状数组" scheme="http://yoursite.com/categories/CF/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+      <category term="CF" scheme="http://yoursite.com/tags/CF/"/>
+    
+      <category term="树状数组" scheme="http://yoursite.com/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
