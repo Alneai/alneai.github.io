@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-14T13:08:57.351Z</updated>
+  <updated>2020-05-15T00:09:21.064Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,18 +21,17 @@
     <link href="http://yoursite.com/2020/05/14/%E7%BA%BF%E6%80%A7%E5%9F%BA/"/>
     <id>http://yoursite.com/2020/05/14/%E7%BA%BF%E6%80%A7%E5%9F%BA/</id>
     <published>2020-05-14T06:15:02.000Z</published>
-    <updated>2020-05-14T13:08:57.351Z</updated>
+    <updated>2020-05-15T00:09:21.064Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;线性基的构造&quot;&gt;&lt;a href=&quot;#线性基的构造&quot; class=&quot;headerlink&quot; title=&quot;线性基的构造&quot;&gt;&lt;/a&gt;线性基的构造&lt;/h2&gt;&lt;p&gt;线性基是怎么构造的？&lt;/p&gt;
-&lt;p&gt;大概就是考虑每个数 $a$，从高位到低位枚举，找到在线性基 $b$
-        
-      
+      &lt;h2 id=&quot;线性基的构造&quot;&gt;&lt;a href=&quot;#线性基的构造&quot; class=&quot;headerlink&quot; title=&quot;线性基的构造&quot;&gt;&lt;/a&gt;线性基的构造&lt;/h2&gt;&lt;p&gt;线性基是怎么构造的？&lt;/p&gt;
+&lt;p&gt;大概就是考虑每个数 $a$，从高位到低位枚举，找到在线性基 $b$ 中没出现过的 $a$ 的最高位 $i$，将 $a$ 加入到线性基$b[i]$中，高于 $i$ 的 $a$ 的二进制位用线性基中的数给异或掉(因此此时 $i$ 就是 $a$ 的最高位了)。然后用类似高斯消元的方法，先用下面的行消自己，再用自己消上面的行，把线性基消成一个上三角矩阵。&lt;/p&gt;
+&lt;h2 id=&quot;线性基的性质&quot;&gt;&lt;a href=&quot;#线性基的性质&quot; class=&quot;headerlink&quot; title=&quot;线性基的性质&quot;&gt;&lt;/a&gt;线性基的性质&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;线性基中所有向量线性无关，也就是不能异或出 0（废话&lt;/li&gt;
+&lt;li&gt;线性基中每个对角线元素为 1 的列其余元素都为 0&lt;/li&gt;
+&lt;li&gt;若线性基中向量个数 $m &amp;lt;n$，那么存在向量组线性相关，可以异或出 0，总的异或和的个数为&lt;br&gt;$2^m$；否则，异或和个数为 $2^m - 1$&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
