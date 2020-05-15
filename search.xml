@@ -507,8 +507,13 @@ b_i =
 <p>简化剩余系：$m$ 的完全剩余系中与 $m$ 互素的数构成的子集</p>
 </blockquote>
 <p>设 $r_1, r_2, \cdots, r_{\varphi(m)}$ 为模 $m$ 意义下的一个简化剩余系，则 $ar_1, ar_2, \cdots, ar_{\varphi(m)}$ 也为模 $m$ 意义下的一个简化剩余系。所以 $r_1r_2\cdots r_{\varphi(m)} \equiv ar_1\cdot ar_2\cdots r_{\varphi(m)} \equiv a^{\varphi(m)}r_1r_2\cdots r_{\varphi(m)} \pmod{m}$，可约去 $r_1r_2\cdots r_{\varphi(m)}$，即得到 $a^{\varphi(m)} \equiv 1 \pmod{m}$。</p>
-<h4 id="扩展欧拉定理"><a href="#扩展欧拉定理" class="headerlink" title="扩展欧拉定理"></a>扩展欧拉定理</h4><p><img src="https://raw.githubusercontent.com/Alneai/alneai.github.io/master/images/a.png" alt="Eular"></p>
-<hr>
+<h4 id="扩展欧拉定理"><a href="#扩展欧拉定理" class="headerlink" title="扩展欧拉定理"></a>扩展欧拉定理</h4><script type="math/tex; mode=display">a^b\equiv
+\begin{cases}
+a^{b\bmod\varphi(p)},\,&\gcd(a,\,p)=1\\
+a^b,&\gcd(a,\,p)\ne1,\,b<\varphi(p)\\
+a^{b\bmod\varphi(p)+\varphi(p)},&\gcd(a,\,p)\ne1,\,b\ge\varphi(p)
+\end{cases}
+\pmod p</script><hr>
 <h3 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h3><h3 id="Lucas定理"><a href="#Lucas定理" class="headerlink" title="Lucas定理"></a>Lucas定理</h3><h3 id="BSGS"><a href="#BSGS" class="headerlink" title="BSGS"></a>BSGS</h3><h3 id="原根"><a href="#原根" class="headerlink" title="原根"></a>原根</h3><h3 id="二次剩余"><a href="#二次剩余" class="headerlink" title="二次剩余"></a>二次剩余</h3><h3 id="错排问题"><a href="#错排问题" class="headerlink" title="错排问题"></a>错排问题</h3>]]></content>
       <categories>
         <category>学习笔记</category>
