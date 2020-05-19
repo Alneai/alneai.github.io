@@ -547,8 +547,12 @@ a^{b \bmod \varphi(p) + \varphi(p)}, & \gcd(a,\,p)\ne1,\,b\ge\varphi(p)
 <h3 id="BSGS"><a href="#BSGS" class="headerlink" title="BSGS"></a>BSGS</h3><hr>
 <h3 id="原根"><a href="#原根" class="headerlink" title="原根"></a>原根</h3><h4 id="阶"><a href="#阶" class="headerlink" title="阶"></a>阶</h4><p>设 $n&gt;1$，$(a, n)=1$，则必有 $r(1\leq r\leq n)$ 使得 $a^r\equiv 1 \pmod n$。满足 $a^r\equiv 1 \pmod n$ 的最小整数<br>$r$ 称为 $a$ 模 $n$ 的阶，记为 $Ord_n{a}$。</p>
 <p>只有当 $(a, n)=1$ 时才有阶。</p>
-<p>阶的性质：<br>(1) 若 $a^N \equiv 1 \pmod n$，则 $r|N$；<br>(2) $r | \varphi(n)$。特别的，若 $n$ 是素数 $p$，则 $r | p-1$。</p>
-<hr>
+<p>阶的性质：<br>(1) 若 $a^N \equiv 1 \pmod n$，则 $r|N$；</p>
+<p>(2) $r | \varphi(n)$。特别的，若 $n$ 是素数 $p$，则 $r | p-1$。</p>
+<h4 id="原根-1"><a href="#原根-1" class="headerlink" title="原根"></a>原根</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>若 $a$ 模 $m$ 的阶等于 $\varphi(m)$，则称 $a$ 为模 $m$ 的一个原根。</p>
+<p>显然，原根与 $m$ 互质。</p>
+<h5 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h5><p>设 $r=Ord_m(a)$，则 $a^0, a^1, \cdots, a^{r-1}$ 构成模 $m$ 的简化剩余系，反之亦然。</p>
+<h5 id="求质数-p-的原根"><a href="#求质数-p-的原根" class="headerlink" title="求质数 p 的原根"></a>求质数 p 的原根</h5><h5 id="N-次剩余"><a href="#N-次剩余" class="headerlink" title="N 次剩余"></a>N 次剩余</h5><hr>
 <h3 id="二次剩余"><a href="#二次剩余" class="headerlink" title="二次剩余"></a>二次剩余</h3><h3 id="错排问题"><a href="#错排问题" class="headerlink" title="错排问题"></a>错排问题</h3>]]></content>
       <categories>
         <category>学习笔记</category>
