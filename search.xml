@@ -34,15 +34,15 @@
 <li><p>$\varepsilon(n)=\sum_{d|n}\mu(d)$，即 $\varepsilon=\mu*1$</p>
 </li>
 </ul>
-<h3 id="一些证明和结论"><a href="#一些证明和结论" class="headerlink" title="一些证明和结论"></a>一些证明和结论</h3><p>$n = \sum_{d|n}\varphi(d)$。</p>
+<h3 id="一些结论和证明"><a href="#一些结论和证明" class="headerlink" title="一些结论和证明"></a>一些结论和证明</h3><p>$n = \sum_{d|n}\varphi(d)$。</p>
 <p>$\varepsilon=\mu*1$ 即为 $\sum_{d|n}\mu(d)=[n=1]$。</p>
 <p>证明：$n=1$ 时 $\sum_{d|n}\mu(d)=1$。</p>
 <p>$n \neq 1$ 时，设 $n$ 有 $k$ 个质因子，只有当 $n$ 的因子中所有质因子次数都为 $1$ 时，$\mu$ 不为 $0$，即</p>
-<script type="math/tex; mode=display">\begin{align*}
+<script type="math/tex; mode=display">\begin{aligned}
 \sum_{d|n}\mu(d) &=\sum_{i=0}^{k}(-1)^{i}C(k,i)\\
                  &= (1-1)^k\\
                  &=0
-\end{align*}</script><p>因此 $\sum_{d|n}\mu(d)=[n=1]$。</p>
+\end{aligned}</script><p>因此 $\sum_{d|n}\mu(d)=[n=1]$。</p>
 <h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>若两个函数 $f$，$g$ 满足：</p>
 <script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则它们也满足</p>
 <script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(d)f(\frac{n}{d})</script><p>反之亦然，即</p>
@@ -51,7 +51,7 @@
 <h2 id="炫酷反演魔术"><a href="#炫酷反演魔术" class="headerlink" title="炫酷反演魔术"></a>炫酷反演魔术</h2><p>以下内容来自 ICPCCamp2015 吕凯风《炫酷反演魔术》。</p>
 <h3 id="反演"><a href="#反演" class="headerlink" title="反演"></a>反演</h3><p>对于 $f(n)=\sum_{k}a_{n,k}g(k)$，已知 $f$ 求 $g$ 的过程就称为反演。</p>
 <h3 id="二项式反演"><a href="#二项式反演" class="headerlink" title="二项式反演"></a>二项式反演</h3><p>假如我们已经知道</p>
-<script type="math/tex; mode=display">f(n)=\sum_{k=0}^{n}\binom{n}{k}g(k)</script><p>以及 $f(n)$，我们想要求出 $g(n)$ <del>高斯消元</del>。</p>
+<script type="math/tex; mode=display">f(n)=\sum_{k=0}^{n}\binom{n}{k}g(k)</script><p>以及 $f(n)$，我们想要求出 $g(n)$ <del>高斯消元</del></p>
 <p>首先，我们有一个式子</p>
 <script type="math/tex; mode=display">\sum_{k=0}^{n}(-1)^k\binom{n}{k}=[n=0]</script><p>然后，写一句废话</p>
 <script type="math/tex; mode=display">g(n)=\sum_{m=0}^{n}[n-m=0]\binom{n}{m}g(m)</script><p>将上面那个式子代入</p>
@@ -64,8 +64,8 @@ g(n)&=\sum_{m=0}^{n}\sum_{k=0}^{n-m}(-1)^k\binom{n}{k}\binom{n-k}{m}g(m)
 &=\sum_{k=0}^{n}(-1)^k\binom{n}{k}f(n-k)\\
 &=\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(k)
 \end{aligned}</script><p>这样，我们空手套白狼得到了二项式反演：</p>
-<p>若</p>
-<script type="math/tex; mode=display">f(n)=\sum_{k=0}^{n}\binom{n}{k}g(k)</script><p>则</p>
+<p>若有</p>
+<script type="math/tex; mode=display">f(n)=\sum_{k=0}^{n}\binom{n}{k}g(k)</script><p>则也有</p>
 <script type="math/tex; mode=display">g(n)=\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(k)</script><h3 id="莫比乌斯反演-1"><a href="#莫比乌斯反演-1" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h3><p>让我们用同样的方法研究如下式子</p>
 <script type="math/tex; mode=display">f(n)=\sum_{d|k}g(d)</script><p>首先，我们有</p>
 <script type="math/tex; mode=display">\sum_{d|n}\mu(d)=[n=1]</script><p>写一句废话</p>
@@ -76,8 +76,8 @@ g(n)&=\sum_{m|n}[\frac{n}{m}=1]g(m)\\
 &=\sum_{d|n}\mu(d)\sum_{m|\frac{n}{d}}g(m)\\
 &=\sum_{d|n}\mu(\frac{n}{d})f(d)
 \end{aligned}</script><p>我们便得到了莫比乌斯反演：</p>
-<p>若</p>
-<script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则</p>
+<p>若有</p>
+<script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则也有</p>
 <script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(\frac{n}{d})f(d)</script><h3 id="矩阵形式"><a href="#矩阵形式" class="headerlink" title="矩阵形式"></a>矩阵形式</h3>]]></content>
       <categories>
         <category>学习笔记</category>
