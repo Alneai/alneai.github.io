@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>反演笔记</title>
+    <url>/2020/05/21/%E5%8F%8D%E6%BC%94%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="数论函数"><a href="#数论函数" class="headerlink" title="数论函数"></a>数论函数</h2><p><strong>数论函数：</strong> 定义域为正整数的函数。</p>
+<p><strong>积性函数：</strong> 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)=f(a)\times f(b)$ 的函数 $f$</p>
+<p><strong>完全积性函数：</strong> 对于所有正整数 $a, b$，均满足 $f<br>(ab)=f(a)\times f(b)$ 的函数 $f$</p>
+<p>对于一个积性函数 $f$，$f(n)=f(\prod p_i^{a_i})=\prod f(p_i^{a_i})$，若 $f$ 还满足完全积性，则 $f(n)=\prod f(p_i)^{a_i}$</p>
+<a id="more"></a>
+<h2 id="常见积性函数"><a href="#常见积性函数" class="headerlink" title="常见积性函数"></a>常见积性函数</h2><p><strong>欧拉函数 $\varphi(n)$</strong></p>
+<p><strong>莫比乌斯函数 $\mu(n)$：</strong> 若 $n$ 有平方数因子，则 $\mu(n)=0$。否则若 $n$ 为 $k$ 个不同质数之积，则 $\mu(n)=(-1)^k$。</p>
+<script type="math/tex; mode=display">\mu(n)=
+\begin{cases}
+1      & n=1\\
+(-1)^k & n=p_1p_2\cdots p_k\\
+0      & \text{else}
+\end{cases}</script><p><strong>除数函数：</strong> $\sigma_k(n)$ 表示 $n$ 的所有正因子的 $k$ 次幂之和。</p>
+<p>$d(n)=\sigma_0(n)$ 表示 $n$ 的正因子个数，$\sigma(n)=\sigma_1(n)$ 表示 $n$ 的所有正因子之和。</p>
+<p><strong>幂函数：</strong> $\operatorname{Id}_k(n)=n^k$，$1(n)=\operatorname{Id}_0(n)=1$，$\operatorname{Id}(n)=\operatorname{Id}_1(n)=n$</p>
+<p><strong>单位函数：</strong><br>$e(n)=\varepsilon(n)=<br>\begin{cases}<br>1 &amp; n = 1\\<br>0 &amp; n &gt; 1<br>\end{cases}<br>$</p>
+<h2 id="狄利克雷（Dirichlet）卷积"><a href="#狄利克雷（Dirichlet）卷积" class="headerlink" title="狄利克雷（Dirichlet）卷积"></a>狄利克雷（Dirichlet）卷积</h2><p>定义两个数论函数 $f$，$g$ 的 Dirichlet 卷积：</p>
+<script type="math/tex; mode=display">(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})</script><h3 id="狄利克雷卷积的性质"><a href="#狄利克雷卷积的性质" class="headerlink" title="狄利克雷卷积的性质"></a>狄利克雷卷积的性质</h3><p>交换律：</p>
+<script type="math/tex; mode=display">f*g=g*f</script><p>结合律：</p>
+<script type="math/tex; mode=display">(f*g)*h=f*(g*h)</script><p>分配律：</p>
+<script type="math/tex; mode=display">f*(g+h)=f*g+f*h</script><p>单位元：</p>
+<script type="math/tex; mode=display">f*\varepsilon=\varepsilon*f</script><h3 id="常见的狄利克雷卷积"><a href="#常见的狄利克雷卷积" class="headerlink" title="常见的狄利克雷卷积"></a>常见的狄利克雷卷积</h3><ul>
+<li><p>$d(n)=\sum_{d|n}1$，即 $d=1*1$</p>
+</li>
+<li><p>$\sigma(n)=\sum_{d|n}d$，即 $\sigma=1*1$</p>
+</li>
+<li><p>$\varphi(n)=\sum_{d|n}\mu(d)\frac{n}{d}$，即 $\varphi=\mu*\operatorname{Id}$</p>
+</li>
+<li><p>$\varepsilon(n)=\sum_{d|n}\mu(d)$，即 $\varepsilon=\mu*1$</p>
+</li>
+</ul>
+<h3 id="一些证明和结论"><a href="#一些证明和结论" class="headerlink" title="一些证明和结论"></a>一些证明和结论</h3><p>$n = \sum_{d|n}\varphi(d)$。</p>
+<p>$\varepsilon=\mu*1$ 即为 $\sum_{d|n}\mu(d)=[n=1]$。</p>
+<p>证明：$n=1$ 时 $\sum_{d|n}\mu(d)=1$。</p>
+<p>$n \neq 1$ 时，设 $n$ 有 $k$ 个质因子，只有当 $n$ 的因子中所有质因子次数都为 $1$ 时，$\mu$ 不为 $0$，即</p>
+<script type="math/tex; mode=display">\begin{align*}
+\sum_{d|n}\mu(d) &=\sum_{i=0}^{k}(-1)^{i}C(k,i)\\
+                 &= (1-1)^k\\
+                 &=0
+\end{align*}</script><p>因此 $\sum_{d|n}\mu(d)=[n=1]$。</p>
+<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>若两个函数 $f$，$g$ 满足：</p>
+<script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则它们也满足</p>
+<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(d)f(\frac{n}{d})</script><p>反之亦然，即</p>
+<script type="math/tex; mode=display">f=g*1\Leftrightarrow g=\mu *f</script><p>它的另一个形式：</p>
+<script type="math/tex; mode=display">f(n)=\sum_{n|d}g(d)\Leftrightarrow g(n)=\sum_{n|d}\mu(d)f(\frac{d}{n})</script><hr>
+<h2 id="炫酷反演魔术"><a href="#炫酷反演魔术" class="headerlink" title="炫酷反演魔术"></a>炫酷反演魔术</h2><p>以下内容来自 ICPCCamp2015 吕凯风《炫酷反演魔术》。</p>
+<h3 id="反演"><a href="#反演" class="headerlink" title="反演"></a>反演</h3><p>对于 $f(n)=\sum_{k}a_{n,k}g(k)$，已知 $f$ 求 $g$ 的过程就称为反演。</p>
+<h3 id="二项式反演"><a href="#二项式反演" class="headerlink" title="二项式反演"></a>二项式反演</h3><p>假如我们已经知道</p>
+<script type="math/tex; mode=display">f(n)=\sum_{k=0}^{n}\binom{n}{k}g(k)</script><p>以及 $f(n)$，我们想要求出 $g(n)$ <del>高斯消元</del>。</p>
+<p>首先，我们有一个式子</p>
+<script type="math/tex; mode=display">\sum_{k=0}^{n}(-1)^k\binom{n}{k}=[n=0]</script><p>然后，写一句废话</p>
+<script type="math/tex; mode=display">g(n)=\sum_{m=0}^{n}[n-m=0]\binom{n}{m}g(m)</script><p>将上面那个式子代入</p>
+<script type="math/tex; mode=display">g(n)=\sum_{m=0}^{n} \sum_{k=0}^{n-m}(-1)^k\binom{n-m}{k}\binom{n}{m}g(m)</script><p>根据组合数的性质，我们知道</p>
+<script type="math/tex; mode=display">\binom{n}{m}\binom{n-m}{k}=\binom{n}{k}\binom{n-k}{m}</script><p>于是</p>
+<script type="math/tex; mode=display">\begin{aligned}
+g(n)&=\sum_{m=0}^{n}\sum_{k=0}^{n-m}(-1)^k\binom{n}{k}\binom{n-k}{m}g(m)
+\\
+&=\sum_{k=0}^n(-1)^k\binom{n}{k}\sum_{m=0}^{n-k}\binom{n-k}{m}g(m)\\
+&=\sum_{k=0}^{n}(-1)^k\binom{n}{k}f(n-k)\\
+&=\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(k)
+\end{aligned}</script><p>这样，我们空手套白狼得到了二项式反演：</p>
+<p>若</p>
+<script type="math/tex; mode=display">f(n)=\sum_{k=0}^{n}\binom{n}{k}g(k)</script><p>则</p>
+<script type="math/tex; mode=display">g(n)=\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(k)</script><h3 id="莫比乌斯反演-1"><a href="#莫比乌斯反演-1" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h3><p>让我们用同样的方法研究如下式子</p>
+<script type="math/tex; mode=display">f(n)=\sum_{d|k}g(d)</script><p>首先，我们有</p>
+<script type="math/tex; mode=display">\sum_{d|n}\mu(d)=[n=1]</script><p>写一句废话</p>
+<script type="math/tex; mode=display">g(n)=\sum_{m|n}[\frac{n}{m}=1]g(m)</script><p>然后</p>
+<script type="math/tex; mode=display">\begin{aligned}
+g(n)&=\sum_{m|n}[\frac{n}{m}=1]g(m)\\
+&=\sum_{m|n}\sum_{d|\frac{n}{m}}\mu(d)g(m)\\
+&=\sum_{d|n}\mu(d)\sum_{m|\frac{n}{d}}g(m)\\
+&=\sum_{d|n}\mu(\frac{n}{d})f(d)
+\end{aligned}</script><p>我们便得到了莫比乌斯反演：</p>
+<p>若</p>
+<script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则</p>
+<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(\frac{n}{d})f(d)</script><h3 id="矩阵形式"><a href="#矩阵形式" class="headerlink" title="矩阵形式"></a>矩阵形式</h3>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>莫比乌斯反演</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>珂朵莉树</title>
     <url>/2020/05/15/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/</url>
     <content><![CDATA[<p>真正的暴力出奇迹。</p>
@@ -98,62 +185,6 @@ b_i =
       </categories>
       <tags>
         <tag>线段树</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>莫比乌斯反演</title>
-    <url>/2020/03/04/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</url>
-    <content><![CDATA[<h2 id="数论函数"><a href="#数论函数" class="headerlink" title="数论函数"></a>数论函数</h2><p><strong>数论函数：</strong> 定义域为正整数的函数。</p>
-<p><strong>积性函数：</strong> 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)=f(a)\times f(b)$ 的函数 $f$</p>
-<p><strong>完全积性函数：</strong> 对于所有正整数 $a, b$，均满足 $f<br>(ab)=f(a)\times f(b)$ 的函数 $f$</p>
-<p>对于一个积性函数 $f$，$f(n)=f(\prod p_i^{a_i})=\prod f(p_i^{a_i})$，若 $f$ 还满足完全积性，则 $f(n)=\prod f(p_i)^{a_i}$</p>
-<a id="more"></a>
-<h2 id="常见积性函数"><a href="#常见积性函数" class="headerlink" title="常见积性函数"></a>常见积性函数</h2><p><strong>欧拉函数 $\varphi(n)$</strong></p>
-<p><strong>莫比乌斯函数 $\mu(n)$：</strong> 若 $n$ 有平方数因子，则 $\mu(n)=0$。否则若 $n$ 为 $k$ 个不同质数之积，则 $\mu(n)=(-1)^k$。</p>
-<script type="math/tex; mode=display">\mu(n)=
-\begin{cases}
-1      & n=1\\
-(-1)^k & n=p_1p_2\cdots p_k\\
-0      & \text{else}
-\end{cases}</script><p><strong>除数函数：</strong> $\sigma_k(n)$ 表示 $n$ 的所有正因子的 $k$ 次幂之和。</p>
-<p>$d(n)=\sigma_0(n)$ 表示 $n$ 的正因子个数，$\sigma(n)=\sigma_1(n)$ 表示 $n$ 的所有正因子之和。</p>
-<p><strong>幂函数：</strong> $\operatorname{Id}_k(n)=n^k$，$1(n)=\operatorname{Id}_0(n)=1$，$\operatorname{Id}(n)=\operatorname{Id}_1(n)=n$</p>
-<p><strong>单位函数：</strong><br>$e(n)=\varepsilon(n)=<br>\begin{cases}<br>1 &amp; n = 1\\<br>0 &amp; n &gt; 1<br>\end{cases}<br>$</p>
-<h2 id="狄利克雷（Dirichlet）卷积"><a href="#狄利克雷（Dirichlet）卷积" class="headerlink" title="狄利克雷（Dirichlet）卷积"></a>狄利克雷（Dirichlet）卷积</h2><p>定义两个数论函数 $f$，$g$ 的 Dirichlet 卷积：</p>
-<script type="math/tex; mode=display">(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})</script><h3 id="狄利克雷卷积的性质"><a href="#狄利克雷卷积的性质" class="headerlink" title="狄利克雷卷积的性质"></a>狄利克雷卷积的性质</h3><p>交换律：</p>
-<script type="math/tex; mode=display">f*g=g*f</script><p>结合律：</p>
-<script type="math/tex; mode=display">(f*g)*h=f*(g*h)</script><p>分配律：</p>
-<script type="math/tex; mode=display">f*(g+h)=f*g+f*h</script><p>单位元：</p>
-<script type="math/tex; mode=display">f*\varepsilon=\varepsilon*f</script><h3 id="常见的狄利克雷卷积"><a href="#常见的狄利克雷卷积" class="headerlink" title="常见的狄利克雷卷积"></a>常见的狄利克雷卷积</h3><ul>
-<li><p>$d(n)=\sum_{d|n}1$，即 $d=1*1$</p>
-</li>
-<li><p>$\sigma(n)=\sum_{d|n}d$，即 $\sigma=1*1$</p>
-</li>
-<li><p>$\varphi(n)=\sum_{d|n}\mu(d)\frac{n}{d}$，即 $\varphi=\mu*\operatorname{Id}$</p>
-</li>
-<li><p>$\varepsilon(n)=\sum_{d|n}\mu(d)$，即 $\varepsilon=\mu*1$</p>
-</li>
-</ul>
-<h3 id="一些证明和结论"><a href="#一些证明和结论" class="headerlink" title="一些证明和结论"></a>一些证明和结论</h3><p>$n = \sum_{d|n}\varphi(d)$。</p>
-<p>$\varepsilon=\mu*1$ 即为 $\sum_{d|n}\mu(d)=[n=1]$。</p>
-<p>证明：$n=1$ 时 $\sum_{d|n}\mu(d)=1$。</p>
-<p>$n \neq 1$ 时，设 $n$ 有 $k$ 个质因子，只有当 $n$ 的因子中所有质因子次数都为 $1$ 时，$\mu$ 不为 $0$，即</p>
-<script type="math/tex; mode=display">\begin{align*}
-\sum_{d|n}\mu(d) &=\sum_{i=0}^{k}(-1)^{i}C(k,i)\\
-                 &= (1-1)^k\\
-                 &=0
-\end{align*}</script><p>因此 $\sum_{d|n}\mu(d)=[n=1]$。</p>
-<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>若两个函数 $f$，$g$ 满足：</p>
-<script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则它们也满足</p>
-<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(d)f(\frac{n}{d})</script><p>反之亦然，即</p>
-<script type="math/tex; mode=display">f=g*1\Leftrightarrow g=\mu *f</script><p>它的另一个形式：</p>
-<script type="math/tex; mode=display">f(n)=\sum_{n|d}g(d)\Leftrightarrow g(n)=\sum_{n|d}\mu(d)f(\frac{d}{n})</script>]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>莫比乌斯反演</tag>
       </tags>
   </entry>
   <entry>
@@ -472,8 +503,7 @@ b_i =
   <entry>
     <title>数论笔记</title>
     <url>/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><a id="more"></a>
-<hr>
+    <content><![CDATA[<hr>
 <h3 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h3><p>$a$ 的逆元，即为满足 $a\times a^{-1}\equiv 1 \pmod{p}$ 的 $a^{-1}$。</p>
 <h4 id="扩展欧几里得求逆元"><a href="#扩展欧几里得求逆元" class="headerlink" title="扩展欧几里得求逆元"></a>扩展欧几里得求逆元</h4><p>可以用扩展欧几里得算法求出 $a$ 的逆元，同时根据裴蜀定理，我们又能知道若 $\gcd(a,p)\neq 1$，则 $a$ 不存在逆元。</p>
 <h4 id="费马小定理求逆元"><a href="#费马小定理求逆元" class="headerlink" title="费马小定理求逆元"></a>费马小定理求逆元</h4><p>更简单的求逆元方法则是利用费马小定理。</p>
@@ -487,6 +517,7 @@ b_i =
 <p>两边同乘 $b^{-1}\times (a \bmod b)^{-1}$，得</p>
 <p>$b^{-1} = -\lfloor \dfrac{a}{b}\rfloor \times (a \bmod b)^{-1} \pmod{a}$</p>
 <p>由于 $a \bmod b$ 小于 $b$ ，因此可以递推求解。<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inverse</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    inv[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">        inv[i] = (p - p / i) * inv[p % i] % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h4 id="线性求阶乘的逆元"><a href="#线性求阶乘的逆元" class="headerlink" title="线性求阶乘的逆元"></a>线性求阶乘的逆元</h4><p>可以先用费马小定理求出 $n!$ 的逆元，然后从 $n$ 乘到 $1$ 能够得到所有 $(i!)^{-1}$，</p>
 <h4 id="线性求任意-n-个数的逆元"><a href="#线性求任意-n-个数的逆元" class="headerlink" title="线性求任意$n$个数的逆元"></a>线性求任意$n$个数的逆元</h4><p>与求阶乘逆元的原理类似。求出 $a_i$ 的前缀积 $s_i$，用费马小定理或扩欧能够求出 $s_n^{-1}$，进而求出 $s_i^{-1}(1 \leq i \leq n)$，则 $a_i^{-1}=s_{i}^{-1}\times s_{i-1}$</p>
 <hr>
@@ -496,12 +527,12 @@ b_i =
 <p>引理： 若 $x=p^k$，那么 $\varphi(x)=p^{k-1}\times(p-1)$</p>
 </blockquote>
 <p>证明：当 $y \bmod p \neq 0$ 时，$x \perp y$。我们将 $x$ 划分为 长度为 $p$ 的 $p^{k-1}$ 段，每一段都有 $p-1$ 个数与 $x$ 互质，因此 $\varphi(x)=p^{k-1}\times(p-1)$。</p>
-<script type="math/tex; mode=display">\begin{align*}
+<script type="math/tex; mode=display">\begin{aligned}
 \varphi(n)&=\prod_{i=1}^{s}\varphi(p_i^{k_i})\\
 &=\prod_{i=1}^{s}(p_i-1)\times p_i^{k_i-1}\\
 &=\prod_{i=1}^{s}p_i^{k_i}\times \frac{p_i-1}{p_i}\\
 &=n\prod_{i=1}^{s}\frac{p_i-1}{p_i}
-\end{align*}</script><h4 id="欧拉函数的一些性质"><a href="#欧拉函数的一些性质" class="headerlink" title="欧拉函数的一些性质"></a>欧拉函数的一些性质</h4><ul>
+\end{aligned}</script><h4 id="欧拉函数的一些性质"><a href="#欧拉函数的一些性质" class="headerlink" title="欧拉函数的一些性质"></a>欧拉函数的一些性质</h4><ul>
 <li>欧拉函数是积性函数，即对于$\gcd(a,b)=1$，$\varphi(ab)=\varphi(a)\times \varphi(b)$</li>
 </ul>
 <p>特别的，当 $n$ 是奇数时，$\varphi(2n)=\varphi(n)$</p>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-15T09:10:23.167Z</updated>
+  <updated>2020-05-21T01:27:12.370Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>反演笔记</title>
+    <link href="http://yoursite.com/2020/05/21/%E5%8F%8D%E6%BC%94%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2020/05/21/%E5%8F%8D%E6%BC%94%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-05-21T00:24:44.000Z</published>
+    <updated>2020-05-21T01:27:12.370Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;数论函数&quot;&gt;&lt;a href=&quot;#数论函数&quot; class=&quot;headerlink&quot; title=&quot;数论函数&quot;&gt;&lt;/a&gt;数论函数&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;数论函数：&lt;/strong&gt; 定义域为正整数的函数。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;积性函数：&lt;/strong&gt; 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)=f(a)\times f(b)$ 的函数 $f$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;完全积性函数：&lt;/strong&gt; 对于所有正整数 $a, b$，均满足 $f&lt;br&gt;(ab)=f(a)\times f(b)$ 的函数 $f$&lt;/p&gt;
+&lt;p&gt;对于一个积性函数 $f$，$f(n)=f(\prod p_i^{a_i})=\prod f(p_i^{a_i})$，若 $f$ 还满足完全积性，则 $f(n)=\prod f(p_i)^{a_i}$&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数论" scheme="http://yoursite.com/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="莫比乌斯反演" scheme="http://yoursite.com/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>珂朵莉树</title>
@@ -141,32 +167,6 @@ b_i =
     
     
       <category term="线段树" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>莫比乌斯反演</title>
-    <link href="http://yoursite.com/2020/03/04/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
-    <id>http://yoursite.com/2020/03/04/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</id>
-    <published>2020-03-03T19:24:44.000Z</published>
-    <updated>2020-03-29T02:00:32.616Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;数论函数&quot;&gt;&lt;a href=&quot;#数论函数&quot; class=&quot;headerlink&quot; title=&quot;数论函数&quot;&gt;&lt;/a&gt;数论函数&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;数论函数：&lt;/strong&gt; 定义域为正整数的函数。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;积性函数：&lt;/strong&gt; 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)=f(a)\times f(b)$ 的函数 $f$&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;完全积性函数：&lt;/strong&gt; 对于所有正整数 $a, b$，均满足 $f&lt;br&gt;(ab)=f(a)\times f(b)$ 的函数 $f$&lt;/p&gt;
-&lt;p&gt;对于一个积性函数 $f$，$f(n)=f(\prod p_i^{a_i})=\prod f(p_i^{a_i})$，若 $f$ 还满足完全积性，则 $f(n)=\prod f(p_i)^{a_i}$&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数论" scheme="http://yoursite.com/tags/%E6%95%B0%E8%AE%BA/"/>
-    
-      <category term="莫比乌斯反演" scheme="http://yoursite.com/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
     
   </entry>
   
@@ -446,11 +446,24 @@ b_i =
     <link href="http://yoursite.com/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/</id>
     <published>2020-02-12T12:12:41.000Z</published>
-    <updated>2020-05-20T07:10:00.813Z</updated>
+    <updated>2020-05-21T01:08:34.070Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;数论&quot;&gt;&lt;a href=&quot;#数论&quot; class=&quot;headerlink&quot; title=&quot;数论&quot;&gt;&lt;/a&gt;数论&lt;/h2&gt;
+      &lt;hr&gt;
+&lt;h3 id=&quot;逆元&quot;&gt;&lt;a href=&quot;#逆元&quot; class=&quot;headerlink&quot; title=&quot;逆元&quot;&gt;&lt;/a&gt;逆元&lt;/h3&gt;&lt;p&gt;$a$ 的逆元，即为满足 $a\times a^{-1}\equiv 1 \pmod{p}$ 的 $a^{-1}$。&lt;/p&gt;
+&lt;h4 id=&quot;扩展欧几里得求逆元&quot;&gt;&lt;a href=&quot;#扩展欧几里得求逆元&quot; class=&quot;headerlink&quot; title=&quot;扩展欧几里得求逆元&quot;&gt;&lt;/a&gt;扩展欧几里得求逆元&lt;/h4&gt;&lt;p&gt;可以用扩展欧几里得算法求出 $a$ 的逆元，同时根据裴蜀定理，我们又能知道若 $\gcd(a,p)\neq 1$，则 $a$ 不存在逆元。&lt;/p&gt;
+&lt;h4 id=&quot;费马小定理求逆元&quot;&gt;&lt;a href=&quot;#费马小定理求逆元&quot; class=&quot;headerlink&quot; title=&quot;费马小定理求逆元&quot;&gt;&lt;/a&gt;费马小定理求逆元&lt;/h4&gt;&lt;p&gt;更简单的求逆元方法则是利用费马小定理。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;费马小定理：&lt;/strong&gt; 若 $p$ 为质数，$a$ 为正整数，且  $\gcd(a,p)=1$，则 $a^{p-1}\equiv 1 \pmod{p}$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$a^{-1}\equiv a^{p-2} \pmod{p}$，因此可以直接快速幂求。&lt;/p&gt;
+&lt;h4 id=&quot;线性求逆元&quot;&gt;&lt;a href=&quot;#线性求逆元&quot; class=&quot;headerlink&quot; title=&quot;线性求逆元&quot;&gt;&lt;/a&gt;线性求逆元&lt;/h4&gt;&lt;p&gt;要求 $1\dots n$ 的逆元，我们有更快的方法。&lt;/p&gt;
+&lt;p&gt;考虑带余除法，$a\bmod b = a - \lfloor \dfrac{a}{b}\rfloor \times b$，&lt;/p&gt;
+&lt;p&gt;则 $a\bmod b = -\lfloor \dfrac{a}{b}\rfloor \times b \pmod{a}$&lt;/p&gt;
+&lt;p&gt;两边同乘 $b^{-1}\times (a \bmod b)^{-1}$，得&lt;/p&gt;
+&lt;p&gt;$b^{-1} = -\lfloor \dfrac{a}{b}\rfloor \times (a \bmod b)^{-1} \pmod{a}$&lt;/p&gt;
+&lt;p&gt;由于 $a \bmod b$ 小于 $b$ ，因此可以递推求解。&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;inverse&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    inv[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;; i &amp;lt;= n; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        inv[i] = (p - p / i) * inv[p % i] % p;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
