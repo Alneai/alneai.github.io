@@ -27,7 +27,7 @@
 <meta property="og:description" content="数论函数数论函数： 定义域为正整数的函数。 积性函数： 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)&#x3D;f(a)\times f(b)$ 的函数 $f$ 完全积性函数： 对于所有正整数 $a, b$，均满足 $f(ab)&#x3D;f(a)\times f(b)$ 的函数 $f$ 对于一个积性函数 $f$，$f(n)&#x3D;f(\prod p_i^{a_i})&#x3D;\prod f(p_i^{a_i})$">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-21T01:33:44.000Z">
-<meta property="article:modified_time" content="2020-05-21T01:48:49.981Z">
+<meta property="article:modified_time" content="2020-05-21T16:05:36.986Z">
 <meta property="article:author" content="Alneai">
 <meta property="article:tag" content="数论">
 <meta property="article:tag" content="莫比乌斯反演">
@@ -207,10 +207,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-21 09:33:44 / 修改时间：09:48:49" itemprop="dateCreated datePublished" datetime="2020-05-21T09:33:44+08:00">2020-05-21</time>
+              <time title="创建时间：2020-05-21 09:33:44" itemprop="dateCreated datePublished" datetime="2020-05-21T09:33:44+08:00">2020-05-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-22 00:05:36" itemprop="dateModified" datetime="2020-05-22T00:05:36+08:00">2020-05-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -330,7 +336,33 @@ g(n)&=\sum_{m|n}[\frac{n}{m}=1]g(m)\\
 \end{aligned}</script><p>我们便得到了莫比乌斯反演：</p>
 <p>若有</p>
 <script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则也有</p>
-<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(\frac{n}{d})f(d)</script><h3 id="矩阵形式"><a href="#矩阵形式" class="headerlink" title="矩阵形式"></a>矩阵形式</h3>
+<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(\frac{n}{d})f(d)</script><h3 id="矩阵形式"><a href="#矩阵形式" class="headerlink" title="矩阵形式"></a>矩阵形式</h3><p>vfk 告诉我们，我们在上面真正用到的是这个东西</p>
+<script type="math/tex; mode=display">[m\ |\ n]\sum_{d|\frac{n}{m}}\mu(d)=[\frac{n}{m}=1]=[n=m]</script><p>令 $c=md$，左边可以写成这样</p>
+<script type="math/tex; mode=display">\sum_{c|n}[m\ |\ c]\mu(\frac{c}{m})</script><p>令 $A_{c,n}=[c | n]$，$B_{m,c}=[m | c]\mu(\frac{c}{m})$</p>
+<p>刚才的结论就是 $BA=I$</p>
+<p>刚才解 $Ax=b$ 的推导过程就是：</p>
+<script type="math/tex; mode=display">\begin{aligned}
+x&=Ix\\
+x&=(BA)x\\
+x&=B(Ax)\\
+x&=Bb
+\end{aligned}</script><p><del>十分抽象，根本不懂</del></p>
+<p>其实整个过程相当于找 $A$ 的逆矩阵 $B$，也就是那个神奇的性质$\sum_{d|n}\mu(d)=[n=1]$。</p>
+<p>题外话：</p>
+<script type="math/tex; mode=display">f(n)=\sum_{k=0}^{n}\binom{n}{k}g(k)</script><script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>它们都是下三角矩阵，那逆矩阵。。直接 $O(n^2)$ 消元？</p>
+<p>对于 $k\leq n$ 的一般情况：</p>
+<script type="math/tex; mode=display">f(n)=\sum_{k=1}^n a_{n,k}g(k)</script><p>我们算出每个 $f(m)$ 对答案的贡献，对于每一个 $m$ 我们求出 $f(m)=1$ 而其他 $f$ 都是 $0$ 的情况下的 $g$ 就行了，用 $\mu(n,m)$ 来表示这个解。</p>
+<p>那么一定满足性质</p>
+<script type="math/tex; mode=display">\sum_{k=1}^{n}a_{n,k}\mu(k,m)=[n=m]</script><p>这个可以递推求出。</p>
+<p>此时答案已经很明显了：</p>
+<script type="math/tex; mode=display">g(n)=\sum_{k=1}^n \mu(n,k)f(k)</script><p>然而这并没有什么用。。这里的 $\mu$ 其实就是逆矩阵，$\mu$ 一般也是比较难求的。。</p>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><script type="math/tex; mode=display">\sum_{j = 1}^{n} \gcd(i, j)^c \cdot \text{lcm}(i, j)^d \cdot x_j \equiv b_i \pmod{p}</script><p>给出 $n,c,d,b_i$，求出 $x_i$。</p>
+<p><a href="http://vfleaking.blog.uoj.ac/blog/62" target="_blank" rel="noopener">UOJ</a></p>
+<p>由小学奥数我们知道这个东西就是</p>
+<script type="math/tex; mode=display">\sum_{j=1}^n \gcd(i,j)^{c - d} \cdot i^d \cdot j^d \cdot x_j = b_i</script><p>vfk 告诉我们，这样的东西都可做</p>
+<script type="math/tex; mode=display">\sum_{j=1}^n f(\gcd(i,j)) \cdot g(i) \cdot h(j) \cdot x_j = b_i</script><p>这个东西的关键其实在于 $f(\gcd(i,j))$，如果我们有一个函数 $f_r(n)$ 满足 $f(n)=\sum_{d|n}f_r(d)$ 就好做了。这个其实就是通过枚举因数 $d$ 来去掉讨厌的 $\gcd$（ycy 告诉我们：遇到 $\gcd$ 反它就完了！）。</p>
+<p>然而在这里，vfk 舍弃了麻烦的莫比乌斯反演，而是直接用递推求出了 $f_r(n)$。</p>
+
     </div>
 
     
@@ -413,7 +445,7 @@ g(n)&=\sum_{m|n}[\frac{n}{m}=1]g(m)\\
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数论函数"><span class="nav-number">1.</span> <span class="nav-text">数论函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见积性函数"><span class="nav-number">2.</span> <span class="nav-text">常见积性函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狄利克雷（Dirichlet）卷积"><span class="nav-number">3.</span> <span class="nav-text">狄利克雷（Dirichlet）卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#狄利克雷卷积的性质"><span class="nav-number">3.1.</span> <span class="nav-text">狄利克雷卷积的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的狄利克雷卷积"><span class="nav-number">3.2.</span> <span class="nav-text">常见的狄利克雷卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些结论和证明"><span class="nav-number">3.3.</span> <span class="nav-text">一些结论和证明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#莫比乌斯反演"><span class="nav-number">4.</span> <span class="nav-text">莫比乌斯反演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#炫酷反演魔术"><span class="nav-number">5.</span> <span class="nav-text">炫酷反演魔术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反演"><span class="nav-number">5.1.</span> <span class="nav-text">反演</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二项式反演"><span class="nav-number">5.2.</span> <span class="nav-text">二项式反演</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#莫比乌斯反演-1"><span class="nav-number">5.3.</span> <span class="nav-text">莫比乌斯反演</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵形式"><span class="nav-number">5.4.</span> <span class="nav-text">矩阵形式</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数论函数"><span class="nav-number">1.</span> <span class="nav-text">数论函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见积性函数"><span class="nav-number">2.</span> <span class="nav-text">常见积性函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狄利克雷（Dirichlet）卷积"><span class="nav-number">3.</span> <span class="nav-text">狄利克雷（Dirichlet）卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#狄利克雷卷积的性质"><span class="nav-number">3.1.</span> <span class="nav-text">狄利克雷卷积的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的狄利克雷卷积"><span class="nav-number">3.2.</span> <span class="nav-text">常见的狄利克雷卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些结论和证明"><span class="nav-number">3.3.</span> <span class="nav-text">一些结论和证明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#莫比乌斯反演"><span class="nav-number">4.</span> <span class="nav-text">莫比乌斯反演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#炫酷反演魔术"><span class="nav-number">5.</span> <span class="nav-text">炫酷反演魔术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反演"><span class="nav-number">5.1.</span> <span class="nav-text">反演</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二项式反演"><span class="nav-number">5.2.</span> <span class="nav-text">二项式反演</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#莫比乌斯反演-1"><span class="nav-number">5.3.</span> <span class="nav-text">莫比乌斯反演</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵形式"><span class="nav-number">5.4.</span> <span class="nav-text">矩阵形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题"><span class="nav-number">5.5.</span> <span class="nav-text">例题</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
