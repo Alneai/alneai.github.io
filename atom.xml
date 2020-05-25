@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-25T16:16:54.092Z</updated>
+  <updated>2020-05-25T16:26:22.132Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/05/25/UPC%20Tyher%E7%9A%84%E7%83%A6%E6%81%BC/"/>
     <id>http://yoursite.com/2020/05/25/UPC%20Tyher%E7%9A%84%E7%83%A6%E6%81%BC/</id>
     <published>2020-05-25T13:49:43.000Z</published>
-    <updated>2020-05-25T16:16:54.092Z</updated>
+    <updated>2020-05-25T16:26:22.132Z</updated>
     
     <summary type="html">
     
@@ -30,11 +30,6 @@
 &lt;li&gt;将编号为 $L$ 到 $R$ 的盒子里的石头数量变为 $(X-L+1)\times A \bmod B$，$X$ 为盒子编号；&lt;/li&gt;
 &lt;li&gt;查询 $L$ 到 $R$ 的盒子的石头总数。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot; class=&quot;headerlink&quot; title=&quot;题解&quot;&gt;&lt;/a&gt;题解&lt;/h2&gt;&lt;p&gt;看到区间操作以及 $10^9$ 这么鬼畜的数据范围，就能想到要用珂朵莉树。然而我们发现，查询时我们要计算这么个东西：&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{i=v}^{v+L-1}i\cdot a \bmod b&lt;/script&gt;&lt;p&gt;这里只对每一项取模，而并没有对和取模，这就比较难办了。&lt;/p&gt;
-&lt;p&gt;我们考虑去掉取模：&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{i=v}^{v+L-1}i - \left\lfloor \frac{i\cdot a}{b} \right\rfloor b=
-\sum_{i=v}^{v+L-1}i - b \sum_{i=v}^{v+L-1}\left\lfloor \frac{i\cdot a}{b} \right\rfloor&lt;/script&gt;&lt;p&gt;后面那一项直接用类欧几里得算法求就可以了。总的时间复杂度在随机数据下为 $O(n\log n \log \log n)$&lt;/p&gt;
     
     </summary>
     
@@ -53,19 +48,11 @@
     <link href="http://yoursite.com/2020/05/25/%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85/"/>
     <id>http://yoursite.com/2020/05/25/%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85/</id>
     <published>2020-05-25T08:01:51.000Z</published>
-    <updated>2020-05-25T16:13:57.065Z</updated>
+    <updated>2020-05-25T16:26:36.756Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;多重背包问题：有 $n$ 种物品，每种物品有一个重量 $v_i$，价值 $w_i$，数量 $a_i$，问一个重量为 $m$ 的背包最多能装多少价值的物品。&lt;/p&gt;
-&lt;p&gt;我们很容易就能写出一个 $O(nm\sum a_i)$ 的 DP 方程：&lt;/p&gt;
-&lt;script
-        
-      
+      &lt;p&gt;多重背包问题：有 $n$ 种物品，每种物品有一个重量 $v_i$，价值 $w_i$，数量 $a_i$，问一个重量为 $m$ 的背包最多能装多少价值的物品。&lt;/p&gt;
     
     </summary>
     
@@ -110,18 +97,12 @@
     <link href="http://yoursite.com/2020/05/15/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/"/>
     <id>http://yoursite.com/2020/05/15/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/</id>
     <published>2020-05-15T09:09:22.000Z</published>
-    <updated>2020-05-25T14:04:14.732Z</updated>
+    <updated>2020-05-25T16:24:03.275Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;真正的暴力出奇迹。&lt;/p&gt;
-&lt;h2 id=&quot;Code&quot;&gt;&lt;a href=&quot;#Code&quot; class=&quot;headerlink&quot; title=&quot;Code&quot;&gt;&lt;/a&gt;Code&lt;/h2&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
+      &lt;p&gt;&lt;a href=&quot;https://codeforces.com/problemset/problem/896/C&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CF896C&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;真正的暴力出奇迹。&lt;/p&gt;
     
     </summary>
     
@@ -138,18 +119,12 @@
     <link href="http://yoursite.com/2020/05/14/%E7%BA%BF%E6%80%A7%E5%9F%BA/"/>
     <id>http://yoursite.com/2020/05/14/%E7%BA%BF%E6%80%A7%E5%9F%BA/</id>
     <published>2020-05-14T06:15:02.000Z</published>
-    <updated>2020-05-16T16:29:12.321Z</updated>
+    <updated>2020-05-25T16:26:54.806Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;线性基的构造&quot;&gt;&lt;a href=&quot;#线性基的构造&quot; class=&quot;headerlink&quot; title=&quot;线性基的构造&quot;&gt;&lt;/a&gt;线性基的构造&lt;/h2&gt;&lt;p&gt;线性基是怎么构造的？&lt;/p&gt;
 &lt;p&gt;大概就是考虑每个数 $a$，从高位到低位枚举，找到在线性基 $b$ 中没出现过的 $a$ 的最高位 $i$，将 $a$ 加入到线性基$b[i]$中，高于 $i$ 的 $a$ 的二进制位用线性基中的数给异或掉(因此此时 $i$ 就是 $a$ 的最高位了)。然后用类似高斯消元的方法，先用下面的行消自己，再用自己消上面的行，把线性基消成一个上三角矩阵。&lt;/p&gt;
-&lt;h2 id=&quot;线性基的性质&quot;&gt;&lt;a href=&quot;#线性基的性质&quot; class=&quot;headerlink&quot; title=&quot;线性基的性质&quot;&gt;&lt;/a&gt;线性基的性质&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;线性基中所有向量线性无关，也就是不能异或出 0（废话&lt;/li&gt;
-&lt;li&gt;线性基中每个对角线元素为 1 的列其余元素都为 0&lt;/li&gt;
-&lt;li&gt;若线性基中向量个数 $m &amp;lt;n$，那么存在向量组线性相关，可以异或出 0，总的异或和的个数为&lt;br&gt;$2^m$；否则，异或和个数为 $2^m - 1$&lt;/li&gt;
-&lt;li&gt;若线性基中向量个数 $m$，那么线性基中每个向量在原集合的异或和中出现的次数为 $2^{n-m}$&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     
@@ -166,38 +141,11 @@
     <link href="http://yoursite.com/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0/"/>
     <id>http://yoursite.com/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0/</id>
     <published>2020-05-13T08:14:41.000Z</published>
-    <updated>2020-05-13T08:54:26.893Z</updated>
+    <updated>2020-05-25T16:27:12.192Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;昨天打了 CF614，依旧不太顺心，被 D 卡死了。比赛时一直以为是我区间中位数求的有问题，比赛后才发现是我得出的结论有问题。。&lt;/p&gt;
-&lt;h2 id=&quot;区间中位数&quot;&gt;&lt;a href=&quot;#区间中位数&quot; class=&quot;headerlink&quot; title=&quot;区间中位数&quot;&gt;&lt;/a&gt;区间中位数&lt;/h2&gt;&lt;p&gt;若将中位数定义为区间排序后第 $\lfloor (n + 1)/2 \rfloor$ 个数，定义数组 $b$，&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\begin{aligned} 
-b_i = 
-\begin{cases} 
-1,  &amp; a_i \ge k, \\ 
--1, &amp; a_i &lt; k.
-\end{cases} 
-\end{aligned}&lt;/script&gt;&lt;p&gt;则区间中位数大于等于 $k$ 等价于 $\sum_{i=l}^r b_i &amp;gt; 0$。&lt;br&gt;利用树状数组即可在 $O(n\log n)$ 时间内求出中位数大于等于 $k$ 的子区间数量。&lt;/p&gt;
-&lt;p&gt;若将中位数定义为区间排序后第 $\lfloor n / 2 \rfloor + 1$ 个数，那么定义数组 $b$，&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\begin{aligned} 
-b_i = 
-\begin{cases} 
-1,  &amp; a_i &gt; k, \\ 
--1, &amp; a_i \leq k.
-\end{cases} 
-\end{aligned}&lt;/script&gt;&lt;p&gt;则区间中位数小于等于 $k$ 等价于 $\sum_{i=l}^r b_i &amp;lt; 0$。&lt;/p&gt;
-&lt;p&gt;当然也可以将 $b$ 定义为&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\begin{aligned} 
-b_i = 
-\begin{cases} 
--1,  &amp; a_i &gt; k, \\ 
-1, &amp; a_i \leq k.
-\end{cases} 
-\end{aligned}&lt;/script&gt;&lt;p&gt;则区间中位数小于等于 $k$ 等价于 $\sum_{i=l}^r b_i &amp;gt; 0$。&lt;/p&gt;
     
     </summary>
     
@@ -216,12 +164,12 @@ b_i =
     <link href="http://yoursite.com/2020/03/09/HDU%204747%20Mex/"/>
     <id>http://yoursite.com/2020/03/09/HDU%204747%20Mex/</id>
     <published>2020-03-09T14:53:19.000Z</published>
-    <updated>2020-03-09T16:02:02.188Z</updated>
+    <updated>2020-05-25T16:27:23.994Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给定一个非负序列 $\{a_i\}$，定义 $\operatorname{mex}(l, r)$ 表示下标在 $l$ 和 $r$ 之间未出现的最小自然数，求&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{i=1}^{n}\sum_{j=i}^{n} \operatorname{mex}(i,j)&lt;/script&gt;&lt;h2 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot; class=&quot;headerlink&quot; title=&quot;题解&quot;&gt;&lt;/a&gt;题解&lt;/h2&gt;&lt;p&gt;若固定左端点，那么随着右端点的增加，mex 是单调不降的。因此考虑枚举左端点 $i$，维护此时序列每个位置的 mex。每次左端点 + 1 都需要删除上一个点 $a_{i-1}$，$a_{i-1}$ 影响的范围为 $i$ 到 $a_{i-1}$ 出现的下一个位置 - 1，在这段区间内所有大于 $a_{i-1}$ 的 mex 都应该更新为 $a_{i-1}$。由于 mex 具有单调性，因此可以二分寻找大于 $a_{i-1}$ 的第一个 mex 对应的位置，用线段树维护 mex。&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{i=1}^{n}\sum_{j=i}^{n} \operatorname{mex}(i,j)&lt;/script&gt;
     
     </summary>
     
@@ -238,24 +186,11 @@ b_i =
     <link href="http://yoursite.com/2020/03/02/Tarjan%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2020/03/02/Tarjan%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2020-03-02T09:15:54.000Z</published>
-    <updated>2020-05-13T08:41:52.901Z</updated>
+    <updated>2020-05-25T16:28:20.515Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;一些概念&quot;&gt;&lt;a href=&quot;#一些概念&quot; class=&quot;headerlink&quot; title=&quot;一些概念&quot;&gt;&lt;/a&gt;一些概念&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;割点&lt;/strong&gt;：无向图连通中，删去点 x 与 x 相连的边后 G 不连通，则 x 为 G 的割点。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;割边&lt;/strong&gt;：无向图连通中，删去边 e 后 G 不连通，则 e 称为 G 的桥或割边。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;点双连通&lt;/strong&gt;：若一张无向连通图不存在割点（点连通度等于一），则称它为点双连通。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;边双连通&lt;/strong&gt;：若一张无向连通图不存在桥（边连通度等于一），则称它为边双连通。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;点双连通分量(v-DCC)&lt;/strong&gt;：无向图的极大点双连通子图。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;边双连通分量(e-DCC)&lt;/strong&gt;：无向图的极大边双连通子图。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Tarjan 算法可以求：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;割点、割边&lt;/li&gt;
-&lt;li&gt;无向图的双连通分量&lt;/li&gt;
-&lt;li&gt;有向图的强连通分量&lt;/li&gt;
-&lt;/ol&gt;
+      &lt;p&gt;From《算法竞赛进阶指南》。&lt;/p&gt;
     
     </summary>
     
@@ -274,11 +209,11 @@ b_i =
     <link href="http://yoursite.com/2020/03/02/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2020/03/02/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%AC%94%E8%AE%B0/</id>
     <published>2020-03-02T08:20:58.000Z</published>
-    <updated>2020-03-06T07:08:58.192Z</updated>
+    <updated>2020-05-25T16:28:57.558Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;看了 lyd 书上写的差分约束，在这里&lt;del&gt;抄&lt;/del&gt;总结下。&lt;/p&gt;
+      &lt;p&gt;From《算法竞赛进阶指南》。&lt;/p&gt;
     
     </summary>
     
@@ -297,17 +232,12 @@ b_i =
     <link href="http://yoursite.com/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96/"/>
     <id>http://yoursite.com/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96/</id>
     <published>2020-02-26T11:54:18.000Z</published>
-    <updated>2020-03-09T14:57:14.350Z</updated>
+    <updated>2020-05-25T16:29:17.326Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;最小圆覆盖板子。&lt;/p&gt;
 &lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;在一个平面上有 $n$ 个点，求一个半径最小的圆，能覆盖所有的点。&lt;/p&gt;
-&lt;h2 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot; class=&quot;headerlink&quot; title=&quot;题解&quot;&gt;&lt;/a&gt;题解&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://oi-wiki.org/geometry/random-incremental/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OI Wiki&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;为什么是 $O(n)$ 的？&lt;/p&gt;
-&lt;p&gt;因为对于第 $i$ 个点，它在前 $i$ 个点形成的最小圆上的概率为 $\frac{3}{i}$。&lt;/p&gt;
-&lt;p&gt;如何求三个点形成的圆？&lt;/p&gt;
-&lt;p&gt;把三个点代入圆的方程，联立解出 $r$, $x_0$, $y_0$。&lt;/p&gt;
     
     </summary>
     
@@ -379,12 +309,11 @@ b_i =
     <link href="http://yoursite.com/2020/02/16/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     <id>http://yoursite.com/2020/02/16/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E5%B9%B6%E6%9F%A5%E9%9B%86/</id>
     <published>2020-02-16T03:59:16.000Z</published>
-    <updated>2020-03-09T14:55:51.192Z</updated>
+    <updated>2020-05-25T16:33:54.015Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;可持久化并查集板子。&lt;br&gt;&lt;del&gt;简单又好写&lt;/del&gt;&lt;/p&gt;
-&lt;hr&gt;
+      &lt;p&gt;可持久化并查集板子。&lt;/p&gt;
 &lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P3402&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Luogu&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;$n$ 个集合，$m$个操作。&lt;/p&gt;
 &lt;p&gt;操作：&lt;/p&gt;
@@ -413,14 +342,11 @@ b_i =
     <link href="http://yoursite.com/2020/02/14/CF%20Round%20619%20(Div.%202)/"/>
     <id>http://yoursite.com/2020/02/14/CF%20Round%20619%20(Div.%202)/</id>
     <published>2020-02-13T17:20:16.000Z</published>
-    <updated>2020-02-26T11:55:54.703Z</updated>
+    <updated>2020-05-25T16:30:00.503Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;开场又被 B 卡住了，死活 WA，耽误了有 20 分钟，最后下定决心弃掉 B 去看 C，看了会发现 C 是水题，很快写完了，然而这时已经过去 50 多分钟了。&lt;/p&gt;
-&lt;p&gt;敲完 C 去看了下 D，发现不怎么可做，就又回过头去调 B，结果一看，是数组没有清空。。。就只是因为一个下标会越界。。真实训练赛打多了，忘记多组数据该怎么写了。。以后多组数据一定要记得清空数组，也一定要避免下标越界访问，尤其是像 $a[n+1]$ 这样的位置。&lt;/p&gt;
-&lt;p&gt;过了 B，迷茫了一会，发现 E, F 没什么人做，就去搞 D 了。看了会，发现 D 就是个 SB 构造，随便构造下就行了。。结果最后时间太赶，想错了一些细节，而且代码实现的也极其混乱，最终还是没能过。。&lt;/p&gt;
-&lt;p&gt;还是太菜，写个几十行的垃圾代码能出一万个 bug。&lt;/p&gt;
+      &lt;p&gt;并不顺心的一场 CF。。&lt;/p&gt;
     
     </summary>
     
@@ -433,16 +359,15 @@ b_i =
   </entry>
   
   <entry>
-    <title>「USACO」 Haywire - 模拟退火</title>
-    <link href="http://yoursite.com/2020/02/13/USACO%20Haywire/"/>
-    <id>http://yoursite.com/2020/02/13/USACO%20Haywire/</id>
+    <title>「洛谷P2210」 Haywire - 模拟退火</title>
+    <link href="http://yoursite.com/2020/02/13/Luogu%20Haywire/"/>
+    <id>http://yoursite.com/2020/02/13/Luogu%20Haywire/</id>
     <published>2020-02-13T12:32:40.000Z</published>
-    <updated>2020-03-09T14:56:01.341Z</updated>
+    <updated>2020-05-25T16:31:34.384Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;模拟退火板子题。 &lt;del&gt;为啥这题是黑题啊&lt;/del&gt;&lt;/p&gt;
-&lt;hr&gt;
 &lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P2210&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Luogu&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;有 $n(n\le 12)$ 只奶牛，每只奶牛有 $3$ 个朋友。现在要把这 $12$ 只奶牛排成一列，使得每只奶牛与它的朋友的距离之和最小。&lt;/p&gt;
     
@@ -452,18 +377,16 @@ b_i =
       <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="USACO" scheme="http://yoursite.com/tags/USACO/"/>
-    
       <category term="模拟退火" scheme="http://yoursite.com/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/"/>
     
   </entry>
   
   <entry>
     <title>「洛谷P2365」任务安排 - 斜率优化DP</title>
-    <link href="http://yoursite.com/2020/02/13/%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/"/>
-    <id>http://yoursite.com/2020/02/13/%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/</id>
+    <link href="http://yoursite.com/2020/02/13/Luogu%20%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/"/>
+    <id>http://yoursite.com/2020/02/13/Luogu%20%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/</id>
     <published>2020-02-13T09:55:30.000Z</published>
-    <updated>2020-03-09T14:55:45.328Z</updated>
+    <updated>2020-05-25T16:30:48.161Z</updated>
     
     <summary type="html">
     
@@ -509,24 +432,11 @@ b_i =
     <link href="http://yoursite.com/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/</id>
     <published>2020-02-12T12:12:41.000Z</published>
-    <updated>2020-05-21T01:08:34.070Z</updated>
+    <updated>2020-05-25T16:33:30.441Z</updated>
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;h3 id=&quot;逆元&quot;&gt;&lt;a href=&quot;#逆元&quot; class=&quot;headerlink&quot; title=&quot;逆元&quot;&gt;&lt;/a&gt;逆元&lt;/h3&gt;&lt;p&gt;$a$ 的逆元，即为满足 $a\times a^{-1}\equiv 1 \pmod{p}$ 的 $a^{-1}$。&lt;/p&gt;
-&lt;h4 id=&quot;扩展欧几里得求逆元&quot;&gt;&lt;a href=&quot;#扩展欧几里得求逆元&quot; class=&quot;headerlink&quot; title=&quot;扩展欧几里得求逆元&quot;&gt;&lt;/a&gt;扩展欧几里得求逆元&lt;/h4&gt;&lt;p&gt;可以用扩展欧几里得算法求出 $a$ 的逆元，同时根据裴蜀定理，我们又能知道若 $\gcd(a,p)\neq 1$，则 $a$ 不存在逆元。&lt;/p&gt;
-&lt;h4 id=&quot;费马小定理求逆元&quot;&gt;&lt;a href=&quot;#费马小定理求逆元&quot; class=&quot;headerlink&quot; title=&quot;费马小定理求逆元&quot;&gt;&lt;/a&gt;费马小定理求逆元&lt;/h4&gt;&lt;p&gt;更简单的求逆元方法则是利用费马小定理。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;费马小定理：&lt;/strong&gt; 若 $p$ 为质数，$a$ 为正整数，且  $\gcd(a,p)=1$，则 $a^{p-1}\equiv 1 \pmod{p}$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;$a^{-1}\equiv a^{p-2} \pmod{p}$，因此可以直接快速幂求。&lt;/p&gt;
-&lt;h4 id=&quot;线性求逆元&quot;&gt;&lt;a href=&quot;#线性求逆元&quot; class=&quot;headerlink&quot; title=&quot;线性求逆元&quot;&gt;&lt;/a&gt;线性求逆元&lt;/h4&gt;&lt;p&gt;要求 $1\dots n$ 的逆元，我们有更快的方法。&lt;/p&gt;
-&lt;p&gt;考虑带余除法，$a\bmod b = a - \lfloor \dfrac{a}{b}\rfloor \times b$，&lt;/p&gt;
-&lt;p&gt;则 $a\bmod b = -\lfloor \dfrac{a}{b}\rfloor \times b \pmod{a}$&lt;/p&gt;
-&lt;p&gt;两边同乘 $b^{-1}\times (a \bmod b)^{-1}$，得&lt;/p&gt;
-&lt;p&gt;$b^{-1} = -\lfloor \dfrac{a}{b}\rfloor \times (a \bmod b)^{-1} \pmod{a}$&lt;/p&gt;
-&lt;p&gt;由于 $a \bmod b$ 小于 $b$ ，因此可以递推求解。&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;inverse&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    inv[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;; i &amp;lt;= n; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        inv[i] = (p - p / i) * inv[p % i] % p;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+      &lt;p&gt;主要是写给自己看的，所以写的很简洁，很多东西也是直接复制其他博客、资料的，谨慎参考。&lt;/p&gt;
     
     </summary>
     

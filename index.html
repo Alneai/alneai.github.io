@@ -210,7 +210,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-26 00:16:54" itemprop="dateModified" datetime="2020-05-26T00:16:54+08:00">2020-05-26</time>
+                <time title="修改时间：2020-05-26 00:26:22" itemprop="dateModified" datetime="2020-05-26T00:26:22+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,11 +261,6 @@
 <li>将编号为 $L$ 到 $R$ 的盒子里的石头数量变为 $(X-L+1)\times A \bmod B$，$X$ 为盒子编号；</li>
 <li>查询 $L$ 到 $R$ 的盒子的石头总数。</li>
 </ol>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>看到区间操作以及 $10^9$ 这么鬼畜的数据范围，就能想到要用珂朵莉树。然而我们发现，查询时我们要计算这么个东西：</p>
-<script type="math/tex; mode=display">\sum_{i=v}^{v+L-1}i\cdot a \bmod b</script><p>这里只对每一项取模，而并没有对和取模，这就比较难办了。</p>
-<p>我们考虑去掉取模：</p>
-<script type="math/tex; mode=display">\sum_{i=v}^{v+L-1}i - \left\lfloor \frac{i\cdot a}{b} \right\rfloor b=
-\sum_{i=v}^{v+L-1}i - b \sum_{i=v}^{v+L-1}\left\lfloor \frac{i\cdot a}{b} \right\rfloor</script><p>后面那一项直接用类欧几里得算法求就可以了。总的时间复杂度在随机数据下为 $O(n\log n \log \log n)$</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/05/25/UPC%20Tyher%E7%9A%84%E7%83%A6%E6%81%BC/#more" rel="contents">
@@ -323,7 +318,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-26 00:13:57" itemprop="dateModified" datetime="2020-05-26T00:13:57+08:00">2020-05-26</time>
+                <time title="修改时间：2020-05-26 00:26:36" itemprop="dateModified" datetime="2020-05-26T00:26:36+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -370,19 +365,14 @@
 
       
           <p>多重背包问题：有 $n$ 种物品，每种物品有一个重量 $v_i$，价值 $w_i$，数量 $a_i$，问一个重量为 $m$ 的背包最多能装多少价值的物品。</p>
-<p>我们很容易就能写出一个 $O(nm\sum a_i)$ 的 DP 方程：</p>
-<script type="math/tex; mode=display">f[j]=\max_{k=1}^{a_i}(f[j-k\times v_i]+k\times w_i)</script><p>如何优化这个式子呢？</p>
-<p>注意到对于每一个 $j$，其能够转移的 $f$ 的下标是一个关于模 $v_i$ 的剩余类，于是我们可以按照模 $v_i$ 分类转移。</p>
-<p>这样分类后，我们要求的就是某个余数中最大的 $f$，并且注意到能够更新当前 $f[j]$ 的下标是单调的，于是可以使用单调队列优化。</p>
-<p>但是对于不同的 $k$，其贡献也不同。如何处理这个问题呢？我们把 $j$ 写成 $j=p\times v_i + r$ 的形式，然后改写一下 DP 方程：</p>
-<script type="math/tex; mode=display">\begin{aligned}
-f[j]&=\max_{k=1}^{a_i}(f[j-k\times v_i]+k\times w_i)\\
-&=\max_{k=1}^{a_i}(f[(p-k)\times v_i+r]+p\times w_i - (p-k)\times w_i)\\
-&=\max_{k=1}^{a_i}(f[(p-k)\times v_i+r] - (p-k)\times w_i) + p\times w_i
-\end{aligned}</script><p>这样就使得 $\max$ 内的值只与 $p-k$ 有关了。至于 $p-k$ 具体是多少我们并不关心，因为我们很容易就能确定它的范围：只需要保证查询时的下标 $\geq j - a_i\times v_i$ 即可。</p>
-<p>在插入时将 $f[j]-p\times w_i$ 放入单调队列中，查询时查询单调队列里下标 $\geq j - a_i\times v_i$ 的值再加上 $p \times w_i$ 来更新 $f[j]$，我们就在 $O(nm)$ 的时间内解决了多重背包问题。</p>
-<p>代码：等用到的时候再写吧。。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/25/%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -539,7 +529,7 @@ f[j]&=\max_{k=1}^{a_i}(f[j-k\times v_i]+k\times w_i)\\
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-25 22:04:14" itemprop="dateModified" datetime="2020-05-25T22:04:14+08:00">2020-05-25</time>
+                <time title="修改时间：2020-05-26 00:24:03" itemprop="dateModified" datetime="2020-05-26T00:24:03+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -585,8 +575,16 @@ f[j]&=\max_{k=1}^{a_i}(f[j-k\times v_i]+k\times w_i)\\
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>真正的暴力出奇迹。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fl first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fr second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100000</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    LL l, r;</span><br><span class="line">    <span class="keyword">mutable</span> LL v;</span><br><span class="line">    Node(<span class="keyword">const</span> <span class="keyword">int</span> &amp;l, <span class="keyword">const</span> <span class="keyword">int</span> &amp;r, <span class="keyword">const</span> LL &amp;v) : l(l), r(r), v(v) &#123;&#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node &amp;o) <span class="keyword">const</span> &#123; <span class="keyword">return</span> l &lt; o.l; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">set</span>&lt;Node&gt;::iterator iter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line">LL seed, vmax;</span><br><span class="line"><span class="built_in">set</span>&lt;Node&gt; odt;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">split 函数把包含 x 的区间分成 [l, x) 和 [x, r] 两部分，</span></span><br><span class="line"><span class="comment">并返回指向后者的迭代器</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">当想要对区间 [l, r] 操作时，相当于对 [split(l), split(r+1)) 进行操作</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function">iter <span class="title">split</span><span class="params">(LL x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; n) <span class="keyword">return</span> odt.end();</span><br><span class="line">    iter it = --odt.upper_bound(Node&#123;x, <span class="number">0</span>, <span class="number">0</span>&#125;);</span><br><span class="line">    <span class="keyword">if</span> (it-&gt;l == x) <span class="keyword">return</span> it;</span><br><span class="line">    LL l = it-&gt;l, r = it-&gt;r;</span><br><span class="line">    LL v = it-&gt;v;</span><br><span class="line">    odt.erase(it);</span><br><span class="line">    odt.insert(Node(l, x - <span class="number">1</span>, v));</span><br><span class="line">    <span class="keyword">return</span> odt.insert(Node(x, r, v)).first;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">assign</span><span class="params">(LL l, LL r, LL v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    iter itr = split(r + <span class="number">1</span>), itl = split(l);</span><br><span class="line">    odt.erase(itl, itr);</span><br><span class="line">    odt.insert(Node(l, r, v));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">rnd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LL ret = seed;</span><br><span class="line">    seed = (seed * <span class="number">7</span> + <span class="number">13</span>) % <span class="number">1000000007</span>;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(LL l, LL r, LL x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    iter itr = split(r + <span class="number">1</span>), itl = split(l);</span><br><span class="line">    <span class="keyword">for</span> (; itl != itr; ++itl)</span><br><span class="line">    &#123;</span><br><span class="line">        itl-&gt;v += x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LL <span class="title">Query</span><span class="params">(LL l, LL r, LL x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    iter itr = split(r + <span class="number">1</span>), itl = split(l);</span><br><span class="line">    <span class="built_in">vector</span>&lt;pair&lt;LL, LL&gt; &gt; v;</span><br><span class="line">    <span class="keyword">for</span> (; itl != itr; ++itl) v.pb(mp(itl-&gt;v, itl-&gt;r - itl-&gt;l + <span class="number">1</span>));</span><br><span class="line">    sort(v.begin(), v.end());</span><br><span class="line">    LL now = x;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v.size(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        now -= v[i].fr;</span><br><span class="line">        <span class="keyword">if</span> (now &lt;= <span class="number">0</span>) <span class="keyword">return</span> v[i].fl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LL <span class="title">qpow</span><span class="params">(LL a, LL b, LL mod)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    a %= mod;</span><br><span class="line">    LL res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; b; b &gt;&gt;= <span class="number">1</span>, a = a * a % mod)</span><br><span class="line">        <span class="keyword">if</span> (b &amp; <span class="number">1</span>) res = res * a % mod;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LL <span class="title">Query2</span><span class="params">(LL l, LL r, LL x, LL y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LL res = <span class="number">0</span>;</span><br><span class="line">    iter itr = split(r + <span class="number">1</span>), itl = split(l);</span><br><span class="line">    <span class="keyword">for</span> (; itl != itr; ++itl)</span><br><span class="line">    &#123;</span><br><span class="line">        res = (res + qpow(itl-&gt;v, x, y) * (itl-&gt;r - itl-&gt;l + <span class="number">1</span>) % y) % y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; seed &gt;&gt; vmax;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        LL a = rnd() % vmax + <span class="number">1</span>;</span><br><span class="line">        odt.insert(Node&#123;i, i, a&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        LL op = rnd() % <span class="number">4</span> + <span class="number">1</span>, l = rnd() % n + <span class="number">1</span>, r = rnd() % n + <span class="number">1</span>;</span><br><span class="line">        LL x, y;</span><br><span class="line">        <span class="keyword">if</span> (l &gt; r) swap(l, r);</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">3</span>) x = rnd() % (r - l + <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> x = rnd() % vmax + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">4</span>) y = rnd() % vmax + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">1</span>) Add(l, r, x);</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">2</span>) assign(l, r, x);</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">3</span>) <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, Query(l, r, x));</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">4</span>) <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, Query2(l, r, x, y));</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <p><a href="https://codeforces.com/problemset/problem/896/C" target="_blank" rel="noopener">CF896C</a></p>
+<p>真正的暴力出奇迹。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/15/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -636,7 +634,7 @@ f[j]&=\max_{k=1}^{a_i}(f[j-k\times v_i]+k\times w_i)\\
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-17 00:29:12" itemprop="dateModified" datetime="2020-05-17T00:29:12+08:00">2020-05-17</time>
+                <time title="修改时间：2020-05-26 00:26:54" itemprop="dateModified" datetime="2020-05-26T00:26:54+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -684,12 +682,6 @@ f[j]&=\max_{k=1}^{a_i}(f[j-k\times v_i]+k\times w_i)\\
       
           <h2 id="线性基的构造"><a href="#线性基的构造" class="headerlink" title="线性基的构造"></a>线性基的构造</h2><p>线性基是怎么构造的？</p>
 <p>大概就是考虑每个数 $a$，从高位到低位枚举，找到在线性基 $b$ 中没出现过的 $a$ 的最高位 $i$，将 $a$ 加入到线性基$b[i]$中，高于 $i$ 的 $a$ 的二进制位用线性基中的数给异或掉(因此此时 $i$ 就是 $a$ 的最高位了)。然后用类似高斯消元的方法，先用下面的行消自己，再用自己消上面的行，把线性基消成一个上三角矩阵。</p>
-<h2 id="线性基的性质"><a href="#线性基的性质" class="headerlink" title="线性基的性质"></a>线性基的性质</h2><ul>
-<li>线性基中所有向量线性无关，也就是不能异或出 0（废话</li>
-<li>线性基中每个对角线元素为 1 的列其余元素都为 0</li>
-<li>若线性基中向量个数 $m &lt;n$，那么存在向量组线性相关，可以异或出 0，总的异或和的个数为<br>$2^m$；否则，异或和个数为 $2^m - 1$</li>
-<li>若线性基中向量个数 $m$，那么线性基中每个向量在原集合的异或和中出现的次数为 $2^{n-m}$</li>
-</ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/05/14/%E7%BA%BF%E6%80%A7%E5%9F%BA/#more" rel="contents">
@@ -739,10 +731,16 @@ f[j]&=\max_{k=1}^{a_i}(f[j-k\times v_i]+k\times w_i)\\
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-13 16:14:41 / 修改时间：16:54:26" itemprop="dateCreated datePublished" datetime="2020-05-13T16:14:41+08:00">2020-05-13</time>
+              <time title="创建时间：2020-05-13 16:14:41" itemprop="dateCreated datePublished" datetime="2020-05-13T16:14:41+08:00">2020-05-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-26 00:27:12" itemprop="dateModified" datetime="2020-05-26T00:27:12+08:00">2020-05-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -788,33 +786,6 @@ f[j]&=\max_{k=1}^{a_i}(f[j-k\times v_i]+k\times w_i)\\
 
       
           <p>昨天打了 CF614，依旧不太顺心，被 D 卡死了。比赛时一直以为是我区间中位数求的有问题，比赛后才发现是我得出的结论有问题。。</p>
-<h2 id="区间中位数"><a href="#区间中位数" class="headerlink" title="区间中位数"></a>区间中位数</h2><p>若将中位数定义为区间排序后第 $\lfloor (n + 1)/2 \rfloor$ 个数，定义数组 $b$，</p>
-<script type="math/tex; mode=display">
-\begin{aligned} 
-b_i = 
-\begin{cases} 
-1,  & a_i \ge k, \\ 
--1, & a_i < k.
-\end{cases} 
-\end{aligned}</script><p>则区间中位数大于等于 $k$ 等价于 $\sum_{i=l}^r b_i &gt; 0$。<br>利用树状数组即可在 $O(n\log n)$ 时间内求出中位数大于等于 $k$ 的子区间数量。</p>
-<p>若将中位数定义为区间排序后第 $\lfloor n / 2 \rfloor + 1$ 个数，那么定义数组 $b$，</p>
-<script type="math/tex; mode=display">
-\begin{aligned} 
-b_i = 
-\begin{cases} 
-1,  & a_i > k, \\ 
--1, & a_i \leq k.
-\end{cases} 
-\end{aligned}</script><p>则区间中位数小于等于 $k$ 等价于 $\sum_{i=l}^r b_i &lt; 0$。</p>
-<p>当然也可以将 $b$ 定义为</p>
-<script type="math/tex; mode=display">
-\begin{aligned} 
-b_i = 
-\begin{cases} 
--1,  & a_i > k, \\ 
-1, & a_i \leq k.
-\end{cases} 
-\end{aligned}</script><p>则区间中位数小于等于 $k$ 等价于 $\sum_{i=l}^r b_i &gt; 0$。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/05/13/%E5%8C%BA%E9%97%B4%E4%B8%AD%E4%BD%8D%E6%95%B0/#more" rel="contents">
@@ -872,7 +843,7 @@ b_i =
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-10 00:02:02" itemprop="dateModified" datetime="2020-03-10T00:02:02+08:00">2020-03-10</time>
+                <time title="修改时间：2020-05-26 00:27:23" itemprop="dateModified" datetime="2020-05-26T00:27:23+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -919,7 +890,7 @@ b_i =
 
       
           <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给定一个非负序列 $\{a_i\}$，定义 $\operatorname{mex}(l, r)$ 表示下标在 $l$ 和 $r$ 之间未出现的最小自然数，求</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{n}\sum_{j=i}^{n} \operatorname{mex}(i,j)</script><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>若固定左端点，那么随着右端点的增加，mex 是单调不降的。因此考虑枚举左端点 $i$，维护此时序列每个位置的 mex。每次左端点 + 1 都需要删除上一个点 $a_{i-1}$，$a_{i-1}$ 影响的范围为 $i$ 到 $a_{i-1}$ 出现的下一个位置 - 1，在这段区间内所有大于 $a_{i-1}$ 的 mex 都应该更新为 $a_{i-1}$。由于 mex 具有单调性，因此可以二分寻找大于 $a_{i-1}$ 的第一个 mex 对应的位置，用线段树维护 mex。</p>
+<script type="math/tex; mode=display">\sum_{i=1}^{n}\sum_{j=i}^{n} \operatorname{mex}(i,j)</script>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/09/HDU%204747%20Mex/#more" rel="contents">
@@ -977,7 +948,7 @@ b_i =
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-13 16:41:52" itemprop="dateModified" datetime="2020-05-13T16:41:52+08:00">2020-05-13</time>
+                <time title="修改时间：2020-05-26 00:28:20" itemprop="dateModified" datetime="2020-05-26T00:28:20+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1023,20 +994,7 @@ b_i =
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><ul>
-<li><strong>割点</strong>：无向图连通中，删去点 x 与 x 相连的边后 G 不连通，则 x 为 G 的割点。</li>
-<li><strong>割边</strong>：无向图连通中，删去边 e 后 G 不连通，则 e 称为 G 的桥或割边。</li>
-<li><strong>点双连通</strong>：若一张无向连通图不存在割点（点连通度等于一），则称它为点双连通。</li>
-<li><strong>边双连通</strong>：若一张无向连通图不存在桥（边连通度等于一），则称它为边双连通。</li>
-<li><strong>点双连通分量(v-DCC)</strong>：无向图的极大点双连通子图。</li>
-<li><strong>边双连通分量(e-DCC)</strong>：无向图的极大边双连通子图。</li>
-</ul>
-<p>Tarjan 算法可以求：</p>
-<ol>
-<li>割点、割边</li>
-<li>无向图的双连通分量</li>
-<li>有向图的强连通分量</li>
-</ol>
+          <p>From《算法竞赛进阶指南》。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/02/Tarjan%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
@@ -1094,7 +1052,7 @@ b_i =
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-06 15:08:58" itemprop="dateModified" datetime="2020-03-06T15:08:58+08:00">2020-03-06</time>
+                <time title="修改时间：2020-05-26 00:28:57" itemprop="dateModified" datetime="2020-05-26T00:28:57+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1140,7 +1098,7 @@ b_i =
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>看了 lyd 书上写的差分约束，在这里<del>抄</del>总结下。</p>
+          <p>From《算法竞赛进阶指南》。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/02/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%AC%94%E8%AE%B0/#more" rel="contents">
@@ -1198,7 +1156,7 @@ b_i =
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-09 22:57:14" itemprop="dateModified" datetime="2020-03-09T22:57:14+08:00">2020-03-09</time>
+                <time title="修改时间：2020-05-26 00:29:17" itemprop="dateModified" datetime="2020-05-26T00:29:17+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1246,11 +1204,6 @@ b_i =
       
           <p>最小圆覆盖板子。</p>
 <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>在一个平面上有 $n$ 个点，求一个半径最小的圆，能覆盖所有的点。</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><a href="https://oi-wiki.org/geometry/random-incremental/" target="_blank" rel="noopener">OI Wiki</a></p>
-<p>为什么是 $O(n)$ 的？</p>
-<p>因为对于第 $i$ 个点，它在前 $i$ 个点形成的最小圆上的概率为 $\frac{3}{i}$。</p>
-<p>如何求三个点形成的圆？</p>
-<p>把三个点代入圆的方程，联立解出 $r$, $x_0$, $y_0$。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/02/26/%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96/#more" rel="contents">
@@ -1358,7 +1311,7 @@ b_i =
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

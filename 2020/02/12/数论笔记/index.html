@@ -19,15 +19,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="逆元$a$ 的逆元，即为满足 $a\times a^{-1}\equiv 1 \pmod{p}$ 的 $a^{-1}$。 扩展欧几里得求逆元可以用扩展欧几里得算法求出 $a$ 的逆元，同时根据裴蜀定理，我们又能知道若 $\gcd(a,p)\neq 1$，则 $a$ 不存在逆元。 费马小定理求逆元更简单的求逆元方法则是利用费马小定理。  费马小定理： 若 $p$ 为质数，$a$ 为正整数，且  $">
+  <meta name="description" content="主要是写给自己看的，所以写的很简洁，很多东西也是直接复制其他博客、资料的，谨慎参考。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数论笔记">
 <meta property="og:url" content="http://yoursite.com/2020/02/12/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Alneai&#39;s Blog">
-<meta property="og:description" content="逆元$a$ 的逆元，即为满足 $a\times a^{-1}\equiv 1 \pmod{p}$ 的 $a^{-1}$。 扩展欧几里得求逆元可以用扩展欧几里得算法求出 $a$ 的逆元，同时根据裴蜀定理，我们又能知道若 $\gcd(a,p)\neq 1$，则 $a$ 不存在逆元。 费马小定理求逆元更简单的求逆元方法则是利用费马小定理。  费马小定理： 若 $p$ 为质数，$a$ 为正整数，且  $">
+<meta property="og:description" content="主要是写给自己看的，所以写的很简洁，很多东西也是直接复制其他博客、资料的，谨慎参考。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-12T12:12:41.000Z">
-<meta property="article:modified_time" content="2020-05-21T01:08:34.070Z">
+<meta property="article:modified_time" content="2020-05-25T16:33:30.441Z">
 <meta property="article:author" content="Alneai">
 <meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
@@ -214,7 +214,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-21 09:08:34" itemprop="dateModified" datetime="2020-05-21T09:08:34+08:00">2020-05-21</time>
+                <time title="修改时间：2020-05-26 00:33:30" itemprop="dateModified" datetime="2020-05-26T00:33:30+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,7 +260,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <hr>
+        <p>主要是写给自己看的，所以写的很简洁，很多东西也是直接复制其他博客、资料的，谨慎参考。</p>
+<a id="more"></a>
 <h3 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h3><p>$a$ 的逆元，即为满足 $a\times a^{-1}\equiv 1 \pmod{p}$ 的 $a^{-1}$。</p>
 <h4 id="扩展欧几里得求逆元"><a href="#扩展欧几里得求逆元" class="headerlink" title="扩展欧几里得求逆元"></a>扩展欧几里得求逆元</h4><p>可以用扩展欧几里得算法求出 $a$ 的逆元，同时根据裴蜀定理，我们又能知道若 $\gcd(a,p)\neq 1$，则 $a$ 不存在逆元。</p>
 <h4 id="费马小定理求逆元"><a href="#费马小定理求逆元" class="headerlink" title="费马小定理求逆元"></a>费马小定理求逆元</h4><p>更简单的求逆元方法则是利用费马小定理。</p>
@@ -274,7 +275,6 @@
 <p>两边同乘 $b^{-1}\times (a \bmod b)^{-1}$，得</p>
 <p>$b^{-1} = -\lfloor \dfrac{a}{b}\rfloor \times (a \bmod b)^{-1} \pmod{a}$</p>
 <p>由于 $a \bmod b$ 小于 $b$ ，因此可以递推求解。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inverse</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    inv[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">        inv[i] = (p - p / i) * inv[p % i] % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
 <h4 id="线性求阶乘的逆元"><a href="#线性求阶乘的逆元" class="headerlink" title="线性求阶乘的逆元"></a>线性求阶乘的逆元</h4><p>可以先用费马小定理求出 $n!$ 的逆元，然后从 $n$ 乘到 $1$ 能够得到所有 $(i!)^{-1}$，</p>
 <h4 id="线性求任意-n-个数的逆元"><a href="#线性求任意-n-个数的逆元" class="headerlink" title="线性求任意$n$个数的逆元"></a>线性求任意$n$个数的逆元</h4><p>与求阶乘逆元的原理类似。求出 $a_i$ 的前缀积 $s_i$，用费马小定理或扩欧能够求出 $s_n^{-1}$，进而求出 $s_i^{-1}(1 \leq i \leq n)$，则 $a_i^{-1}=s_{i}^{-1}\times s_{i-1}$</p>
 <hr>
@@ -480,7 +480,7 @@ a^{b \bmod \varphi(p) + \varphi(p)}, & \gcd(a,\,p)\ne1,\,b\ge\varphi(p)
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
