@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-25T15:50:39.130Z</updated>
+  <updated>2020-05-25T16:16:54.092Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,50 +18,23 @@
   
   <entry>
     <title>「2020.5.25训练赛」 Tyher的烦恼</title>
-    <link href="http://yoursite.com/2020/05/25/2020.5.25%E8%AE%AD%E7%BB%83%E8%B5%9B%20Tyher%E7%9A%84%E7%83%A6%E6%81%BC/"/>
-    <id>http://yoursite.com/2020/05/25/2020.5.25%E8%AE%AD%E7%BB%83%E8%B5%9B%20Tyher%E7%9A%84%E7%83%A6%E6%81%BC/</id>
-    <published>2020-05-25T13:49:43.000Z</published>
-    <updated>2020-05-25T15:50:39.130Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给你 $n(n &amp;lt;= 10^9)$ 个盒子，初始全为空。有 $m(m&amp;lt;=50000)$
-        
-      
-    
-    </summary>
-    
-    
-      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="珂朵莉树" scheme="http://yoursite.com/tags/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/"/>
-    
-      <category term="类欧几里得算法" scheme="http://yoursite.com/tags/%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「2020.5.25训练赛」 Tyher的烦恼</title>
     <link href="http://yoursite.com/2020/05/25/UPC%20Tyher%E7%9A%84%E7%83%A6%E6%81%BC/"/>
     <id>http://yoursite.com/2020/05/25/UPC%20Tyher%E7%9A%84%E7%83%A6%E6%81%BC/</id>
     <published>2020-05-25T13:49:43.000Z</published>
-    <updated>2020-05-25T14:05:39.042Z</updated>
+    <updated>2020-05-25T16:16:54.092Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给你 $n(n &amp;lt;= 10^9)$ 个盒子，&lt;/p&gt;
-&lt;h2 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot;
-        
-      
+      &lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给你 $n(n &amp;lt;= 10^9)$ 个盒子，初始全为空。有 $m(m&amp;lt;=50000)$ 个操作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将编号为 $L$ 到 $R$ 的盒子里的石头数量变为 $(X-L+1)\times A \bmod B$，$X$ 为盒子编号；&lt;/li&gt;
+&lt;li&gt;查询 $L$ 到 $R$ 的盒子的石头总数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot; class=&quot;headerlink&quot; title=&quot;题解&quot;&gt;&lt;/a&gt;题解&lt;/h2&gt;&lt;p&gt;看到区间操作以及 $10^9$ 这么鬼畜的数据范围，就能想到要用珂朵莉树。然而我们发现，查询时我们要计算这么个东西：&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{i=v}^{v+L-1}i\cdot a \bmod b&lt;/script&gt;&lt;p&gt;这里只对每一项取模，而并没有对和取模，这就比较难办了。&lt;/p&gt;
+&lt;p&gt;我们考虑去掉取模：&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{i=v}^{v+L-1}i - \left\lfloor \frac{i\cdot a}{b} \right\rfloor b=
+\sum_{i=v}^{v+L-1}i - b \sum_{i=v}^{v+L-1}\left\lfloor \frac{i\cdot a}{b} \right\rfloor&lt;/script&gt;&lt;p&gt;后面那一项直接用类欧几里得算法求就可以了。总的时间复杂度在随机数据下为 $O(n\log n \log \log n)$&lt;/p&gt;
     
     </summary>
     
