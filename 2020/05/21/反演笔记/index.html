@@ -19,17 +19,16 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="数论函数数论函数： 定义域为正整数的函数。 积性函数： 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)&#x3D;f(a)\times f(b)$ 的函数 $f$ 完全积性函数： 对于所有正整数 $a, b$，均满足 $f(ab)&#x3D;f(a)\times f(b)$ 的函数 $f$ 对于一个积性函数 $f$，$f(n)&#x3D;f(\prod p_i^{a_i})&#x3D;\prod f(p_i^{a_i})$">
+  <meta name="description" content="以下内容来自 ICPCCamp2015 吕凯风《炫酷反演魔术》。 反演对于 $f(n)&#x3D;\sum_{k}a_{n,k}g(k)$，已知 $f$ 求 $g$ 的过程就称为反演。 二项式反演假如我们已经知道 f(n)&#x3D;\sum_{k&#x3D;0}^{n}\binom{n}{k}g(k)以及 $f(n)$，我们想要求出 $g(n)$ 高斯消元 首先，我们有一个式子 \sum_{k&#x3D;0}^{n}(-1)^k\b">
 <meta property="og:type" content="article">
 <meta property="og:title" content="反演笔记">
 <meta property="og:url" content="http://yoursite.com/2020/05/21/%E5%8F%8D%E6%BC%94%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Alneai&#39;s Blog">
-<meta property="og:description" content="数论函数数论函数： 定义域为正整数的函数。 积性函数： 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)&#x3D;f(a)\times f(b)$ 的函数 $f$ 完全积性函数： 对于所有正整数 $a, b$，均满足 $f(ab)&#x3D;f(a)\times f(b)$ 的函数 $f$ 对于一个积性函数 $f$，$f(n)&#x3D;f(\prod p_i^{a_i})&#x3D;\prod f(p_i^{a_i})$">
+<meta property="og:description" content="以下内容来自 ICPCCamp2015 吕凯风《炫酷反演魔术》。 反演对于 $f(n)&#x3D;\sum_{k}a_{n,k}g(k)$，已知 $f$ 求 $g$ 的过程就称为反演。 二项式反演假如我们已经知道 f(n)&#x3D;\sum_{k&#x3D;0}^{n}\binom{n}{k}g(k)以及 $f(n)$，我们想要求出 $g(n)$ 高斯消元 首先，我们有一个式子 \sum_{k&#x3D;0}^{n}(-1)^k\b">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-21T01:33:44.000Z">
-<meta property="article:modified_time" content="2020-05-24T13:45:04.838Z">
+<meta property="article:modified_time" content="2020-05-26T04:46:20.121Z">
 <meta property="article:author" content="Alneai">
-<meta property="article:tag" content="数论">
 <meta property="article:tag" content="莫比乌斯反演">
 <meta name="twitter:card" content="summary">
 
@@ -215,7 +214,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-24 21:45:04" itemprop="dateModified" datetime="2020-05-24T21:45:04+08:00">2020-05-24</time>
+                <time title="修改时间：2020-05-26 12:46:20" itemprop="dateModified" datetime="2020-05-26T12:46:20+08:00">2020-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,54 +260,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="数论函数"><a href="#数论函数" class="headerlink" title="数论函数"></a>数论函数</h2><p><strong>数论函数：</strong> 定义域为正整数的函数。</p>
-<p><strong>积性函数：</strong> 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)=f(a)\times f(b)$ 的函数 $f$</p>
-<p><strong>完全积性函数：</strong> 对于所有正整数 $a, b$，均满足 $f<br>(ab)=f(a)\times f(b)$ 的函数 $f$</p>
-<p>对于一个积性函数 $f$，$f(n)=f(\prod p_i^{a_i})=\prod f(p_i^{a_i})$，若 $f$ 还满足完全积性，则 $f(n)=\prod f(p_i)^{a_i}$</p>
-<a id="more"></a>
-<h2 id="常见积性函数"><a href="#常见积性函数" class="headerlink" title="常见积性函数"></a>常见积性函数</h2><p><strong>欧拉函数 $\varphi(n)$</strong></p>
-<p><strong>莫比乌斯函数 $\mu(n)$：</strong> 若 $n$ 有平方数因子，则 $\mu(n)=0$。否则若 $n$ 为 $k$ 个不同质数之积，则 $\mu(n)=(-1)^k$。</p>
-<script type="math/tex; mode=display">\mu(n)=
-\begin{cases}
-1      & n=1\\
-(-1)^k & n=p_1p_2\cdots p_k\\
-0      & \text{else}
-\end{cases}</script><p><strong>除数函数：</strong> $\sigma_k(n)$ 表示 $n$ 的所有正因子的 $k$ 次幂之和。</p>
-<p>$d(n)=\sigma_0(n)$ 表示 $n$ 的正因子个数，$\sigma(n)=\sigma_1(n)$ 表示 $n$ 的所有正因子之和。</p>
-<p><strong>幂函数：</strong> $\operatorname{Id}_k(n)=n^k$，$1(n)=\operatorname{Id}_0(n)=1$，$\operatorname{Id}(n)=\operatorname{Id}_1(n)=n$</p>
-<p><strong>单位函数：</strong><br>$e(n)=\varepsilon(n)=<br>\begin{cases}<br>1 &amp; n = 1\\<br>0 &amp; n &gt; 1<br>\end{cases}<br>$</p>
-<h2 id="狄利克雷（Dirichlet）卷积"><a href="#狄利克雷（Dirichlet）卷积" class="headerlink" title="狄利克雷（Dirichlet）卷积"></a>狄利克雷（Dirichlet）卷积</h2><p>定义两个数论函数 $f$，$g$ 的 Dirichlet 卷积：</p>
-<script type="math/tex; mode=display">(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})</script><h3 id="狄利克雷卷积的性质"><a href="#狄利克雷卷积的性质" class="headerlink" title="狄利克雷卷积的性质"></a>狄利克雷卷积的性质</h3><p>交换律：</p>
-<script type="math/tex; mode=display">f*g=g*f</script><p>结合律：</p>
-<script type="math/tex; mode=display">(f*g)*h=f*(g*h)</script><p>分配律：</p>
-<script type="math/tex; mode=display">f*(g+h)=f*g+f*h</script><p>单位元：</p>
-<script type="math/tex; mode=display">f*\varepsilon=\varepsilon*f</script><h3 id="常见的狄利克雷卷积"><a href="#常见的狄利克雷卷积" class="headerlink" title="常见的狄利克雷卷积"></a>常见的狄利克雷卷积</h3><ul>
-<li><p>$d(n)=\sum_{d|n}1$，即 $d=1*1$</p>
-</li>
-<li><p>$\sigma(n)=\sum_{d|n}d$，即 $\sigma=1*1$</p>
-</li>
-<li><p>$\varphi(n)=\sum_{d|n}\mu(d)\frac{n}{d}$，即 $\varphi=\mu*\operatorname{Id}$</p>
-</li>
-<li><p>$\varepsilon(n)=\sum_{d|n}\mu(d)$，即 $\varepsilon=\mu*1$</p>
-</li>
-</ul>
-<h3 id="一些结论和证明"><a href="#一些结论和证明" class="headerlink" title="一些结论和证明"></a>一些结论和证明</h3><p>$n = \sum_{d|n}\varphi(d)$。</p>
-<p>$\varepsilon=\mu*1$ 即为 $\sum_{d|n}\mu(d)=[n=1]$。</p>
-<p>证明：$n=1$ 时 $\sum_{d|n}\mu(d)=1$。</p>
-<p>$n \neq 1$ 时，设 $n$ 有 $k$ 个质因子，只有当 $n$ 的因子中所有质因子次数都为 $1$ 时，$\mu$ 不为 $0$，即</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\sum_{d|n}\mu(d) &=\sum_{i=0}^{k}(-1)^{i}C(k,i)\\
-                 &= (1-1)^k\\
-                 &=0
-\end{aligned}</script><p>因此 $\sum_{d|n}\mu(d)=[n=1]$。</p>
-<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>若两个函数 $f$，$g$ 满足：</p>
-<script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则它们也满足</p>
-<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(d)f(\frac{n}{d})</script><p>反之亦然，即</p>
-<script type="math/tex; mode=display">f=g*1\Leftrightarrow g=\mu *f</script><p>它的另一个形式：</p>
-<script type="math/tex; mode=display">f(n)=\sum_{n|d}g(d)\Leftrightarrow g(n)=\sum_{n|d}\mu(d)f(\frac{d}{n})</script><hr>
-<h2 id="炫酷反演魔术"><a href="#炫酷反演魔术" class="headerlink" title="炫酷反演魔术"></a>炫酷反演魔术</h2><p>以下内容来自 ICPCCamp2015 吕凯风《炫酷反演魔术》。</p>
-<h3 id="反演"><a href="#反演" class="headerlink" title="反演"></a>反演</h3><p>对于 $f(n)=\sum_{k}a_{n,k}g(k)$，已知 $f$ 求 $g$ 的过程就称为反演。</p>
-<h3 id="二项式反演"><a href="#二项式反演" class="headerlink" title="二项式反演"></a>二项式反演</h3><p>假如我们已经知道</p>
+        <hr>
+<p>以下内容来自 ICPCCamp2015 吕凯风《炫酷反演魔术》。</p>
+<h2 id="反演"><a href="#反演" class="headerlink" title="反演"></a>反演</h2><p>对于 $f(n)=\sum_{k}a_{n,k}g(k)$，已知 $f$ 求 $g$ 的过程就称为反演。</p>
+<h2 id="二项式反演"><a href="#二项式反演" class="headerlink" title="二项式反演"></a>二项式反演</h2><p>假如我们已经知道</p>
 <script type="math/tex; mode=display">f(n)=\sum_{k=0}^{n}\binom{n}{k}g(k)</script><p>以及 $f(n)$，我们想要求出 $g(n)$ <del>高斯消元</del></p>
 <p>首先，我们有一个式子</p>
 <script type="math/tex; mode=display">\sum_{k=0}^{n}(-1)^k\binom{n}{k}=[n=0]</script><p>然后，写一句废话</p>
@@ -324,7 +279,7 @@ g(n)&=\sum_{m=0}^{n}\sum_{k=0}^{n-m}(-1)^k\binom{n}{k}\binom{n-k}{m}g(m)
 \end{aligned}</script><p>这样，我们空手套白狼得到了二项式反演：</p>
 <p>若有</p>
 <script type="math/tex; mode=display">f(n)=\sum_{k=0}^{n}\binom{n}{k}g(k)</script><p>则也有</p>
-<script type="math/tex; mode=display">g(n)=\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(k)</script><h3 id="莫比乌斯反演-1"><a href="#莫比乌斯反演-1" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h3><p>让我们用同样的方法研究如下式子</p>
+<script type="math/tex; mode=display">g(n)=\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(k)</script><h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>让我们用同样的方法研究如下式子</p>
 <script type="math/tex; mode=display">f(n)=\sum_{d|k}g(d)</script><p>首先，我们有</p>
 <script type="math/tex; mode=display">\sum_{d|n}\mu(d)=[n=1]</script><p>写一句废话</p>
 <script type="math/tex; mode=display">g(n)=\sum_{m|n}[\frac{n}{m}=1]g(m)</script><p>然后</p>
@@ -336,7 +291,7 @@ g(n)&=\sum_{m|n}[\frac{n}{m}=1]g(m)\\
 \end{aligned}</script><p>我们便得到了莫比乌斯反演：</p>
 <p>若有</p>
 <script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则也有</p>
-<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(\frac{n}{d})f(d)</script><h3 id="矩阵形式"><a href="#矩阵形式" class="headerlink" title="矩阵形式"></a>矩阵形式</h3><p>vfk 告诉我们，我们在上面真正用到的是这个东西</p>
+<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(\frac{n}{d})f(d)</script><h2 id="矩阵形式"><a href="#矩阵形式" class="headerlink" title="矩阵形式"></a>矩阵形式</h2><p>vfk 告诉我们，我们在上面真正用到的是这个东西</p>
 <script type="math/tex; mode=display">[m\ |\ n]\sum_{d|\frac{n}{m}}\mu(d)=[\frac{n}{m}=1]=[n=m]</script><p>令 $c=md$，左边可以写成这样</p>
 <script type="math/tex; mode=display">\sum_{c|n}[m\ |\ c]\mu(\frac{c}{m})</script><p>令 $A_{c,n}=[c | n]$，$B_{m,c}=[m | c]\mu(\frac{c}{m})$</p>
 <p>刚才的结论就是 $BA=I$</p>
@@ -356,7 +311,7 @@ x&=Bb
 <script type="math/tex; mode=display">\sum_{k=1}^{n}a_{n,k}\mu(k,m)=[n=m]</script><p>这个可以递推求出。</p>
 <p>此时答案已经很明显了：</p>
 <script type="math/tex; mode=display">g(n)=\sum_{k=1}^n \mu(n,k)f(k)</script><p>然而这并没有什么用。。这里的 $\mu$ 其实就是逆矩阵，$\mu$ 一般也是比较难求的。。</p>
-<h3 id="UOJ-Round-5-C"><a href="#UOJ-Round-5-C" class="headerlink" title="UOJ Round#5 C"></a>UOJ Round#5 C</h3><script type="math/tex; mode=display">\sum_{j = 1}^{n} \gcd(i, j)^c \cdot \text{lcm}(i, j)^d \cdot x_j \equiv b_i \pmod{p}</script><p>给出 $n,c,d,b_i$，求出 $x_i$。</p>
+<h2 id="UOJ-Round-5-C"><a href="#UOJ-Round-5-C" class="headerlink" title="UOJ Round#5 C"></a>UOJ Round#5 C</h2><script type="math/tex; mode=display">\sum_{j = 1}^{n} \gcd(i, j)^c \cdot \text{lcm}(i, j)^d \cdot x_j \equiv b_i \pmod{p}</script><p>给出 $n,c,d,b_i$，求出 $x_i$。</p>
 <p><a href="http://vfleaking.blog.uoj.ac/blog/62" target="_blank" rel="noopener">UOJ</a></p>
 <p>由小学奥数我们知道这个东西就是</p>
 <script type="math/tex; mode=display">\sum_{j=1}^n \gcd(i,j)^{c - d} \cdot i^d \cdot j^d \cdot x_j = b_i</script><p>vfk 告诉我们，这样的东西都可做</p>
@@ -381,7 +336,6 @@ x&=Bb
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag"># 数论</a>
               <a href="/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/" rel="tag"># 莫比乌斯反演</a>
           </div>
 
@@ -458,7 +412,7 @@ x&=Bb
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数论函数"><span class="nav-number">1.</span> <span class="nav-text">数论函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见积性函数"><span class="nav-number">2.</span> <span class="nav-text">常见积性函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狄利克雷（Dirichlet）卷积"><span class="nav-number">3.</span> <span class="nav-text">狄利克雷（Dirichlet）卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#狄利克雷卷积的性质"><span class="nav-number">3.1.</span> <span class="nav-text">狄利克雷卷积的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的狄利克雷卷积"><span class="nav-number">3.2.</span> <span class="nav-text">常见的狄利克雷卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些结论和证明"><span class="nav-number">3.3.</span> <span class="nav-text">一些结论和证明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#莫比乌斯反演"><span class="nav-number">4.</span> <span class="nav-text">莫比乌斯反演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#炫酷反演魔术"><span class="nav-number">5.</span> <span class="nav-text">炫酷反演魔术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反演"><span class="nav-number">5.1.</span> <span class="nav-text">反演</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二项式反演"><span class="nav-number">5.2.</span> <span class="nav-text">二项式反演</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#莫比乌斯反演-1"><span class="nav-number">5.3.</span> <span class="nav-text">莫比乌斯反演</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵形式"><span class="nav-number">5.4.</span> <span class="nav-text">矩阵形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UOJ-Round-5-C"><span class="nav-number">5.5.</span> <span class="nav-text">UOJ Round#5 C</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#反演"><span class="nav-number">1.</span> <span class="nav-text">反演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二项式反演"><span class="nav-number">2.</span> <span class="nav-text">二项式反演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#莫比乌斯反演"><span class="nav-number">3.</span> <span class="nav-text">莫比乌斯反演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵形式"><span class="nav-number">4.</span> <span class="nav-text">矩阵形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UOJ-Round-5-C"><span class="nav-number">5.</span> <span class="nav-text">UOJ Round#5 C</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -474,7 +428,7 @@ x&=Bb
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

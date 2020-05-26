@@ -1,6 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>莫比乌斯反演</title>
+    <url>/2020/05/26/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</url>
+    <content><![CDATA[<h2 id="数论函数"><a href="#数论函数" class="headerlink" title="数论函数"></a>数论函数</h2><p><strong>数论函数：</strong> 定义域为正整数的函数。</p>
+<p><strong>积性函数：</strong> 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)=f(a)\times f(b)$ 的函数 $f$</p>
+<p><strong>完全积性函数：</strong> 对于所有正整数 $a, b$，均满足 $f<br>(ab)=f(a)\times f(b)$ 的函数 $f$</p>
+<p>对于一个积性函数 $f$，$f(n)=f(\prod p_i^{a_i})=\prod f(p_i^{a_i})$，若 $f$ 还满足完全积性，则 $f(n)=\prod f(p_i)^{a_i}$</p>
+<a id="more"></a>
+<h2 id="常见积性函数"><a href="#常见积性函数" class="headerlink" title="常见积性函数"></a>常见积性函数</h2><p><strong>欧拉函数 $\varphi(n)$</strong></p>
+<p><strong>莫比乌斯函数 $\mu(n)$：</strong> 若 $n$ 有平方数因子，则 $\mu(n)=0$。否则若 $n$ 为 $k$ 个不同质数之积，则 $\mu(n)=(-1)^k$。</p>
+<script type="math/tex; mode=display">\mu(n)=
+\begin{cases}
+1      & n=1\\
+(-1)^k & n=p_1p_2\cdots p_k\\
+0      & \text{else}
+\end{cases}</script><p><strong>除数函数：</strong> $\sigma_k(n)$ 表示 $n$ 的所有正因子的 $k$ 次幂之和。</p>
+<p>$d(n)=\sigma_0(n)$ 表示 $n$ 的正因子个数，$\sigma(n)=\sigma_1(n)$ 表示 $n$ 的所有正因子之和。</p>
+<p><strong>幂函数：</strong> $\operatorname{Id}_k(n)=n^k$，$1(n)=\operatorname{Id}_0(n)=1$，$\operatorname{Id}(n)=\operatorname{Id}_1(n)=n$</p>
+<p><strong>单位函数：</strong><br>$e(n)=\varepsilon(n)=<br>\begin{cases}<br>1 &amp; n = 1\\<br>0 &amp; n &gt; 1<br>\end{cases}<br>$</p>
+<h2 id="狄利克雷（Dirichlet）卷积"><a href="#狄利克雷（Dirichlet）卷积" class="headerlink" title="狄利克雷（Dirichlet）卷积"></a>狄利克雷（Dirichlet）卷积</h2><p>定义两个数论函数 $f$，$g$ 的 Dirichlet 卷积：</p>
+<script type="math/tex; mode=display">(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})</script><h3 id="狄利克雷卷积的性质"><a href="#狄利克雷卷积的性质" class="headerlink" title="狄利克雷卷积的性质"></a>狄利克雷卷积的性质</h3><p>交换律：</p>
+<script type="math/tex; mode=display">f*g=g*f</script><p>结合律：</p>
+<script type="math/tex; mode=display">(f*g)*h=f*(g*h)</script><p>分配律：</p>
+<script type="math/tex; mode=display">f*(g+h)=f*g+f*h</script><p>单位元：</p>
+<script type="math/tex; mode=display">f*\varepsilon=\varepsilon*f</script><h3 id="常见的狄利克雷卷积"><a href="#常见的狄利克雷卷积" class="headerlink" title="常见的狄利克雷卷积"></a>常见的狄利克雷卷积</h3><ul>
+<li><p>$d(n)=\sum_{d|n}1$，即 $d=1*1$</p>
+</li>
+<li><p>$\sigma(n)=\sum_{d|n}d$，即 $\sigma=1*1$</p>
+</li>
+<li><p>$\varphi(n)=\sum_{d|n}\mu(d)\frac{n}{d}$，即 $\varphi=\mu*\operatorname{Id}$</p>
+</li>
+<li><p>$\varepsilon(n)=\sum_{d|n}\mu(d)$，即 $\varepsilon=\mu*1$</p>
+</li>
+</ul>
+<h3 id="一些结论和证明"><a href="#一些结论和证明" class="headerlink" title="一些结论和证明"></a>一些结论和证明</h3><p>$n = \sum_{d|n}\varphi(d)$。</p>
+<p>$1$ 到 $n$ 中与 $n(n&gt;1)$ 互质的数的和为 $\dfrac{n\times \varphi(n)}{2}$。</p>
+<p>$\varepsilon=\mu*1$ 即为 $\sum_{d|n}\mu(d)=[n=1]$。</p>
+<p>证明：$n=1$ 时 $\sum_{d|n}\mu(d)=1$。</p>
+<p>$n \neq 1$ 时，设 $n$ 有 $k$ 个质因子，只有当 $n$ 的因子中所有质因子次数都为 $1$ 时，$\mu$ 不为 $0$，即</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\sum_{d|n}\mu(d) &=\sum_{i=0}^{k}(-1)^{i}C(k,i)\\
+                 &= (1-1)^k\\
+                 &=0
+\end{aligned}</script><p>因此 $\sum_{d|n}\mu(d)=[n=1]$。</p>
+<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>若两个函数 $f$，$g$ 满足：</p>
+<script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则它们也满足</p>
+<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(d)f(\frac{n}{d})</script><p>反之亦然，即</p>
+<script type="math/tex; mode=display">f=g*1\Leftrightarrow g=\mu *f</script><p>它的另一个形式：</p>
+<script type="math/tex; mode=display">f(n)=\sum_{n|d}g(d)\Leftrightarrow g(n)=\sum_{n|d}\mu(d)f(\frac{d}{n})</script><h2 id="线性筛"><a href="#线性筛" class="headerlink" title="线性筛"></a>线性筛</h2><p>反演的题目经常会需要快速求积性函数，这时就要用到线性筛。</p>
+<h3 id="线性筛质数"><a href="#线性筛质数" class="headerlink" title="线性筛质数"></a>线性筛质数</h3><p>设 $pr_i$ 表示 $i$ 的最小质因子。枚举所有不超过 $pr_i$ 的质数 $p$，使 $pr_(i\cdot p) = p$，相当于将每个数的质因子降序分解，每个数只会被它的最小质因子筛一次，因此复杂度是 $O(n)$ 的。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shaker</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pr[i]) prime[++cnt] = pr[i] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt; j++)</span><br><span class="line">        &#123;</span><br><span class="line">			<span class="keyword">int</span> k = i * prime[j];</span><br><span class="line">			<span class="keyword">if</span> (k &gt; x) <span class="keyword">break</span>;</span><br><span class="line">            pr[k] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="线性筛积性函数"><a href="#线性筛积性函数" class="headerlink" title="线性筛积性函数"></a>线性筛积性函数</h3><p>利用线性筛求解每个数 $n$ 的最小质因子 $p$ 的次数 $k$：令 $n = pm$，由于 $p$ 是 $n$ 最小的质因子，若 $p^2  |  n$<br>，则 $p  |  m$ ，并且 $p$ 也是 $m$ 最小的质因子，这样在筛法的同时即可算出新筛去的合数的最小质因子的次数。</p>
+<p>这样在求解积性函数时，我们能利用 $f(n)=f(p^k)f(\frac{n}{p^k})$，在线性筛的同时快速求出 $f(n)$。</p>
+<h4 id="线性筛欧拉函数"><a href="#线性筛欧拉函数" class="headerlink" title="线性筛欧拉函数"></a>线性筛欧拉函数</h4><p>$\varphi(p^k)=(p-1)p^{k-1}$，因此筛法时，若 $p | m$，$\varphi$ 就乘上 $p$，否则乘上 $p-1$。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shaker</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pr[i]) prime[++cnt] = pr[i] = i, phi[i] = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt; j++)</span><br><span class="line">        &#123;</span><br><span class="line">			<span class="keyword">int</span> k = i * prime[j];</span><br><span class="line">			<span class="keyword">if</span> (k &gt; x) <span class="keyword">break</span>;</span><br><span class="line">            pr[k] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                phi[k] = phi[i] * prime[j];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            phi[k] = phi[i] * (prime[j] - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="线性筛莫比乌斯函数"><a href="#线性筛莫比乌斯函数" class="headerlink" title="线性筛莫比乌斯函数"></a>线性筛莫比乌斯函数</h4><p>只有当 $k=1$ 时 $\mu(p^k)=-1$，否则 $\mu(p^k)=0$。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shaker</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pr[i]) prime[++cnt] = pr[i] = i, mu[i] = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt; j++)</span><br><span class="line">        &#123;</span><br><span class="line">			<span class="keyword">int</span> k = i * prime[j];</span><br><span class="line">			<span class="keyword">if</span> (k &gt; x) <span class="keyword">break</span>;</span><br><span class="line">            pr[k] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                mu[k] = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            mu[k] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="筛法求约数个数、约数和"><a href="#筛法求约数个数、约数和" class="headerlink" title="筛法求约数个数、约数和"></a>筛法求约数个数、约数和</h4><p>约数个数 $d_i$ 是积性函数，因此也可以用筛法求。类似的可以求约数和、最小质因子 $k$ 次幂的和。</p>
+<p>求约数个数。$num_i$ 表示 $i$ 的最小质因子出现次数。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shaker</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    d[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pr[i]) prime[++cnt] = pr[i] = i, d[i] = <span class="number">2</span>, num[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt; j++)</span><br><span class="line">        &#123;</span><br><span class="line">			<span class="keyword">int</span> k = i * prime[j];</span><br><span class="line">			<span class="keyword">if</span> (k &gt; x) <span class="keyword">break</span>;</span><br><span class="line">            pr[k] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                num[k] = num[i] + <span class="number">1</span>;</span><br><span class="line">                d[k] = d[i] / num[k] * (num[k] + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            num[k] = <span class="number">1</span>;</span><br><span class="line">            d[k] = d[i] * <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>求约数和。$f_i$ 表示 $i$ 的约数和，$g_i$ 表示 $i$ 的最小质因子的 $p^0+p^1+p^2+\cdots +p^k$.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shaker</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    g[<span class="number">1</span>] = f[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pr[i]) prime[++cnt] = pr[i] = i, g[i] = f[i] = i + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt; j++)</span><br><span class="line">        &#123;</span><br><span class="line">			<span class="keyword">int</span> k = i * prime[j];</span><br><span class="line">			<span class="keyword">if</span> (k &gt; x) <span class="keyword">break</span>;</span><br><span class="line">            pr[k] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                g[k] = g[i] * prime[j] + <span class="number">1</span>;</span><br><span class="line">                f[k] = f[i] / g[i] * g[k];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            g[k] = prime[j] + <span class="number">1</span>;</span><br><span class="line">            f[k] = f[i] * f[prime[j]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="BZOJ-2705"><a href="#BZOJ-2705" class="headerlink" title="BZOJ 2705"></a>BZOJ 2705</h3><p>求</p>
+<script type="math/tex; mode=display">F(n)=\sum_{i=1}^n \gcd(i,n)</script><script type="math/tex; mode=display">\begin{aligned}
+F(n)&=\sum_{i=1}^n \gcd(i,n)\\
+&= \sum_{i=1}^n \sum_{d}[d\ |\ \gcd(i,n)] \ \varphi(d)\\
+&=\sum_{i=1}^n \sum_{d} [d\ |\ i][d\ | \ n]\ \varphi(d)\\
+&=\sum_{d|n}\varphi(d)\sum_{i=1}^n [d\ |\ i]\\
+&=\sum_{d|i}\varphi(d)\frac{n}{d}
+\end{aligned}</script><p>$F$ 是积性函数，因此直接 $O(\sqrt n)$ 质因数分解得到答案。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line">LL n, ans = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Factor</span><span class="params">(LL x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (LL i = <span class="number">2</span>; i * i &lt;= x; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (x % i == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			LL p = i, k = <span class="number">0</span>, res = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span> (x % i == <span class="number">0</span>) x /= i, k++, res *= p;</span><br><span class="line">			ans *= res + k * (p - <span class="number">1</span>) * res / p;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (x &gt; <span class="number">1</span>) ans *= x + (x - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	Factor(n);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="BZOJ-2226"><a href="#BZOJ-2226" class="headerlink" title="BZOJ 2226"></a>BZOJ 2226</h3><p>求</p>
+<script type="math/tex; mode=display">F(n)=\sum_{i=1}^n \text{lcm}(i,j)</script><p>方法一：欧拉函数</p>
+<p>令</p>
+<script type="math/tex; mode=display">G(n)=\sum_{i=1}^n [\gcd(n,i)=1]\ i</script><script type="math/tex; mode=display">G(n)=\begin{cases}
+\frac{n\cdot \varphi(n)}{2}, &n>1\\
+1, &n=1
+\end{cases}</script><script type="math/tex; mode=display">\begin{aligned}
+F(n)&=\sum_{i=1}^n \text{lcm}(i,j)\\
+&=\sum_{i=1}^n \frac{n\cdot i}{\gcd(n,i)}\\
+&=\sum_{d|n} \sum_{i=1}^n [\gcd(n,i)=d] \ \frac{ni}{d}\\
+&=\sum_{d|n} \sum_{i=1}^{\frac{n}{d}} [\gcd(\frac{n}{d},i)=1] \ ni\\
+&=n\sum_{d|n}G(\frac{n}{d})\\
+&=n\sum_{d|n}G(d)\\
+&=\frac{n((\sum_{d|n}d\cdot \varphi(d))+1)}{2}
+\end{aligned}</script><p>$\sum_{d|n}d\cdot \varphi(d)$ 是积性函数，因此可以线性筛 $O(n)$ 预处理，单次询问 $O(1)$。</p>
+<p>方法二：莫比乌斯函数</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>莫比乌斯反演</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>「2020.5.25训练赛」 Tyher的烦恼</title>
     <url>/2020/05/25/UPC%20Tyher%E7%9A%84%E7%83%A6%E6%81%BC/</url>
     <content><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给你 $n(n &lt;= 10^9)$ 个盒子，初始全为空。有 $m(m&lt;=50000)$ 个操作：</p>
@@ -52,54 +147,10 @@ f[j]&=\max_{k=1}^{a_i}(f[j-k\times v_i]+k\times w_i)\\
   <entry>
     <title>反演笔记</title>
     <url>/2020/05/21/%E5%8F%8D%E6%BC%94%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="数论函数"><a href="#数论函数" class="headerlink" title="数论函数"></a>数论函数</h2><p><strong>数论函数：</strong> 定义域为正整数的函数。</p>
-<p><strong>积性函数：</strong> 对于任意两个互质的正整数 $a, b$，均满足 $f(ab)=f(a)\times f(b)$ 的函数 $f$</p>
-<p><strong>完全积性函数：</strong> 对于所有正整数 $a, b$，均满足 $f<br>(ab)=f(a)\times f(b)$ 的函数 $f$</p>
-<p>对于一个积性函数 $f$，$f(n)=f(\prod p_i^{a_i})=\prod f(p_i^{a_i})$，若 $f$ 还满足完全积性，则 $f(n)=\prod f(p_i)^{a_i}$</p>
-<a id="more"></a>
-<h2 id="常见积性函数"><a href="#常见积性函数" class="headerlink" title="常见积性函数"></a>常见积性函数</h2><p><strong>欧拉函数 $\varphi(n)$</strong></p>
-<p><strong>莫比乌斯函数 $\mu(n)$：</strong> 若 $n$ 有平方数因子，则 $\mu(n)=0$。否则若 $n$ 为 $k$ 个不同质数之积，则 $\mu(n)=(-1)^k$。</p>
-<script type="math/tex; mode=display">\mu(n)=
-\begin{cases}
-1      & n=1\\
-(-1)^k & n=p_1p_2\cdots p_k\\
-0      & \text{else}
-\end{cases}</script><p><strong>除数函数：</strong> $\sigma_k(n)$ 表示 $n$ 的所有正因子的 $k$ 次幂之和。</p>
-<p>$d(n)=\sigma_0(n)$ 表示 $n$ 的正因子个数，$\sigma(n)=\sigma_1(n)$ 表示 $n$ 的所有正因子之和。</p>
-<p><strong>幂函数：</strong> $\operatorname{Id}_k(n)=n^k$，$1(n)=\operatorname{Id}_0(n)=1$，$\operatorname{Id}(n)=\operatorname{Id}_1(n)=n$</p>
-<p><strong>单位函数：</strong><br>$e(n)=\varepsilon(n)=<br>\begin{cases}<br>1 &amp; n = 1\\<br>0 &amp; n &gt; 1<br>\end{cases}<br>$</p>
-<h2 id="狄利克雷（Dirichlet）卷积"><a href="#狄利克雷（Dirichlet）卷积" class="headerlink" title="狄利克雷（Dirichlet）卷积"></a>狄利克雷（Dirichlet）卷积</h2><p>定义两个数论函数 $f$，$g$ 的 Dirichlet 卷积：</p>
-<script type="math/tex; mode=display">(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})</script><h3 id="狄利克雷卷积的性质"><a href="#狄利克雷卷积的性质" class="headerlink" title="狄利克雷卷积的性质"></a>狄利克雷卷积的性质</h3><p>交换律：</p>
-<script type="math/tex; mode=display">f*g=g*f</script><p>结合律：</p>
-<script type="math/tex; mode=display">(f*g)*h=f*(g*h)</script><p>分配律：</p>
-<script type="math/tex; mode=display">f*(g+h)=f*g+f*h</script><p>单位元：</p>
-<script type="math/tex; mode=display">f*\varepsilon=\varepsilon*f</script><h3 id="常见的狄利克雷卷积"><a href="#常见的狄利克雷卷积" class="headerlink" title="常见的狄利克雷卷积"></a>常见的狄利克雷卷积</h3><ul>
-<li><p>$d(n)=\sum_{d|n}1$，即 $d=1*1$</p>
-</li>
-<li><p>$\sigma(n)=\sum_{d|n}d$，即 $\sigma=1*1$</p>
-</li>
-<li><p>$\varphi(n)=\sum_{d|n}\mu(d)\frac{n}{d}$，即 $\varphi=\mu*\operatorname{Id}$</p>
-</li>
-<li><p>$\varepsilon(n)=\sum_{d|n}\mu(d)$，即 $\varepsilon=\mu*1$</p>
-</li>
-</ul>
-<h3 id="一些结论和证明"><a href="#一些结论和证明" class="headerlink" title="一些结论和证明"></a>一些结论和证明</h3><p>$n = \sum_{d|n}\varphi(d)$。</p>
-<p>$\varepsilon=\mu*1$ 即为 $\sum_{d|n}\mu(d)=[n=1]$。</p>
-<p>证明：$n=1$ 时 $\sum_{d|n}\mu(d)=1$。</p>
-<p>$n \neq 1$ 时，设 $n$ 有 $k$ 个质因子，只有当 $n$ 的因子中所有质因子次数都为 $1$ 时，$\mu$ 不为 $0$，即</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\sum_{d|n}\mu(d) &=\sum_{i=0}^{k}(-1)^{i}C(k,i)\\
-                 &= (1-1)^k\\
-                 &=0
-\end{aligned}</script><p>因此 $\sum_{d|n}\mu(d)=[n=1]$。</p>
-<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>若两个函数 $f$，$g$ 满足：</p>
-<script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则它们也满足</p>
-<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(d)f(\frac{n}{d})</script><p>反之亦然，即</p>
-<script type="math/tex; mode=display">f=g*1\Leftrightarrow g=\mu *f</script><p>它的另一个形式：</p>
-<script type="math/tex; mode=display">f(n)=\sum_{n|d}g(d)\Leftrightarrow g(n)=\sum_{n|d}\mu(d)f(\frac{d}{n})</script><hr>
-<h2 id="炫酷反演魔术"><a href="#炫酷反演魔术" class="headerlink" title="炫酷反演魔术"></a>炫酷反演魔术</h2><p>以下内容来自 ICPCCamp2015 吕凯风《炫酷反演魔术》。</p>
-<h3 id="反演"><a href="#反演" class="headerlink" title="反演"></a>反演</h3><p>对于 $f(n)=\sum_{k}a_{n,k}g(k)$，已知 $f$ 求 $g$ 的过程就称为反演。</p>
-<h3 id="二项式反演"><a href="#二项式反演" class="headerlink" title="二项式反演"></a>二项式反演</h3><p>假如我们已经知道</p>
+    <content><![CDATA[<hr>
+<p>以下内容来自 ICPCCamp2015 吕凯风《炫酷反演魔术》。</p>
+<h2 id="反演"><a href="#反演" class="headerlink" title="反演"></a>反演</h2><p>对于 $f(n)=\sum_{k}a_{n,k}g(k)$，已知 $f$ 求 $g$ 的过程就称为反演。</p>
+<h2 id="二项式反演"><a href="#二项式反演" class="headerlink" title="二项式反演"></a>二项式反演</h2><p>假如我们已经知道</p>
 <script type="math/tex; mode=display">f(n)=\sum_{k=0}^{n}\binom{n}{k}g(k)</script><p>以及 $f(n)$，我们想要求出 $g(n)$ <del>高斯消元</del></p>
 <p>首先，我们有一个式子</p>
 <script type="math/tex; mode=display">\sum_{k=0}^{n}(-1)^k\binom{n}{k}=[n=0]</script><p>然后，写一句废话</p>
@@ -115,7 +166,7 @@ g(n)&=\sum_{m=0}^{n}\sum_{k=0}^{n-m}(-1)^k\binom{n}{k}\binom{n-k}{m}g(m)
 \end{aligned}</script><p>这样，我们空手套白狼得到了二项式反演：</p>
 <p>若有</p>
 <script type="math/tex; mode=display">f(n)=\sum_{k=0}^{n}\binom{n}{k}g(k)</script><p>则也有</p>
-<script type="math/tex; mode=display">g(n)=\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(k)</script><h3 id="莫比乌斯反演-1"><a href="#莫比乌斯反演-1" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h3><p>让我们用同样的方法研究如下式子</p>
+<script type="math/tex; mode=display">g(n)=\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(k)</script><h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>让我们用同样的方法研究如下式子</p>
 <script type="math/tex; mode=display">f(n)=\sum_{d|k}g(d)</script><p>首先，我们有</p>
 <script type="math/tex; mode=display">\sum_{d|n}\mu(d)=[n=1]</script><p>写一句废话</p>
 <script type="math/tex; mode=display">g(n)=\sum_{m|n}[\frac{n}{m}=1]g(m)</script><p>然后</p>
@@ -127,7 +178,7 @@ g(n)&=\sum_{m|n}[\frac{n}{m}=1]g(m)\\
 \end{aligned}</script><p>我们便得到了莫比乌斯反演：</p>
 <p>若有</p>
 <script type="math/tex; mode=display">f(n)=\sum_{d|n}g(d)</script><p>则也有</p>
-<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(\frac{n}{d})f(d)</script><h3 id="矩阵形式"><a href="#矩阵形式" class="headerlink" title="矩阵形式"></a>矩阵形式</h3><p>vfk 告诉我们，我们在上面真正用到的是这个东西</p>
+<script type="math/tex; mode=display">g(n)=\sum_{d|n}\mu(\frac{n}{d})f(d)</script><h2 id="矩阵形式"><a href="#矩阵形式" class="headerlink" title="矩阵形式"></a>矩阵形式</h2><p>vfk 告诉我们，我们在上面真正用到的是这个东西</p>
 <script type="math/tex; mode=display">[m\ |\ n]\sum_{d|\frac{n}{m}}\mu(d)=[\frac{n}{m}=1]=[n=m]</script><p>令 $c=md$，左边可以写成这样</p>
 <script type="math/tex; mode=display">\sum_{c|n}[m\ |\ c]\mu(\frac{c}{m})</script><p>令 $A_{c,n}=[c | n]$，$B_{m,c}=[m | c]\mu(\frac{c}{m})$</p>
 <p>刚才的结论就是 $BA=I$</p>
@@ -147,7 +198,7 @@ x&=Bb
 <script type="math/tex; mode=display">\sum_{k=1}^{n}a_{n,k}\mu(k,m)=[n=m]</script><p>这个可以递推求出。</p>
 <p>此时答案已经很明显了：</p>
 <script type="math/tex; mode=display">g(n)=\sum_{k=1}^n \mu(n,k)f(k)</script><p>然而这并没有什么用。。这里的 $\mu$ 其实就是逆矩阵，$\mu$ 一般也是比较难求的。。</p>
-<h3 id="UOJ-Round-5-C"><a href="#UOJ-Round-5-C" class="headerlink" title="UOJ Round#5 C"></a>UOJ Round#5 C</h3><script type="math/tex; mode=display">\sum_{j = 1}^{n} \gcd(i, j)^c \cdot \text{lcm}(i, j)^d \cdot x_j \equiv b_i \pmod{p}</script><p>给出 $n,c,d,b_i$，求出 $x_i$。</p>
+<h2 id="UOJ-Round-5-C"><a href="#UOJ-Round-5-C" class="headerlink" title="UOJ Round#5 C"></a>UOJ Round#5 C</h2><script type="math/tex; mode=display">\sum_{j = 1}^{n} \gcd(i, j)^c \cdot \text{lcm}(i, j)^d \cdot x_j \equiv b_i \pmod{p}</script><p>给出 $n,c,d,b_i$，求出 $x_i$。</p>
 <p><a href="http://vfleaking.blog.uoj.ac/blog/62" target="_blank" rel="noopener">UOJ</a></p>
 <p>由小学奥数我们知道这个东西就是</p>
 <script type="math/tex; mode=display">\sum_{j=1}^n \gcd(i,j)^{c - d} \cdot i^d \cdot j^d \cdot x_j = b_i</script><p>vfk 告诉我们，这样的东西都可做</p>
@@ -168,7 +219,6 @@ x&=Bb
         <category>学习笔记</category>
       </categories>
       <tags>
-        <tag>数论</tag>
         <tag>莫比乌斯反演</tag>
       </tags>
   </entry>
@@ -631,23 +681,12 @@ b_i =
 <p>根据上面的证明，我们发现，$f(x)=\varphi(\dfrac{n}{x})$，从而 $n=\sum_{d|n}\varphi(\dfrac{n}{d})$。</p>
 <p>注意到约数 $n$ 和 $\dfrac{n}{d}$ 具有对称性，因此上式化为 $n=\sum_{d|n}\varphi(d)$</p>
 <ul>
-<li>$1$ 到 $n$ 中与 $n(n&gt;1)$ 互质的数的和为 $\dfrac{n\times \varphi(n)}{2}$</li>
+<li>$1$ 到 $n$ 中与 $n(n&gt;1)$ 互质的数的和为 $\dfrac{n\times \varphi(n)}{2}$。</li>
 </ul>
 <hr>
 <h3 id="埃筛-欧拉筛"><a href="#埃筛-欧拉筛" class="headerlink" title="埃筛/欧拉筛"></a>埃筛/欧拉筛</h3><h4 id="埃筛求区间内质数个数"><a href="#埃筛求区间内质数个数" class="headerlink" title="埃筛求区间内质数个数"></a>埃筛求区间内质数个数</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> prime1[N], prime2[N];</span><br><span class="line">LL prime[N];</span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// [a, b)</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(LL a, LL b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// [2, sqrt(b)) --&gt; 1</span></span><br><span class="line">    <span class="keyword">for</span> (LL i = <span class="number">2</span>; i * i &lt; b; i++) prime1[i] = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// [a, b) --&gt; 1</span></span><br><span class="line">    <span class="keyword">for</span> (LL i = <span class="number">0</span>; i &lt; b - a; i++) prime2[i] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (LL i = <span class="number">2</span>; i * i &lt; b; i++)</span><br><span class="line">        <span class="keyword">if</span> (prime1[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (LL j = i * <span class="number">2</span>; j * j &lt; b; j += i)</span><br><span class="line">                prime1[j] = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">// (a + i - 1) / i * i  最接近 a 的 i 的倍数</span></span><br><span class="line">            <span class="keyword">for</span> (LL j = max(<span class="number">2L</span>L, (a + i - <span class="number">1</span>) / i) * i; j &lt; b; j += i)</span><br><span class="line">                prime[j - a] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">for</span> (LL i = <span class="number">0</span>; i &lt; b - a; i++)</span><br><span class="line">        <span class="keyword">if</span> (prime2[i]) prime[++cnt] = i + a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="线性筛质数"><a href="#线性筛质数" class="headerlink" title="线性筛质数"></a>线性筛质数</h4><p>设 $pr_i$ 表示 $i$ 的最小质因子。枚举所有不超过 $pr_i$ 的质数 $p$，使 $pr_(i\cdot p) = p$，相当于将每个数的质因子降序分解，每个数只会被它的最小质因子筛一次，因此复杂度是 $O(n)$ 的。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shaker</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pr[i]) prime[++cnt] = pr[i] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= x; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            pr[i * prime[j]] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="线性筛积性函数"><a href="#线性筛积性函数" class="headerlink" title="线性筛积性函数"></a>线性筛积性函数</h4><p>利用线性筛求解每个数 $n$ 的最小质因子 $p$ 的次数 $k$：令 $n = pm$，由于 $p$ 是 $n$ 最小的质因子，若 $p^2  |  n$<br>，则 $p  |  m$ ，并且 $p$ 也是 $m$ 最小的质因子，这样在筛法的同时即可算出新筛去的合数的最小质因子的次数。</p>
-<p>这样在求解积性函数时，我们能利用 $f(n)=f(p^k)f(\frac{n}{p^k})$，在线性筛的同时快速求出 $f(n)$。</p>
-<h5 id="线性筛欧拉函数"><a href="#线性筛欧拉函数" class="headerlink" title="线性筛欧拉函数"></a>线性筛欧拉函数</h5><p>$\varphi(p^k)=(p-1)p^{k-1}$，因此筛法时，若 $p | m$，$\varphi$ 就乘上 $p$，否则乘上 $p-1$。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shaker</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pr[i]) prime[++cnt] = pr[i] = i, phi[i] = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= x; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            pr[i * prime[j]] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                phi[i * prime[j]] = phi[i] * prime[j];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            phi[i * prime[j]] = phi[i] * (prime[j] - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="线性筛莫比乌斯函数"><a href="#线性筛莫比乌斯函数" class="headerlink" title="线性筛莫比乌斯函数"></a>线性筛莫比乌斯函数</h5><p>只有当 $k=1$ 时 $\mu(p^k)=-1$，否则 $\mu(p^k)=0$。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shaker</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pr[i]) prime[++cnt] = pr[i] = i, mu[i] = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= x; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            pr[i * prime[j]] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                mu[i * prime[j]] = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            mu[i * prime[j]] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="筛法求约数个数、约数和"><a href="#筛法求约数个数、约数和" class="headerlink" title="筛法求约数个数、约数和"></a>筛法求约数个数、约数和</h5><p>约数个数 $d_i$ 是积性函数，因此也可以用筛法求。类似的可以求约数和、最小质因子 $k$ 次幂的和。</p>
-<p>求约数个数。$num_i$ 表示 $i$ 的最小质因子出现次数。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shaker</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    d[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pr[i]) prime[++cnt] = pr[i] = i, d[i] = <span class="number">2</span>, num[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= x; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            pr[i * prime[j]] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                num[i * prime[j]] = num[i] + <span class="number">1</span>;</span><br><span class="line">                d[i * prime[j]] = d[i] / num[i * prime[j]] * (num[i * prime[j]] + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            num[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">            d[i * prime[j]] = d[i] * <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>求约数和。$f_i$ 表示 $i$ 的约数和，$g_i$ 表示 $i$ 的最小质因子的 $p^0+p^1+p^2+\cdots +p^k$.</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shaker</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    g[<span class="number">1</span>] = f[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pr[i]) prime[++cnt] = pr[i] = i, g[i] = f[i] = i + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= x; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            pr[i * prime[j]] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                g[i * prime[j]] = g[i] * prime[j] + <span class="number">1</span>;</span><br><span class="line">                f[i * prime[j]] = f[i] / g[i] * g[i * prime[j]];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            g[i * prime[j]] = prime[j] + <span class="number">1</span>;</span><br><span class="line">            f[i * prime[j]] = f[i] * f[prime[j]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shaker</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pr[i]) prime[++cnt] = pr[i] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt; j++)</span><br><span class="line">        &#123;</span><br><span class="line">			<span class="keyword">int</span> k = i * prime[j];</span><br><span class="line">			<span class="keyword">if</span> (k &gt; x) <span class="keyword">break</span>;</span><br><span class="line">            pr[k] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h3><h4 id="欧拉定理-1"><a href="#欧拉定理-1" class="headerlink" title="欧拉定理"></a>欧拉定理</h4><p>若 $\gcd(a, m) = 1$，则 $a^{\varphi(m)} \equiv 1 \pmod{p}$</p>
 <p>证明：</p>
@@ -692,7 +731,7 @@ a^{b \bmod \varphi(p) + \varphi(p)}, & \gcd(a,\,p)\ne1,\,b\ge\varphi(p)
 <p>只有当 $(a, n)=1$ 时才有阶。</p>
 <p>阶的性质：</p>
 <p>(1) 若 $a^N \equiv 1 \pmod n$，则 $r  |  N$；</p>
-<p>(2) $r | \varphi(n)$。特别的，若 $n$ 是素数 $p$，则 $r  |  p-1$。</p>
+<p>(2) $r  |  \varphi(n)$。特别的，若 $n$ 是素数 $p$，则 $r  |  p-1$。</p>
 <h4 id="原根-1"><a href="#原根-1" class="headerlink" title="原根"></a>原根</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>若 $a$ 模 $m$ 的阶等于 $\varphi(m)$，则称 $a$ 为模 $m$ 的一个原根。</p>
 <p>显然，原根与 $m$ 互质。</p>
 <h5 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h5><p>设 $r=Ord_m(a)$，则 $a^0, a^1, \cdots, a^{r-1}$ 构成模 $m$ 的简化剩余系，反之亦然。</p>
