@@ -818,9 +818,9 @@ a^{b \bmod \varphi(p) + \varphi(p)}, & \gcd(a,\,p)\ne1,\,b\ge\varphi(p)
 <h5 id="求质数-p-的原根"><a href="#求质数-p-的原根" class="headerlink" title="求质数 p 的原根"></a>求质数 p 的原根</h5><p>原根的分布比较广，并且最小的原根通常也较小，因此可以从小到大枚举正整数快速寻找一个原根。对于一个质数 $p$，对于 $p-1$ 的每一个质因子 $a$，检查 $g^\frac{p-1}{a}\equiv 1\pmod p$ 是否成立，若成立则说明 $g$ 不是原根。</p>
 <h5 id="N-次剩余"><a href="#N-次剩余" class="headerlink" title="N 次剩余"></a>N 次剩余</h5><hr>
 <h3 id="二次剩余"><a href="#二次剩余" class="headerlink" title="二次剩余"></a>二次剩余</h3><p>二次剩余：解 $x^2\equiv n \pmod p$，$p$ 是奇素数。</p>
-<h3 id="解的数量"><a href="#解的数量" class="headerlink" title="解的数量"></a>解的数量</h3><p>一个方程对应两个解，且互为相反数。</p>
+<h4 id="解的数量"><a href="#解的数量" class="headerlink" title="解的数量"></a>解的数量</h4><p>一个方程对应两个解，且互为相反数。</p>
 <p>二次剩余的个数恰为 $\frac{p-1}{2}$，非二次剩余的个数也为 $\frac{p-1}{2}$。</p>
-<h3 id="欧拉准则"><a href="#欧拉准则" class="headerlink" title="欧拉准则"></a>欧拉准则</h3><p>勒让德符号：</p>
+<h4 id="欧拉准则"><a href="#欧拉准则" class="headerlink" title="欧拉准则"></a>欧拉准则</h4><p>勒让德符号：</p>
 <script type="math/tex; mode=display">
 \left(\frac{a}{p}\right)=
 \begin{cases}
@@ -828,7 +828,7 @@ a^{b \bmod \varphi(p) + \varphi(p)}, & \gcd(a,\,p)\ne1,\,b\ge\varphi(p)
 -1,&a\text{在模$p$意义下是非二次剩余}\\
 0,&a\equiv0\pmod p
 \end{cases}</script><p>欧拉准则：$\left(\frac{a}{p}\right)\equiv a^{\frac{p-1}{2}}\pmod p$</p>
-<h3 id="Cipolla-算法"><a href="#Cipolla-算法" class="headerlink" title="Cipolla 算法"></a><em>Cipolla</em> 算法</h3><p>随机一个 $a$，使得 $\left(\frac{a^2-n}{p}\right) = -1$，令 $w=\sqrt {a^2-n}$，即 $w$ 不是二次剩余，则 $x=(a+w)^{\frac{p+1}{2}}$ 是 $x^2\equiv n\pmod p$ 的解。</p>
+<h4 id="Cipolla-算法"><a href="#Cipolla-算法" class="headerlink" title="Cipolla 算法"></a><em>Cipolla</em> 算法</h4><p>随机一个 $a$，使得 $\left(\frac{a^2-n}{p}\right) = -1$，令 $w=\sqrt {a^2-n}$，即 $w$ 不是二次剩余，则 $x=(a+w)^{\frac{p+1}{2}}$ 是 $x^2\equiv n\pmod p$ 的解。</p>
 <p>这里的 $w$ 是一个新的数域，类似虚数。</p>
 <p>证明：</p>
 <p>首先有一些东西：</p>
