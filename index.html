@@ -314,7 +314,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-22 11:02:33" itemprop="dateModified" datetime="2020-06-22T11:02:33+08:00">2020-06-22</time>
+                <time title="修改时间：2020-06-23 00:06:17" itemprop="dateModified" datetime="2020-06-23T00:06:17+08:00">2020-06-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -363,8 +363,39 @@
           <h2 id="错排问题"><a href="#错排问题" class="headerlink" title="错排问题"></a>错排问题</h2><p>递推：</p>
 <p>$D(n)=(n-1)[D(n-2)+D(n-1)]$</p>
 <p>容斥：</p>
-<script type="math/tex; mode=display">D(n)=n![\frac{1}{0!}-\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{(-1)^n}{n!}]</script><p>容斥的式子可以由二项式反演简单的推出来。</p>
-
+<script type="math/tex; mode=display">D(n)=n![\frac{1}{0!}-\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{(-1)^n}{n!}]</script><p>容斥的式子可以由二项式反演简单的推出来：不考虑 $i \neq a_i$ 这个条件，那么方案数即为 $n!$。这些排列中包含了所有恰由 $k(k=0,1,2,\cdots,n)$ 个位置不变的排列，因此有</p>
+<script type="math/tex; mode=display">n!=\sum_{i=0}^n\binom{n}{i}f_i</script><p>使用二项式反演即可得到</p>
+<script type="math/tex; mode=display">f_n=n!\sum_{i=0}^n \frac{(-1)^i}{i!}</script><h2 id="第一类-Stirling-数"><a href="#第一类-Stirling-数" class="headerlink" title="第一类 Stirling 数"></a>第一类 Stirling 数</h2><p>第一类 Stirling 数表示 n 个不同元素构成 m 个圆排列的数目。有无符号 Stirling 数也表示升阶函数和降阶函数的系数：</p>
+<script type="math/tex; mode=display">x^{n\downarrow}=x(x-1)(x-2)\cdots(x-n+1)=\sum_{k=0}^n s_s(n,k)x^k</script><script type="math/tex; mode=display">x^{n\uparrow}=x(x+1)(x+2)\cdots(x+n-1)=\sum_{k=0}^n s_u(n,k)x^k</script><p>有无符号 Stirling 数之间的关系为 $s_s(n,m)=(-1)^{n-m}s_u(n,m)$</p>
+<p>递推形式：$s(n,r)=(n-1)s(n-1,r)+s(n-1,r-1)$</p>
+<p>有符号的第一类 Stirling 数可以简单推导如下：</p>
+<script type="math/tex; mode=display">\sum_{k=0}^{n+1}s(n+1,k)\cdot x^k=x^{n\downarrow} (x-n)=\sum_{k=0}^ns(n,k)\cdot x^{k+1}-n\sum_{k=0}^ns(n,k)\cdot x^k</script><p>即</p>
+<script type="math/tex; mode=display">s_s(n,m)=s_s(n-1,m-1)-(n-1)\cdot s_s(n-1,m)</script><p>性质：</p>
+<ul>
+<li>$s(n,0)=[n=0]$</li>
+<li>$s(n,1)=(n-1)!$</li>
+<li>$s(n,2)=(n-1)!\sum_{i=1}^{n-1}\frac{1}{i}$</li>
+<li>$s(n,n-1)=\binom{n}{2}$</li>
+<li>$\sum_{k=0}^ns_u(n,k)=n!$</li>
+<li>$\sum_{k=0}^ns_s(n,k)=[n=0]$</li>
+</ul>
+<h2 id="第二类-Stirling-数"><a href="#第二类-Stirling-数" class="headerlink" title="第二类 Stirling 数"></a>第二类 Stirling 数</h2><p>第二类 Stirling 数可以表示把 $n$ 个球放进 $r$ 个相同的盒子里的方案数（没有空盒）。</p>
+<p>递推形式： $S(n,r)=rS(n-1,r)+S(n-1,r-1)$</p>
+<p>第二类 Stirling 数也可用下降阶乘幂定义：</p>
+<script type="math/tex; mode=display">\begin{aligned}
+x^n&=\sum_{k=0}^nS(n,k)(x)_k\\
+&=\sum_{k=0}^nS(n,k)x(x-1)\cdots (x-k+1)
+\end{aligned}</script><p>通项公式为</p>
+<script type="math/tex; mode=display">S(n,m)=\frac{1}{m!}\sum_{k=0}^m (-1)^k\binom{m}{k}(m-k)^n</script><p>可以用容斥理解。$k$ 为有多少集合是空的，每个 $k$ 有 $\binom{m}{k}$ 种空集，$n$ 个元素可以放进非空的 $m-k$ 个集合中。最后再除以 $m!$ 使其变为无序的情况。</p>
+<p>性质：</p>
+<ul>
+<li>$S(n,1)=S(n,n)=1$</li>
+<li>$S(n,0)=[n=0]$</li>
+<li>$S(n,2)=2^{n-1}-1$</li>
+<li>$S(n,3)=\frac{1}{6}(3^n-3\cdot 2^n+3)$</li>
+<li>$S(n,n-1)=\binom{n}{2}$</li>
+</ul>
+<h2 id="Catalan-数"><a href="#Catalan-数" class="headerlink" title="Catalan 数"></a>Catalan 数</h2>
       
     </div>
 
