@@ -40,20 +40,16 @@
     <link href="http://yoursite.com/2020/06/04/%E7%BB%84%E5%90%88%E4%B8%8E%E8%AE%A1%E6%95%B0/"/>
     <id>http://yoursite.com/2020/06/04/%E7%BB%84%E5%90%88%E4%B8%8E%E8%AE%A1%E6%95%B0/</id>
     <published>2020-06-04T10:14:58.000Z</published>
-    <updated>2020-06-22T16:06:17.084Z</updated>
+    <updated>2020-06-24T05:27:49.821Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;错排问题&quot;&gt;&lt;a href=&quot;#错排问题&quot; class=&quot;headerlink&quot; title=&quot;错排问题&quot;&gt;&lt;/a&gt;错排问题&lt;/h2&gt;&lt;p&gt;递推：&lt;/p&gt;
+      &lt;h2 id=&quot;错排问题&quot;&gt;&lt;a href=&quot;#错排问题&quot; class=&quot;headerlink&quot; title=&quot;错排问题&quot;&gt;&lt;/a&gt;错排问题&lt;/h2&gt;&lt;p&gt;递推：&lt;/p&gt;
 &lt;p&gt;$D(n)=(n-1)[D(n-2)+D(n-1)]$&lt;/p&gt;
 &lt;p&gt;容斥：&lt;/p&gt;
-&lt;script
-        
-      
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;D(n)=n![\frac{1}{0!}-\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{(-1)^n}{n!}]&lt;/script&gt;&lt;p&gt;容斥的式子可以由二项式反演简单的推出来：不考虑 $i \neq a_i$ 这个条件，那么方案数即为 $n!$。这些排列中包含了所有恰由 $k(k=0,1,2,\cdots,n)$ 个位置不变的排列，因此有&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n!=\sum_{i=0}^n\binom{n}{i}f_i&lt;/script&gt;&lt;p&gt;使用二项式反演即可得到&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f_n=n!\sum_{i=0}^n \frac{(-1)^i}{i!}&lt;/script&gt;
     
     </summary>
     

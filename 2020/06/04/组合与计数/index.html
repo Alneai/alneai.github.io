@@ -27,7 +27,7 @@
 <meta property="og:description" content="错排问题递推： $D(n)&#x3D;(n-1)[D(n-2)+D(n-1)]$ 容斥： D(n)&#x3D;n![\frac{1}{0!}-\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{(-1)^n}{n!}]容斥的式子可以由二项式反演简单的推出来：不考虑 $i \neq a_i$ 这个条件，那么方案数即为 $n!$。这些排列中包含了所有恰由 $k(k&#x3D;0,1,2,\cdots,n)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-04T10:14:58.000Z">
-<meta property="article:modified_time" content="2020-06-22T16:06:17.084Z">
+<meta property="article:modified_time" content="2020-06-24T05:27:49.821Z">
 <meta property="article:author" content="Alneai">
 <meta name="twitter:card" content="summary">
 
@@ -213,7 +213,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-23 00:06:17" itemprop="dateModified" datetime="2020-06-23T00:06:17+08:00">2020-06-23</time>
+                <time title="修改时间：2020-06-24 13:27:49" itemprop="dateModified" datetime="2020-06-24T13:27:49+08:00">2020-06-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,7 +264,8 @@
 <p>容斥：</p>
 <script type="math/tex; mode=display">D(n)=n![\frac{1}{0!}-\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{(-1)^n}{n!}]</script><p>容斥的式子可以由二项式反演简单的推出来：不考虑 $i \neq a_i$ 这个条件，那么方案数即为 $n!$。这些排列中包含了所有恰由 $k(k=0,1,2,\cdots,n)$ 个位置不变的排列，因此有</p>
 <script type="math/tex; mode=display">n!=\sum_{i=0}^n\binom{n}{i}f_i</script><p>使用二项式反演即可得到</p>
-<script type="math/tex; mode=display">f_n=n!\sum_{i=0}^n \frac{(-1)^i}{i!}</script><h2 id="第一类-Stirling-数"><a href="#第一类-Stirling-数" class="headerlink" title="第一类 Stirling 数"></a>第一类 Stirling 数</h2><p>第一类 Stirling 数表示 n 个不同元素构成 m 个圆排列的数目。有无符号 Stirling 数也表示升阶函数和降阶函数的系数：</p>
+<script type="math/tex; mode=display">f_n=n!\sum_{i=0}^n \frac{(-1)^i}{i!}</script><a id="more"></a>
+<h2 id="第一类-Stirling-数"><a href="#第一类-Stirling-数" class="headerlink" title="第一类 Stirling 数"></a>第一类 Stirling 数</h2><p>第一类 Stirling 数表示 n 个不同元素构成 m 个圆排列的数目。有无符号 Stirling 数也表示升阶函数和降阶函数的系数：</p>
 <script type="math/tex; mode=display">x^{n\downarrow}=x(x-1)(x-2)\cdots(x-n+1)=\sum_{k=0}^n s_s(n,k)x^k</script><script type="math/tex; mode=display">x^{n\uparrow}=x(x+1)(x+2)\cdots(x+n-1)=\sum_{k=0}^n s_u(n,k)x^k</script><p>有无符号 Stirling 数之间的关系为 $s_s(n,m)=(-1)^{n-m}s_u(n,m)$</p>
 <p>递推形式：$s(n,r)=(n-1)s(n-1,r)+s(n-1,r-1)$</p>
 <p>有符号的第一类 Stirling 数可以简单推导如下：</p>
@@ -294,7 +295,17 @@ x^n&=\sum_{k=0}^nS(n,k)(x)_k\\
 <li>$S(n,3)=\frac{1}{6}(3^n-3\cdot 2^n+3)$</li>
 <li>$S(n,n-1)=\binom{n}{2}$</li>
 </ul>
-<h2 id="Catalan-数"><a href="#Catalan-数" class="headerlink" title="Catalan 数"></a>Catalan 数</h2>
+<h2 id="Catalan-数"><a href="#Catalan-数" class="headerlink" title="Catalan 数"></a>Catalan 数</h2><p>Catalan数从 $0$ 开始的前几项：1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440, 9694845</p>
+<h3 id="Catalan-数常见公式"><a href="#Catalan-数常见公式" class="headerlink" title="Catalan 数常见公式"></a>Catalan 数常见公式</h3><script type="math/tex; mode=display">
+H_n = \begin{cases} \sum_{i=1}^{n} H_{i-1} H_{n-i} & n \geq 2, n \in \mathbf{N_{+}}\\ 1 & n = 0, 1 \end{cases}</script><script type="math/tex; mode=display">H_n = \frac{ (4n-2)}{n+1} H_{n-1}</script><script type="math/tex; mode=display">H_n = \binom{2n}{n} - \binom{2n}{n-1} =\frac{1}{n+1}\binom{2n}{n}</script><h3 id="Catalan-数应用"><a href="#Catalan-数应用" class="headerlink" title="Catalan 数应用"></a>Catalan 数应用</h3><p>路径计数问题：只能往右或往上走一个单位长度，问有多少种不同的路径可以从左下角 $(1,1)$ 走到右上角 $(n,n)$，并且要求路径不能经过直线 $y=x$ 上方的点。</p>
+<p>对于一种不合法的方案，它的路径一定与 $y=x+1$ 有交。将第一个交点后面的路径关于 $y=x+1$ 做个对称，新的路径就会到达 $(n-1,n+1)$。合法的方案总数就是</p>
+<script type="math/tex; mode=display">C_n=\binom{2n}{n}-\binom{2n}{n-1}=\frac{1}{n+1}\binom{2n}{n}</script><p>括号序列计数：有多少种不同的长度为 $n$ 的括号序列。长度为 $2n$ 的括号序列的方案数就是 $C_n$</p>
+<p>出栈顺序：有多少种可能的操作序列。</p>
+<p>二叉树计数：有多少种不同的 $n$ 个结点的二叉树</p>
+<script type="math/tex; mode=display">f_n=\sum_{i=1}^n f_{i-1}f_{n-i}</script><p>对这棵树进行遍历，遍历顺序即是一个括号序列。</p>
+<p>在圆上选择 $2n$ 个点，将这些点成对连接起来使得所得到的 $n$ 条线段不相交的方法数。</p>
+<p>对角线不相交的情况下，将一个凸多边形区域分成三角形区域的方法数。</p>
+
     </div>
 
     
@@ -376,7 +387,7 @@ x^n&=\sum_{k=0}^nS(n,k)(x)_k\\
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错排问题"><span class="nav-number">1.</span> <span class="nav-text">错排问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一类-Stirling-数"><span class="nav-number">2.</span> <span class="nav-text">第一类 Stirling 数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二类-Stirling-数"><span class="nav-number">3.</span> <span class="nav-text">第二类 Stirling 数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Catalan-数"><span class="nav-number">4.</span> <span class="nav-text">Catalan 数</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错排问题"><span class="nav-number">1.</span> <span class="nav-text">错排问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一类-Stirling-数"><span class="nav-number">2.</span> <span class="nav-text">第一类 Stirling 数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二类-Stirling-数"><span class="nav-number">3.</span> <span class="nav-text">第二类 Stirling 数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Catalan-数"><span class="nav-number">4.</span> <span class="nav-text">Catalan 数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Catalan-数常见公式"><span class="nav-number">4.1.</span> <span class="nav-text">Catalan 数常见公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Catalan-数应用"><span class="nav-number">4.2.</span> <span class="nav-text">Catalan 数应用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
