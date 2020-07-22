@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-22T03:04:40.850Z</updated>
+  <updated>2020-07-22T19:30:55.146Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>字符串</title>
+    <link href="http://yoursite.com/2020/07/23/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>http://yoursite.com/2020/07/23/%E5%AD%97%E7%AC%A6%E4%B8%B2/</id>
+    <published>2020-07-22T19:26:21.000Z</published>
+    <updated>2020-07-22T19:30:55.146Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;最小表示法&quot;&gt;&lt;a href=&quot;#最小表示法&quot; class=&quot;headerlink&quot; title=&quot;最小表示法&quot;&gt;&lt;/a&gt;最小表示法&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://oi-wiki.org/string/minimal-string/&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>多项式</title>
@@ -465,27 +490,6 @@
       <category term="DP" scheme="http://yoursite.com/tags/DP/"/>
     
       <category term="斜率优化" scheme="http://yoursite.com/tags/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CF Edu Round 82</title>
-    <link href="http://yoursite.com/2020/02/13/CF%20Edu%20Round%2082/"/>
-    <id>http://yoursite.com/2020/02/13/CF%20Edu%20Round%2082/</id>
-    <published>2020-02-13T02:05:30.000Z</published>
-    <updated>2020-02-26T11:55:46.684Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;掉分场。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="比赛" scheme="http://yoursite.com/categories/%E6%AF%94%E8%B5%9B/"/>
-    
-    
-      <category term="CF" scheme="http://yoursite.com/tags/CF/"/>
     
   </entry>
   
