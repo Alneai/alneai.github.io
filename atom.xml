@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-09T03:34:51.809Z</updated>
+  <updated>2020-10-09T03:38:39.893Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>min25筛</title>
+    <link href="http://yoursite.com/2020/10/09/min25%E7%AD%9B/"/>
+    <id>http://yoursite.com/2020/10/09/min25%E7%AD%9B/</id>
+    <published>2020-10-09T03:36:19.000Z</published>
+    <updated>2020-10-09T03:38:39.893Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;奥术大师大所大所大&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数论" scheme="http://yoursite.com/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>字符串</title>
@@ -466,31 +494,6 @@
     
     
       <category term="模拟退火" scheme="http://yoursite.com/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「洛谷P2365」任务安排 - 斜率优化DP</title>
-    <link href="http://yoursite.com/2020/02/13/Luogu%20%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/"/>
-    <id>http://yoursite.com/2020/02/13/Luogu%20%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/</id>
-    <published>2020-02-13T09:55:30.000Z</published>
-    <updated>2020-05-25T16:30:48.161Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这题本身挺水的，$n$ 只有 $5000$，不过这题能用斜率规划 $O(n)$ 做，正好在这总结一下斜率规划。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="题解" scheme="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="Luogu" scheme="http://yoursite.com/tags/Luogu/"/>
-    
-      <category term="DP" scheme="http://yoursite.com/tags/DP/"/>
-    
-      <category term="斜率优化" scheme="http://yoursite.com/tags/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
