@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-09T03:38:39.893Z</updated>
+  <updated>2020-10-09T04:38:53.656Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/10/09/min25%E7%AD%9B/"/>
     <id>http://yoursite.com/2020/10/09/min25%E7%AD%9B/</id>
     <published>2020-10-09T03:36:19.000Z</published>
-    <updated>2020-10-09T03:38:39.893Z</updated>
+    <updated>2020-10-09T04:38:53.656Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,8 @@
       
         
         
-          &lt;p&gt;奥术大师大所大所大&lt;/p&gt;
-
+          &lt;p&gt;min25 筛能够求解积性函数的前缀和。其时间复杂度为 $O(\frac{n^{\frac{3}{4}}}{\log n})$，空间复杂度为 $O(\sqrt n)$。&lt;/p&gt;
+&lt;h2 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot;
         
       
     
@@ -49,18 +49,11 @@
     <link href="http://yoursite.com/2020/07/23/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     <id>http://yoursite.com/2020/07/23/%E5%AD%97%E7%AC%A6%E4%B8%B2/</id>
     <published>2020-07-22T19:26:21.000Z</published>
-    <updated>2020-10-09T03:34:51.809Z</updated>
+    <updated>2020-10-09T03:58:10.308Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;最小表示法&quot;&gt;&lt;a href=&quot;#最小表示法&quot; class=&quot;headerlink&quot; title=&quot;最小表示法&quot;&gt;&lt;/a&gt;最小表示法&lt;/h2&gt;&lt;p&gt;&lt;a
-        
-      
+      &lt;p&gt;字符串的板子们。&lt;/p&gt;
     
     </summary>
     
