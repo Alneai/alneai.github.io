@@ -19,15 +19,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="min25 筛能够求解积性函数的前缀和。其时间复杂度为 $O(\frac{n^{\frac{3}{4}}}{\log n})$，空间复杂度为 $O(\sqrt n)$。 原理首先，min25 筛对于每个 $x &#x3D; \lfloor\frac{n}{i} \rfloor$，能够求出 $\sum_{i&#x3D;1}^x [i \in P] i^k$ 的值。 先通过线性筛可以得到 $\sqrt n$ 以内的所有质">
+  <meta name="description" content="min25 筛能够求解积性函数的前缀和。其时间复杂度为 $O(\frac{n^{\frac{3}{4}}}{\log n})$，空间复杂度为 $O(\sqrt n)$。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="min25筛">
 <meta property="og:url" content="http://yoursite.com/2020/10/09/min25%E7%AD%9B/index.html">
 <meta property="og:site_name" content="Alneai&#39;s Blog">
-<meta property="og:description" content="min25 筛能够求解积性函数的前缀和。其时间复杂度为 $O(\frac{n^{\frac{3}{4}}}{\log n})$，空间复杂度为 $O(\sqrt n)$。 原理首先，min25 筛对于每个 $x &#x3D; \lfloor\frac{n}{i} \rfloor$，能够求出 $\sum_{i&#x3D;1}^x [i \in P] i^k$ 的值。 先通过线性筛可以得到 $\sqrt n$ 以内的所有质">
+<meta property="og:description" content="min25 筛能够求解积性函数的前缀和。其时间复杂度为 $O(\frac{n^{\frac{3}{4}}}{\log n})$，空间复杂度为 $O(\sqrt n)$。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-09T03:36:19.000Z">
-<meta property="article:modified_time" content="2020-10-09T04:38:53.656Z">
+<meta property="article:modified_time" content="2020-10-14T14:26:20.729Z">
 <meta property="article:author" content="Alneai">
 <meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
@@ -206,10 +206,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-10-09 11:36:19 / 修改时间：12:38:53" itemprop="dateCreated datePublished" datetime="2020-10-09T11:36:19+08:00">2020-10-09</time>
+              <time title="创建时间：2020-10-09 11:36:19" itemprop="dateCreated datePublished" datetime="2020-10-09T11:36:19+08:00">2020-10-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-14 22:26:20" itemprop="dateModified" datetime="2020-10-14T22:26:20+08:00">2020-10-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -255,6 +261,7 @@
 
       
         <p>min25 筛能够求解积性函数的前缀和。其时间复杂度为 $O(\frac{n^{\frac{3}{4}}}{\log n})$，空间复杂度为 $O(\sqrt n)$。</p>
+<a id="more"></a>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>首先，min25 筛对于每个 $x = \lfloor\frac{n}{i} \rfloor$，能够求出 $\sum_{i=1}^x [i \in P] i^k$ 的值。</p>
 <p>先通过线性筛可以得到 $\sqrt n$ 以内的所有质数 $p_i$ 以及它们的前缀 $k$ 次方和 $sum_i$。</p>
 <p>定义 $g(n, i) = \sum_{j=1}^n [j \in P or pr_j &gt; p_i] j^k$，其中 $pr_j$ 表示 $j$ 的最小质因子。$g(n, i)$ 表示的就是埃筛进行第 $i$ 轮后尚未被筛去的数的 $k$ 次方和。那么所求答案即为 $g(n, cnt)$，$cnt$ 表示 $\sqrt n$ 以内质数的个数。</p>
@@ -429,7 +436,7 @@ g(n, i - 1) - p_i^k (g(\lfloor \frac{n}{p_i}\rfloor, i - 1) - sum_{i-1}), &p_i^2
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

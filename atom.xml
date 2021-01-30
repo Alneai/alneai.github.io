@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-09T04:38:53.656Z</updated>
+  <updated>2020-10-14T14:26:20.729Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,18 +21,11 @@
     <link href="http://yoursite.com/2020/10/09/min25%E7%AD%9B/"/>
     <id>http://yoursite.com/2020/10/09/min25%E7%AD%9B/</id>
     <published>2020-10-09T03:36:19.000Z</published>
-    <updated>2020-10-09T04:38:53.656Z</updated>
+    <updated>2020-10-14T14:26:20.729Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;min25 筛能够求解积性函数的前缀和。其时间复杂度为 $O(\frac{n^{\frac{3}{4}}}{\log n})$，空间复杂度为 $O(\sqrt n)$。&lt;/p&gt;
-&lt;h2 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;p&gt;min25 筛能够求解积性函数的前缀和。其时间复杂度为 $O(\frac{n^{\frac{3}{4}}}{\log n})$，空间复杂度为 $O(\sqrt n)$。&lt;/p&gt;
     
     </summary>
     
