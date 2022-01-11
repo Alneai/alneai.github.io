@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="错排问题递推： $D(n)&#x3D;(n-1)[D(n-2)+D(n-1)]$ 容斥： D(n)&#x3D;n![\frac{1}{0!}-\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{(-1)^n}{n!}]容斥的式子可以由二项式反演简单的推出来：不考虑 $i \neq a_i$ 这个条件，那么方案数即为 $n!$。这些排列中包含了所有恰由 $k(k&#x3D;0,1,2,\cdots,n)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组合与计数">
+<meta property="og:url" content="http://yoursite.com/2020/06/04/%E7%BB%84%E5%90%88%E4%B8%8E%E8%AE%A1%E6%95%B0/index.html">
+<meta property="og:site_name" content="Alneai&#39;s Blog">
+<meta property="og:description" content="错排问题递推： $D(n)&#x3D;(n-1)[D(n-2)+D(n-1)]$ 容斥： D(n)&#x3D;n![\frac{1}{0!}-\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{(-1)^n}{n!}]容斥的式子可以由二项式反演简单的推出来：不考虑 $i \neq a_i$ 这个条件，那么方案数即为 $n!$。这些排列中包含了所有恰由 $k(k&#x3D;0,1,2,\cdots,n)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-04T10:14:58.000Z">
+<meta property="article:modified_time" content="2022-01-11T09:29:50.357Z">
+<meta property="article:author" content="Alneai">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/04/%E7%BB%84%E5%90%88%E4%B8%8E%E8%AE%A1%E6%95%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>组合与计数 | Alneai's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Alneai's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alneai's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/%E7%BB%84%E5%90%88%E4%B8%8E%E8%AE%A1%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alneai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alneai's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          组合与计数
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-04 18:14:58" itemprop="dateCreated datePublished" datetime="2020-06-04T18:14:58+08:00">2020-06-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-11 17:29:50" itemprop="dateModified" datetime="2022-01-11T17:29:50+08:00">2022-01-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM笔记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/04/%E7%BB%84%E5%90%88%E4%B8%8E%E8%AE%A1%E6%95%B0/" class="post-meta-item leancloud_visitors" data-flag-title="组合与计数" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">评论数：</span>
+    
+    <a title="valine" href="/2020/06/04/%E7%BB%84%E5%90%88%E4%B8%8E%E8%AE%A1%E6%95%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/04/%E7%BB%84%E5%90%88%E4%B8%8E%E8%AE%A1%E6%95%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="错排问题"><a href="#错排问题" class="headerlink" title="错排问题"></a>错排问题</h2><p>递推：</p>
+<p>$D(n)=(n-1)[D(n-2)+D(n-1)]$</p>
+<p>容斥：</p>
+<script type="math/tex; mode=display">D(n)=n![\frac{1}{0!}-\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{(-1)^n}{n!}]</script><p>容斥的式子可以由二项式反演简单的推出来：不考虑 $i \neq a_i$ 这个条件，那么方案数即为 $n!$。这些排列中包含了所有恰由 $k(k=0,1,2,\cdots,n)$ 个位置不变的排列，因此有</p>
+<script type="math/tex; mode=display">n!=\sum_{i=0}^n\binom{n}{i}f_i</script><p>使用二项式反演即可得到</p>
+<script type="math/tex; mode=display">f_n=n!\sum_{i=0}^n \frac{(-1)^i}{i!}</script><a id="more"></a>
+<h2 id="第一类-Stirling-数"><a href="#第一类-Stirling-数" class="headerlink" title="第一类 Stirling 数"></a>第一类 Stirling 数</h2><p>第一类 Stirling 数表示 n 个不同元素构成 m 个圆排列的数目。有无符号 Stirling 数也表示升阶函数和降阶函数的系数：</p>
+<script type="math/tex; mode=display">x^{n\downarrow}=x(x-1)(x-2)\cdots(x-n+1)=\sum_{k=0}^n s_s(n,k)x^k</script><script type="math/tex; mode=display">x^{n\uparrow}=x(x+1)(x+2)\cdots(x+n-1)=\sum_{k=0}^n s_u(n,k)x^k</script><p>有无符号 Stirling 数之间的关系为 $s_s(n,m)=(-1)^{n-m}s_u(n,m)$</p>
+<p>递推形式：$s(n,r)=(n-1)s(n-1,r)+s(n-1,r-1)$</p>
+<p>有符号的第一类 Stirling 数可以简单推导如下：</p>
+<script type="math/tex; mode=display">\sum_{k=0}^{n+1}s(n+1,k)\cdot x^k=x^{n\downarrow} (x-n)=\sum_{k=0}^ns(n,k)\cdot x^{k+1}-n\sum_{k=0}^ns(n,k)\cdot x^k</script><p>即</p>
+<script type="math/tex; mode=display">s_s(n,m)=s_s(n-1,m-1)-(n-1)\cdot s_s(n-1,m)</script><p>性质：</p>
+<ul>
+<li>$s(n,0)=[n=0]$</li>
+<li>$s(n,1)=(n-1)!$</li>
+<li>$s(n,2)=(n-1)!\sum_{i=1}^{n-1}\frac{1}{i}$</li>
+<li>$s(n,n-1)=\binom{n}{2}$</li>
+<li>$\sum_{k=0}^ns_u(n,k)=n!$</li>
+<li>$\sum_{k=0}^ns_s(n,k)=[n=0]$</li>
+</ul>
+<h2 id="第二类-Stirling-数"><a href="#第二类-Stirling-数" class="headerlink" title="第二类 Stirling 数"></a>第二类 Stirling 数</h2><p>第二类 Stirling 数可以表示把 $n$ 个球放进 $r$ 个相同的盒子里的方案数（没有空盒）。</p>
+<p>递推形式： $S(n,r)=rS(n-1,r)+S(n-1,r-1)$</p>
+<p>第二类 Stirling 数也可用下降阶乘幂定义：</p>
+<script type="math/tex; mode=display">\begin{aligned}
+x^n&=\sum_{k=0}^nS(n,k)(x)_k\\
+&=\sum_{k=0}^nS(n,k)x(x-1)\cdots (x-k+1)
+\end{aligned}</script><p>通项公式为</p>
+<script type="math/tex; mode=display">S(n,m)=\frac{1}{m!}\sum_{k=0}^m (-1)^k\binom{m}{k}(m-k)^n</script><p>可以用容斥理解。$k$ 为有多少集合是空的，每个 $k$ 有 $\binom{m}{k}$ 种空集，$n$ 个元素可以放进非空的 $m-k$ 个集合中。最后再除以 $m!$ 使其变为无序的情况。</p>
+<p>性质：</p>
+<ul>
+<li>$S(n,1)=S(n,n)=1$</li>
+<li>$S(n,0)=[n=0]$</li>
+<li>$S(n,2)=2^{n-1}-1$</li>
+<li>$S(n,3)=\frac{1}{6}(3^n-3\cdot 2^n+3)$</li>
+<li>$S(n,n-1)=\binom{n}{2}$</li>
+</ul>
+<h2 id="Catalan-数"><a href="#Catalan-数" class="headerlink" title="Catalan 数"></a>Catalan 数</h2><p>Catalan数从 $0$ 开始的前几项：1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440, 9694845</p>
+<h3 id="Catalan-数常见公式"><a href="#Catalan-数常见公式" class="headerlink" title="Catalan 数常见公式"></a>Catalan 数常见公式</h3><script type="math/tex; mode=display">
+H_n = \begin{cases} \sum_{i=1}^{n} H_{i-1} H_{n-i} & n \geq 2, n \in \mathbf{N_{+}}\\ 1 & n = 0, 1 \end{cases}</script><script type="math/tex; mode=display">H_n = \frac{ (4n-2)}{n+1} H_{n-1}</script><script type="math/tex; mode=display">H_n = \binom{2n}{n} - \binom{2n}{n-1} =\frac{1}{n+1}\binom{2n}{n}</script><h3 id="Catalan-数应用"><a href="#Catalan-数应用" class="headerlink" title="Catalan 数应用"></a>Catalan 数应用</h3><p>路径计数问题：只能往右或往上走一个单位长度，问有多少种不同的路径可以从左下角 $(1,1)$ 走到右上角 $(n,n)$，并且要求路径不能经过直线 $y=x$ 上方的点。</p>
+<p>对于一种不合法的方案，它的路径一定与 $y=x+1$ 有交。将第一个交点后面的路径关于 $y=x+1$ 做个对称，新的路径就会到达 $(n-1,n+1)$。合法的方案总数就是</p>
+<script type="math/tex; mode=display">C_n=\binom{2n}{n}-\binom{2n}{n-1}=\frac{1}{n+1}\binom{2n}{n}</script><p>括号序列计数：有多少种不同的长度为 $n$ 的括号序列。长度为 $2n$ 的括号序列的方案数就是 $C_n$</p>
+<p>出栈顺序：有多少种可能的操作序列。</p>
+<p>二叉树计数：有多少种不同的 $n$ 个结点的二叉树</p>
+<script type="math/tex; mode=display">f_n=\sum_{i=1}^n f_{i-1}f_{n-i}</script><p>对这棵树进行遍历，遍历顺序即是一个括号序列。</p>
+<p>在圆上选择 $2n$ 个点，将这些点成对连接起来使得所得到的 $n$ 条线段不相交的方法数。</p>
+<p>对角线不相交的情况下，将一个凸多边形区域分成三角形区域的方法数。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/26/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/" rel="prev" title="莫比乌斯反演">
+      <i class="fa fa-chevron-left"></i> 莫比乌斯反演
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/09/min25%E7%AD%9B/" rel="next" title="min25筛">
+      min25筛 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错排问题"><span class="nav-number">1.</span> <span class="nav-text">错排问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一类-Stirling-数"><span class="nav-number">2.</span> <span class="nav-text">第一类 Stirling 数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二类-Stirling-数"><span class="nav-number">3.</span> <span class="nav-text">第二类 Stirling 数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Catalan-数"><span class="nav-number">4.</span> <span class="nav-text">Catalan 数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Catalan-数常见公式"><span class="nav-number">4.1.</span> <span class="nav-text">Catalan 数常见公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Catalan-数应用"><span class="nav-number">4.2.</span> <span class="nav-text">Catalan 数应用</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alneai"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Alneai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Alneai" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Alneai" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1907010119@s.upc.edu.cn" title="E-Mail → mailto:1907010119@s.upc.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://aliayc.github.io/" title="https:&#x2F;&#x2F;aliayc.github.io&#x2F;" rel="noopener" target="_blank">Aliayc</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.hexoblog.gq/" title="https:&#x2F;&#x2F;www.hexoblog.gq&#x2F;" rel="noopener" target="_blank">gqd</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://47.94.88.29:9000/" title="http:&#x2F;&#x2F;47.94.88.29:9000&#x2F;" rel="noopener" target="_blank">zs</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alneai</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,0' opacity='0.5' zIndex='-1' count='150' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'pV6iCj1y6mfWVATBKspCnlWv-gzGzoHsz',
+      appKey     : 'Q3AoTtBDAMmfrByu46pgOjVt',
+      placeholder: "留个言再走吧~",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : '',
+      avatar_cdn:'https://www.gravatar.com/avatar/',
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
