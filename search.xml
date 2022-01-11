@@ -4,6 +4,7 @@
     <title>Git常用命令</title>
     <url>/2022/01/11/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h2 id="Git-基本操作"><a href="#Git-基本操作" class="headerlink" title="Git 基本操作"></a>Git 基本操作</h2><h3 id="Git-三大区域"><a href="#Git-三大区域" class="headerlink" title="Git 三大区域"></a>Git 三大区域</h3><p><img src="https://s3.bmp.ovh/imgs/2022/01/af354cd5e11c9af7.png" alt="Git"></p>
+<a id="more"></a>
 <ul>
 <li>工作区</li>
 <li>暂存区：只记录修改</li>
@@ -62,6 +63,16 @@
 <li><code>git remote add [主机名] [主仓库的地址]</code> 增加关联主机</li>
 <li><code>git pull --rebase up master</code> or <code>git fetch up</code> + <code>git rebase up/master</code> 同步主仓库</li>
 <li><code>git rebase</code> 将一个分支的修改合并到当前分支</li>
+</ul>
+<h2 id="Git-标签"><a href="#Git-标签" class="headerlink" title="Git 标签"></a>Git 标签</h2><ul>
+<li><code>git tag [标签名] -m [备注信息] [提交版本号]</code></li>
+<li><code>git tag</code> 查看标签列表</li>
+<li><code>git show [标签名]</code> 查看标签详情</li>
+<li><code>git tag -d [标签名]</code> 删除本地标签</li>
+<li><code>git push origin [标签名]</code> 推送到远程仓库</li>
+<li><code>git push origin --tags</code> 将全部本地标签推送至远程仓库</li>
+<li><code>git push origin :refs/tags/[标签名]</code> 删除远程仓库的标签</li>
+<li><code>git checkout [标签名]</code> + <code>git checkout -b [新的分支名]</code> 签出版本</li>
 </ul>
 ]]></content>
       <categories>
