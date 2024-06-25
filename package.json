@@ -1,0 +1,24 @@
+{
+  "name": "alneai-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev --host 0.0.0.0",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "devDependencies": {
+    "fs-extra": "^11.2.0",
+    "globby": "^14.0.1",
+    "gray-matter": "^4.0.3",
+    "vitepress": "^1.2.3"
+  },
+  "dependencies": {
+    "vue": "^3.4.30"
+  }
+}
