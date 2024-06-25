@@ -2,9 +2,11 @@
 abbrlink: ''
 categories: []
 date: '2024-06-25'
-tags: []
+description: ''
+tags:
+- NeRF
 title: NeRF
-updated: '2024-06-25T17:31:23.818+08:00'
+updated: '2024-06-25T17:42:01.633+08:00'
 ---
 # 论文
 
@@ -13,6 +15,8 @@ updated: '2024-06-25T17:31:23.818+08:00'
 指标
 
 ## Lgm: Large multi-view gaussian model for high-resolution 3d content creation
+
+大模型+NeRF
 
 ## MVGamba: Unify 3D Content Generation as State Space Sequence Modeling
 
@@ -28,7 +32,7 @@ a one image (or text) → mulit-view images → 3D diagram to predict 3DGS param
 
 ## Mip-Splatting: Alias-free 3D Gaussian Splatting
 
-CVPR 2024
+*CVPR 2024*
 
 引入了一个3D平滑滤波器，根据输入视图引起的最大采样频率来限制3D Gaussian primitive的大小，从而消除放大时的高频伪影。
 
