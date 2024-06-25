@@ -30,7 +30,7 @@ export default defineConfig({
         search: {
             provider: 'local',
         },
-        outline: [1, 6],
+        outline: [2, 5],
         outlineTitle: '文章摘要',
         socialLinks: [{ icon: 'github', link: 'https://github.com/Alneai' }]
     },
