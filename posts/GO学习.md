@@ -30,7 +30,7 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 3. 编辑 `~/.vimrc`配置
 
-```shell
+```vim
  "Vundle 相关配置
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -53,8 +53,6 @@ set nocompatible
 
 set nu " 设置行号
 set showmatch " 显示括号匹配
-" set cursorline "突出显示当前行
-" set cursorcolumn " 突出显示当前列
 
 " tab 缩进
 set tabstop=4 " 设置Tab长度为4空格
