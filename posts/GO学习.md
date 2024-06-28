@@ -5,7 +5,7 @@ description: GO相关的简单总结
 tags:
 - Go
 title: GO学习
-updated: '2024-06-28T09:37:37.436+08:00'
+updated: '2024-06-28T09:42:34.867+08:00'
 ---
 # GO学习
 
@@ -74,9 +74,7 @@ filetype plugin indent on    " 启用自动补全
 
 在Vim内执行 `:PluginInstall`安装插件，执行`:GoInstallBinaries`安装vim-go所需环境
 
-## 语法
-
-### 常用命令
+## 常用命令
 
 - go build -o
 - go get，获取远程包
