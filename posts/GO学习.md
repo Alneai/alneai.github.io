@@ -2,9 +2,10 @@
 categories: []
 date: '2024-06-26'
 description: GO相关的简单总结
-tags: []
+tags:
+- Go
 title: GO学习
-updated: '2024-06-26T11:42:02.180+08:00'
+updated: '2024-06-28T09:37:37.436+08:00'
 ---
 # GO学习
 
@@ -72,3 +73,15 @@ filetype plugin indent on    " 启用自动补全
 - Your Complete Me
 
 在Vim内执行 `:PluginInstall`安装插件，执行`:GoInstallBinaries`安装vim-go所需环境
+
+## 语法
+
+### 常用命令
+
+- go build -o
+- go get，获取远程包
+- go install
+- go run，编译并运行
+- go env，查看go环境变量
+- go list，查看安装的包
+- go mod init example.com/greetings，初始化模块
