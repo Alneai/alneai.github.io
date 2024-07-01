@@ -5,7 +5,7 @@ description: GO相关的简单总结
 tags:
 - Go
 title: GO学习
-updated: '2024-06-28T15:48:03.194+08:00'
+updated: '2024-07-01T14:30:58.866+08:00'
 ---
 # GO学习
 
@@ -70,6 +70,12 @@ filetype plugin indent on    " 启用自动补全
 4. 安装和配置插件
 
 - vim-go
+
+```shell
+cd ~/.vim/bundle/
+git clone https://github.com/fatih/vim-go.git
+```
+
 - Your Complete Me
 
 在Vim内执行 `:PluginInstall`安装插件，执行`:GoInstallBinaries`安装vim-go所需环境
