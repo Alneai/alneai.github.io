@@ -6,7 +6,7 @@ description: ''
 tags:
 - NeRF
 title: NeRF
-updated: '2024-06-25T17:42:01.633+08:00'
+updated: '2024-07-11T14:46:03.603+08:00'
 ---
 # 论文
 
@@ -39,6 +39,13 @@ a one image (or text) → mulit-view images → 3D diagram to predict 3DGS param
 ## An Image is Worth 32 Tokens for Reconstruction and Generation
 
 图像编解码器，压缩图像 token 数
+
+
+## GradeADreamer: Enhanced Text-to-3D Generation Using Gaussian Splatting and Multi-View Diffusion
+
+https://arxiv.org/abs/2406.09850
+
+该管道仅使用单个 RTX 3090 GPU 即可生成高质量资产，总生成时间不到 30 分钟。我们提出的方法采用多视图扩散模型 MVDream 来生成高斯 Splats 作为先验，然后使用 StableDiffusion 细化几何和纹理。
 
 ## idea
 
