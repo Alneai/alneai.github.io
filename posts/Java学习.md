@@ -99,6 +99,15 @@ ReentrantLock可重入锁：可以在嵌套调用时自动获得锁，避免死�
 
 `ThreadPoolExecutor`中的拒绝策略：
 
+- `AbortPolicy`，抛出`RejectedExecutionException`来拒绝新任务的处理
+- `CallerRunsPolicy`，调用执行自己的线程运行任务，如果执行程序已关闭，则会丢弃该任务
+- `DiscardPolicy`，丢弃新任务
+- `DiscardOldestPolicy`，丢弃最早的未处理的任务请求
+
+若不允许丢弃任务：
+
+1. 增加`BlockingQueue`大小，调整`maximumPoolSize`
+2. 任务持久化，使用MySQL、Redis、消息队列等
 
 ## 日志
 
