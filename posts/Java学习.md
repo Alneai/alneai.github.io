@@ -95,6 +95,11 @@ ReentrantLock可重入锁：可以在嵌套调用时自动获得锁，避免死�
 - threadFactory，线程工厂
 - handler，拒绝策略
 
+#### 拒绝策略
+
+`ThreadPoolExecutor`中的拒绝策略：
+
+
 ## 日志
 
 slf4j 是日志框架的接口，logback 是实现
