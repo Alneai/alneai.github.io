@@ -5,7 +5,7 @@ description: Java学习的一些总结
 tags:
 - Java
 title: Java学习
-updated: '2024-07-15T17:05:25.254+08:00'
+updated: '2024-07-16T14:54:35.439+08:00'
 ---
 # Java 学习
 
@@ -85,7 +85,11 @@ ReentrantLock可重入锁：可以在嵌套调用时自动获得锁，避免死�
 
 ### 线程池
 
-#### 参数
+- `Runnable`不会返回结果或抛异常，`Callable`可以
+- `execute()`无返回值，`submit()`返回一个`Future`
+- `shutdown()`不再接受新任务，会等待队列中任务执行完毕，`shutdownNow()`终止正在运行的任务，返回正在等待执行的 List
+
+#### ThreadPoolExecutor 参数
 
 - corePoolSize，核心线程数量
 - maximumPoolSize，最大线程数
@@ -95,7 +99,7 @@ ReentrantLock可重入锁：可以在嵌套调用时自动获得锁，避免死�
 - threadFactory，线程工厂
 - handler，拒绝策略
 
-#### 拒绝策略
+#### ThreadPoolExecutor 拒绝策略
 
 `ThreadPoolExecutor`中的拒绝策略：
 
@@ -108,6 +112,19 @@ ReentrantLock可重入锁：可以在嵌套调用时自动获得锁，避免死�
 
 1. 增加`BlockingQueue`大小，调整`maximumPoolSize`
 2. 任务持久化，使用MySQL、Redis、消息队列等
+
+#### 线程池常用阻塞队列
+
+- `LinkedBlockingQueue`无界队列，容量为 `Integer.MAX_VALUE`：`FixedThreadPool` 和 `SingleThreadExector`
+- `SynchronousQueue`同步队列，`CachedThreadPool`，没有容量，不存储元素
+- `DelayedWorkQueue`延迟阻塞队列，`ScheduledThreadPool`和`SingleThreadScheduledExecutor`，按照延迟的时间长短对任务进行排序，添加元素满了之后会自动扩容原来容量的 1/2
+
+#### 常用内置线程池
+
+- `FixedThreadPool`，核心线程数和最大线程数相等，不会拒绝任务，可能OOM
+- `SingleThreadExecutor`，核心线程数和最大线程数都是1
+- `CachedThreadPool`，`corePoolSize`为0，`maximumPoolSize`为 `Integer.MAX.VALUE`，可能会创建大量线程导致OOM
+- `ScheduledThreadPool`
 
 ## 日志
 
