@@ -5,7 +5,7 @@ description: GO相关的简单总结
 tags:
 - Go
 title: GO学习
-updated: '2024-07-19T16:12:43.640+08:00'
+updated: '2024-07-23T09:44:18.432+08:00'
 ---
 # GO学习
 
@@ -124,3 +124,4 @@ git clone https://github.com/fatih/vim-go.git
 
 1. 互斥锁 `sync.Mutex`
 2. 读写互斥锁 `sync.RWMutex`
+3. `sync.WaitGroup`，`Add(n)` 把计数器设置为n ，`Done()` 每次把计数器-1 ，`wait()` 会阻塞代码的运行，直到计数器地值减为0
