@@ -5,7 +5,7 @@ description: Java学习的一些总结
 tags:
 - Java
 title: Java学习
-updated: '2024-08-02T18:24:49.336+08:00'
+updated: '2024-08-08T15:51:31.496+08:00'
 ---
 # Java 学习
 
@@ -50,7 +50,7 @@ updated: '2024-08-02T18:24:49.336+08:00'
   - ConcurrentLinkedQueue，非阻塞队列，CAS+自旋操作，读多写少
 - Vector、Hashtable，使用synchronized修饰方法，效率低下，复合操作不是线程安全的
 
-## 多线程，并发
+## 多线程，并发，异步
 
 继承 Thread类，覆写 run() 或者在创建 Thread 时传入 Runnable 实例来执行线程代码
 
@@ -90,6 +90,15 @@ Java中的锁：
 - 内部维护了 ThreadLocalMap，用于存储 ThreadLocal 变量与各自线程的副本之间的映射关系。
 - ThreadLocalMap 内部由一个 Entry 数组构成，每个 Entry 包含一个 ThreadLocal 变量和对应的线程本地副本值，计算 ThreadLocal 的哈希值然后存储到对应位置。
 - Entry 继承了 WeakReference 防止内存泄漏
+
+### CompletableFuture
+
+- `supplyAsync`：立即启动一个异步计算
+- `runAsync`：执行一个没有返回值的异步任务
+- `.get()`：阻塞的获取结果
+- `.thenApply()`与`.thenAccept()`：处理计算结果
+- `allOf`与`anyOf`：组合
+- `.handle()`与`.exceptionally()`：处理异常
 
 ### 线程池
 
