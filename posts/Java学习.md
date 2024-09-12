@@ -5,7 +5,7 @@ description: Java学习的一些总结
 tags:
 - Java
 title: Java学习
-updated: '2024-09-12T15:02:52.855+08:00'
+updated: '2024-09-12T15:04:17.798+08:00'
 ---
 # Java 学习
 
@@ -200,9 +200,9 @@ Eden满了会先触发Minor GC，存活下来会移到Survivor0，Survivor0满�
 JDK8：Parallel Scavenge与Parallel Old，新生代复制算法，老年代标记整理，吞吐量优先。
 JDK9：G1，响应速度优先，不区分新老，优先收集存活对象较少的区域
 
-# 网络模式
+## 网络模式
 
-## Reactor 与 Proactor
+### Reactor 与 Proactor
 
 **Reactor模式**：IO复用结合线程池，收到事件后分发给事件处理线程。多个连接共用一个阻塞对象，当某个连接有新的数据可以处理时，操作系统通知应用程序，线程从阻塞状态返回，将连接完成后的业务处理任务分配给线程进行处理。
 
@@ -219,7 +219,7 @@ JDK9：G1，响应速度优先，不区分新老，优先收集存活对象较�
 - 同步非阻塞NIO(Reactor): read在调用后立即返回，但数据准备好后拷贝仍是同步的。面向缓冲区，一个线程可以处理多个操作，基于Channelyu与Buffer，Selector监听多个通道的事件
 - 异步非阻塞AIO(Proactor)：内核数据准备与数据拷贝都不需要等待
 
-## Netty
+### Netty
 
 [Netty学习手册](https://dongzl.github.io/netty-handbook/#/_content/chapter05)
 
@@ -227,7 +227,7 @@ Netty基于主从Reactors做了改进，其中主从Reactor多线程模型有多
 
 BossGroup 和 WorkerGroup 类型都是 NioEventLoopGroup，NioEventLoopGroup 包含多个 NioEventLoop，每个 NioEventLoop 是一个线程，用于监听绑定在其上的 socket 的网络通讯。
 
-## RPC
+### RPC
 
 将rpc方法写在接口内，通过动态代理创建实现接口的对象，每次调用invoke设置当前session，并加入到ConcurrentLinkedQueue中。rpc维护一个发送和接收队列的上下文。新开一个线程轮询队列，处理发送和接收请求。
 
