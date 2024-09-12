@@ -5,7 +5,7 @@ description: Java学习的一些总结
 tags:
 - Java
 title: Java学习
-updated: '2024-08-23T16:22:47.660+08:00'
+updated: '2024-09-12T11:44:25.029+08:00'
 ---
 # Java 学习
 
@@ -237,3 +237,59 @@ BossGroup 和 WorkerGroup 类型都是 NioEventLoopGroup，NioEventLoopGroup 包
 - method.getDeclaringClass() 获取声明方法的类
 
 序列化：使用netty的ByteBufOutputStream，将其传入ObjectOutputStream.writeObject(Object obj)将对象写入ByteBuf中
+
+## 单例模式
+
+线程安全的单例模式实现：
+
+1. 双重同步锁
+
+```java
+public class Singleton {
+ 
+    private static volatile Singleton singleton;
+ 
+    private Singleton() {
+    }
+ 
+    public static Singleton getInstance() {
+        if (singleton == null) {
+            synchronized (Singleton.class) {
+                if (singleton == null) {
+                    singleton = new Singleton();
+                }
+            }
+        }
+        return singleton;
+    }
+}
+
+```
+
+2. 内部静态类，可能存在反射攻击和反序列化攻击
+
+```java
+private Singleton() {
+  
+}
+
+public static Singleton getInstance() {
+    return SingletonFactory.instance;
+}
+
+private static class SingletonFactory {
+    private static Singleton instance = new Singleton();
+}
+```
+
+3. 枚举，不能延时加载，能防止反射和反序列化调用
+
+```
+public enum Singleton {
+    INSTANCE;
+
+    public void doSomething() {
+        System.out.println("doSomething");
+    }
+}
+```
