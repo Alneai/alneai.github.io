@@ -5,7 +5,7 @@ description: Java学习的一些总结
 tags:
 - Java
 title: Java学习
-updated: '2024-09-12T11:44:25.029+08:00'
+updated: '2024-09-12T15:02:52.855+08:00'
 ---
 # Java 学习
 
@@ -284,7 +284,7 @@ private static class SingletonFactory {
 
 3. 枚举，不能延时加载，能防止反射和反序列化调用
 
-```
+```java
 public enum Singleton {
     INSTANCE;
 
