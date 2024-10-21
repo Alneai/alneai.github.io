@@ -5,7 +5,7 @@ description: Java学习的一些总结
 tags:
 - Java
 title: Java学习
-updated: '2024-09-12T15:04:17.798+08:00'
+updated: '2024-10-21T14:51:39.898+08:00'
 ---
 # Java 学习
 
@@ -44,7 +44,7 @@ updated: '2024-09-12T15:04:17.798+08:00'
   - CopyOnWriteArraySet
 - 线程安全的Map
   - Collections.synchronizedMap()
-  - ConcurrentHashMap，分段锁
+  - ConcurrentHashMap，分段锁；聚合方法不是原子的，size、isEmpty等方法可能看到中间状态
 - Queue
   - ArrayBlockingQueue/LinkedBlockingQueue，阻塞队列
   - ConcurrentLinkedQueue，非阻塞队列，CAS+自旋操作，读多写少
@@ -54,7 +54,7 @@ updated: '2024-09-12T15:04:17.798+08:00'
 
 继承 Thread类，覆写 run() 或者在创建 Thread 时传入 Runnable 实例来执行线程代码
 
-volatile作用：
+### volatile
 
 - 防止指令重排
 - 确保线程内存中的对象和主线程内对象同步，即确保线程内存中对象对其他线程的可见性（可见性：总是能看到任意线程对这个volatile变量最后的写入）
