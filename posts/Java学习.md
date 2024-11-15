@@ -5,7 +5,7 @@ description: Java学习的一些总结
 tags:
 - Java
 title: Java学习
-updated: '2024-10-21T14:51:39.898+08:00'
+updated: '2024-11-16T00:33:16.135+08:00'
 ---
 # Java 学习
 
@@ -120,9 +120,9 @@ Java中的锁：
 
 `ThreadPoolExecutor`中的拒绝策略：
 
-- `AbortPolicy`，抛出`RejectedExecutionException`来拒绝新任务的处理
-- `CallerRunsPolicy`，调用执行自己的线程运行任务，如果执行程序已关闭，则会丢弃该任务
-- `DiscardPolicy`，丢弃新任务
+- `AbortPolicy`，丢弃任务并抛出`RejectedExecutionException`异常
+- `CallerRunsPolicy`，调用线程自己处理任务，如果执行程序已关闭，则会丢弃该任务
+- `DiscardPolicy`，丢弃任务，不抛异常
 - `DiscardOldestPolicy`，丢弃最早的未处理的任务请求
 
 若不允许丢弃任务：
