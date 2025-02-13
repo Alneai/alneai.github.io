@@ -6,13 +6,13 @@ description: ''
 tags:
 - NeRF
 title: NeRF
-updated: '2024-07-11T14:46:03.603+08:00'
+updated: '2025-02-13T17:00:50.000+08:00'
 ---
 # 论文
 
 ## $T^3$ Bench
 
-指标
+$T^3$ 指标
 
 ## Lgm: Large multi-view gaussian model for high-resolution 3d content creation
 
@@ -39,7 +39,6 @@ a one image (or text) → mulit-view images → 3D diagram to predict 3DGS param
 ## An Image is Worth 32 Tokens for Reconstruction and Generation
 
 图像编解码器，压缩图像 token 数
-
 
 ## GradeADreamer: Enhanced Text-to-3D Generation Using Gaussian Splatting and Multi-View Diffusion
 
